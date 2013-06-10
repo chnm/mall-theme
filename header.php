@@ -7,5 +7,8 @@
     <link href='css/style.css' rel='stylesheet' type='text/css'>
     <script src="javascripts/jquery.js"></script>
     <script src='javascripts/globals.js' type='text/javascript'></script>
+    <script src="javascripts/jquery.scrollTo.min.js" type="text/javascript"></script>
+    <script src="javascripts/jquery.localScroll.min.js" type="text/javascript"></script>
+    <script src="javascripts/events.js" type="text/javascript"></script>
 </head>
 
