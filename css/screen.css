@@ -1,79 +1,1323 @@
-/*
-Syntax error: Undefined mixin 'box-sizing'.
-        on line 2 of /Users/knguyen/Sites/mall/_sass/screen.scss, in `box-sizing'
-        from line 2 of /Users/knguyen/Sites/mall/_sass/screen.scss
+@import url(normalize.css);
+/* ---- Typography ---- */
+@font-face {
+  font-family: 'entypo';
+  src: url("../fonts/entypo.eot");
+  src: url("../fonts/entypo.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo.woff") format("woff"), url("../fonts/entypo.ttf") format("truetype"), url("../fonts/entypo.svg#entypo") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 
-1: /Users/knguyen/Sites/mall/_sass/screen.scss
+/* line 21, ../_sass/_base.scss */
+[data-icon]:before {
+  font-family: 'entypo';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
 
-Backtrace:
-/Users/knguyen/Sites/mall/_sass/screen.scss:2:in `box-sizing'
-/Users/knguyen/Sites/mall/_sass/screen.scss:2
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:249:in `visit_mixin'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:316:in `visit_rule'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `map'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:107:in `block in visit_children'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:119:in `with_environment'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:106:in `visit_children'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:126:in `visit_root'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/base.rb:37:in `visit'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:98:in `visit'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/visitors/perform.rb:7:in `visit'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/tree/root_node.rb:20:in `render'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/engine.rb:315:in `_render'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/sass-3.2.1/lib/sass/engine.rb:262:in `render'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:126:in `timed'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:139:in `block in compile'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/logger.rb:45:in `red'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:138:in `compile'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:118:in `compile_if_required'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:101:in `each'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:101:in `block in run'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:126:in `timed'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/compiler.rb:100:in `run'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/commands/watch_project.rb:147:in `recompile'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `call'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/path.rb:73:in `run_callback'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/path.rb:55:in `callback_action'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/path.rb:35:in `update'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/state/directory.rb:39:in `block in modified'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `each'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/state/directory.rb:37:in `modified'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/state/directory.rb:18:in `refresh'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `block (2 levels) in run'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `each'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:17:in `block in run'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `loop'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/backends/polling.rb:15:in `run'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm/monitor.rb:26:in `run'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/fssm-0.2.9/lib/fssm.rb:70:in `monitor'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/commands/watch_project.rb:87:in `perform'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/commands/base.rb:18:in `execute'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/commands/project_base.rb:19:in `execute'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/bin/compass:29:in `block in <top (required)>'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/bin/compass:43:in `call'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/gems/compass-0.13.alpha.0/bin/compass:43:in `<top (required)>'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/bin/compass:23:in `load'
-/Users/knguyen/.rvm/gems/ruby-1.9.2-p320/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined mixin 'box-sizing'.\A         on line 2 of /Users/knguyen/Sites/mall/_sass/screen.scss, in `box-sizing'\A         from line 2 of /Users/knguyen/Sites/mall/_sass/screen.scss\A \A 1: /Users/knguyen/Sites/mall/_sass/screen.scss"; }
+/* ---- Grid ---- */
+/* line 3, ../_sass/screen.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 7, ../_sass/screen.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 12, ../_sass/screen.scss */
+html {
+  background-color: #f1f1f1;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 19, ../_sass/screen.scss */
+body {
+  font-size: 16px;
+  line-height: 24px;
+  color: #5A5A5A;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+@media (min-width: 40em) {
+  /* line 19, ../_sass/screen.scss */
+  body {
+    max-width: 59em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 7.5em;
+  }
+  /* line 38, ../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  body:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+/* line 31, ../_sass/screen.scss */
+a {
+  text-decoration: none;
+}
+/* line 34, ../_sass/screen.scss */
+a:link {
+  color: #0077b7;
+}
+/* line 35, ../_sass/screen.scss */
+a:visited {
+  color: #6b90a4;
+}
+/* line 36, ../_sass/screen.scss */
+a:active, a:hover {
+  color: #00a5fd;
+}
+
+/* line 40, ../_sass/screen.scss */
+h1 {
+  font-size: 32px;
+  line-height: 48px;
+}
+
+/* line 45, ../_sass/screen.scss */
+.screen-reader-text {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+/* line 51, ../_sass/screen.scss */
+header {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+@media (min-width: 40em) {
+  /* line 51, ../_sass/screen.scss */
+  header {
+    padding-top: 3em;
+  }
+}
+
+/* line 61, ../_sass/screen.scss */
+.home #site-title {
+  margin-bottom: 1.5em;
+}
+
+/* line 65, ../_sass/screen.scss */
+#site-title {
+  width: 70%;
+  text-transform: uppercase;
+  padding: 0.75em 1.69492%;
+  margin: 0;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+}
+@media (min-width: 40em) {
+  /* line 65, ../_sass/screen.scss */
+  #site-title {
+    font-size: 0.875em;
+    line-height: 1.71429em;
+    width: 30%;
+    float: left;
+    line-height: 29px;
+    padding: 0;
+  }
+}
+
+/* line 81, ../_sass/screen.scss */
+.logo {
+  background-color: #2d2d2d;
+  width: 5em;
+  height: 5em;
+  display: block;
+  float: left;
+  margin: 0 1em 0 0;
+}
+@media (min-width: 40em) {
+  /* line 81, ../_sass/screen.scss */
+  .logo {
+    margin: .5em 1em 1em 0;
+  }
+}
+
+/* line 94, ../_sass/screen.scss */
+#mobile-nav {
+  position: absolute;
+  top: 0;
+  right: 1.69492%;
+  width: 3em;
+  padding: 0.75em 0;
+  background-color: #555;
+  text-align: center;
+}
+/* line 103, ../_sass/screen.scss */
+#mobile-nav a {
+  display: block;
+  font-size: 24px;
+  color: #fff;
+}
+/* line 109, ../_sass/screen.scss */
+#mobile-nav a:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 40em) {
+  /* line 94, ../_sass/screen.scss */
+  #mobile-nav {
+    display: none;
+  }
+}
+
+/* line 114, ../_sass/screen.scss */
+#search {
+  padding: 0.75em 1.69492%;
+  float: left;
+  width: 100%;
+  background-color: #000;
+}
+@media (min-width: 40em) {
+  /* line 114, ../_sass/screen.scss */
+  #search {
+    padding: 0;
+    width: 30%;
+    float: right;
+    display: block !important;
+    background-color: transparent;
+    margin-bottom: 0.75em;
+  }
+}
+
+/* line 130, ../_sass/screen.scss */
+#search-query, #search-submit {
+  height: 2.25em;
+  margin: 0;
+  float: left;
+  padding: 0.375em 1.69492%;
+  font-size: 16px;
+}
+@media (min-width: 40em) {
+  /* line 130, ../_sass/screen.scss */
+  #search-query, #search-submit {
+    height: 1.875em;
+  }
+}
+
+/* line 142, ../_sass/screen.scss */
+#search-query {
+  border-color: #e5e5e5;
+  width: 65%;
+  border-style: solid;
+  border-width: 0.0625em;
+  padding: -0.0625em;
+}
+
+/* line 148, ../_sass/screen.scss */
+#search-submit {
+  width: 35%;
+  background-color: #888888;
+  color: #f7f7f7;
+  border: 0;
+}
+
+/* line 155, ../_sass/screen.scss */
+#intro {
+  background-color: #C2C2C2;
+  padding: 0.75em 1.69492%;
+  clear: both;
+}
+
+/* line 161, ../_sass/screen.scss */
+#intro h1 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  line-height: 1.5em;
+  margin: 0;
+}
+
+/* line 167, ../_sass/screen.scss */
+#intro p:first-of-type {
+  margin-top: 0;
+}
+
+/* line 171, ../_sass/screen.scss */
+#intro p:last-of-type {
+  margin-bottom: 0.375em;
+}
+
+/* line 175, ../_sass/screen.scss */
+a.button {
+  background-color: #3d3d3d;
+  color: #fff;
+  padding: 0.375em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 182, ../_sass/screen.scss */
+#featured-question {
+  line-height: 1.5em;
+  padding: 0.75em 1.69492%;
+  background-color: #fff;
+}
+/* line 187, ../_sass/screen.scss */
+#featured-question h1 {
+  margin-top: 0;
+}
+/* line 189, ../_sass/screen.scss */
+#featured-question span {
+  display: block;
+}
+/* line 191, ../_sass/screen.scss */
+#featured-question .category {
+  text-transform: uppercase;
+  font-size: 0.625em;
+  line-height: 2.4em;
+}
+/* line 196, ../_sass/screen.scss */
+#featured-question .title {
+  line-height: 1.125em;
+}
+
+/* Navigation */
+/* line 201, ../_sass/screen.scss */
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* line 206, ../_sass/screen.scss */
+#navigation {
+  clear: both;
+  background-color: #333;
+}
+/* line 210, ../_sass/screen.scss */
+#navigation h1 {
+  margin: 0;
+  color: #e7e7e7;
+  border-color: rgba(255, 255, 255, 0.2);
+  padding: 0.375em 1.69492% 0 1.69492%;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  line-height: 1.5em;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: 0.3125em;
+}
+/* line 220, ../_sass/screen.scss */
+#navigation h2 {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+/* line 222, ../_sass/screen.scss */
+#navigation ul {
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+/* line 228, ../_sass/screen.scss */
+#navigation li {
+  display: block;
+  padding: 0.375em 1.69492% 0 1.69492%;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: 0.3125em;
+}
+/* line 234, ../_sass/screen.scss */
+#navigation li h2 {
+  margin: 0;
+}
+@media (min-width: 40em) {
+  /* line 206, ../_sass/screen.scss */
+  #navigation {
+    background-color: transparent;
+    text-align: right;
+    display: block;
+    float: right;
+    clear: none;
+    width: 100%;
+    display: block !important;
+    margin-top: 3em;
+    margin-bottom: 0.75em;
+  }
+  /* line 248, ../_sass/screen.scss */
+  #navigation ul {
+    padding: 0;
+    margin-bottom: 0;
+  }
+  /* line 253, ../_sass/screen.scss */
+  #navigation li {
+    display: inline-block;
+    margin: 0;
+  }
+  /* line 258, ../_sass/screen.scss */
+  #navigation h1 {
+    display: none;
+  }
+}
+
+/* line 262, ../_sass/screen.scss */
+.home #navigation {
+  background-color: #424242;
+  color: #e7e7e7;
+  overflow: auto;
+  width: 100%;
+  clear: both;
+  text-align: left;
+  margin: 0;
+}
+/* line 271, ../_sass/screen.scss */
+.home #navigation h1 {
+  padding: 0.75em 1.69492%;
+  margin: 0;
+  font-size: 18px;
+  display: block;
+}
+/* line 278, ../_sass/screen.scss */
+.home #navigation h2 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  line-height: 1.2em;
+}
+/* line 283, ../_sass/screen.scss */
+.home #navigation ul {
+  margin: 0;
+  padding-left: 0;
+}
+/* line 288, ../_sass/screen.scss */
+.home #navigation li {
+  width: 50%;
+  height: 7.5em;
+  padding: 0.75em 1.69492%;
+  margin: 0;
+  float: left;
+  border-color: #5c5c5c;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: -0.0625em;
+}
+/* line 298, ../_sass/screen.scss */
+.home #navigation li:first-of-type, .home #navigation li:nth-of-type(2) {
+  border-top-style: solid;
+  border-top-width: 0.0625em;
+  padding-top: -0.0625em;
+}
+/* line 302, ../_sass/screen.scss */
+.home #navigation li:nth-of-type(2n - 1) {
+  border-right-style: solid;
+  border-right-width: 0.0625em;
+  padding-right: -0.0625em;
+}
+/* line 306, ../_sass/screen.scss */
+.home #navigation li:last-of-type {
+  border-bottom: 0;
+}
+@media (min-width: 40em) {
+  /* line 311, ../_sass/screen.scss */
+  .home #navigation li {
+    width: 33.33333%;
+    border-top-style: solid;
+    border-top-width: 0.0625em;
+    padding-top: -0.0625em;
+    border-right-style: solid;
+    border-right-width: 0.0625em;
+    padding-right: -0.0625em;
+  }
+  /* line 317, ../_sass/screen.scss */
+  .home #navigation li:last-of-type {
+    border-right-style: solid;
+    border-right-width: 0em;
+    padding-right: 0em;
+  }
+}
+
+/* line 324, ../_sass/screen.scss */
+.pagination {
+  background-color: #999;
+  overflow: auto;
+  clear: both;
+}
+/* line 328, ../_sass/screen.scss */
+.pagination ul {
+  padding: 0 3.44828%;
+  margin: 0;
+}
+/* line 333, ../_sass/screen.scss */
+.pagination li {
+  display: inline-block;
+  background-color: #777;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+/* line 341, ../_sass/screen.scss */
+.pagination a {
+  display: inline-block;
+  padding: 0.375em 0.9em;
+}
+/* line 346, ../_sass/screen.scss */
+.pagination a:link, .pagination a:visited {
+  color: #e7e7e7;
+}
+/* line 347, ../_sass/screen.scss */
+.pagination a:active, .pagination a:hover {
+  color: #fff;
+}
+
+/* line 350, ../_sass/screen.scss */
+.by-image a:before {
+  content: "\e00e";
+  font-family: 'entypo';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-right: .5em;
+}
+
+/* line 362, ../_sass/screen.scss */
+.alphabetically a:before {
+  content: "ABC";
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+/* line 368, ../_sass/screen.scss */
+.people nav ul li {
+  display: inline-block;
+}
+
+/* line 372, ../_sass/screen.scss */
+.about div[role=main] {
+  clear: both;
+  padding: 0 0 3em 0;
+  background-color: #fff;
+  float: left;
+}
+/* line 378, ../_sass/screen.scss */
+.about div[role=main] p {
+  padding: 0 5%;
+}
+@media (min-width: 40em) {
+  /* line 378, ../_sass/screen.scss */
+  .about div[role=main] p {
+    width: 100%;
+    float: left;
+    display: inline-block;
+  }
+}
+@media (min-width: 40em) {
+  /* line 388, ../_sass/screen.scss */
+  .about div[role=main] .history p {
+    width: 60%;
+  }
+}
+
+/* line 392, ../_sass/screen.scss */
+div[role=main] {
+  overflow: auto;
+  clear: both;
+}
+
+/* line 397, ../_sass/screen.scss */
+.image {
+  width: 48%;
+  height: 9em;
+  background-color: #ccc;
+  float: left;
+  margin: 0 0 1.5em 0;
+}
+/* line 404, ../_sass/screen.scss */
+.image:first-of-type {
+  margin-right: 4%;
+}
+@media (min-width: 40em) {
+  /* line 397, ../_sass/screen.scss */
+  .image {
+    width: 16em;
+    height: 12em;
+  }
+}
+
+/* line 412, ../_sass/screen.scss */
+.right {
+  width: 100%;
+  display: block;
+}
+@media (min-width: 40em) {
+  /* line 412, ../_sass/screen.scss */
+  .right {
+    float: right;
+    width: 35%;
+    margin-right: 5%;
+  }
+  /* line 420, ../_sass/screen.scss */
+  .right .image {
+    float: right;
+  }
+  /* line 422, ../_sass/screen.scss */
+  .right .image:first-of-type {
+    margin-right: 0;
+  }
+}
+
+/* Inspector */
+/* line 430, ../_sass/screen.scss */
+div[role=main] > h1:first-of-type {
+  padding: 5% 3.44828%;
+  background-color: #CFCFCF;
+  margin: 0;
+}
+
+/* line 436, ../_sass/screen.scss */
+div[role=main] h2 {
+  padding-left: 5%;
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 2em;
+}
+
+/* line 443, ../_sass/screen.scss */
+.mission-header {
+  background-color: #cdcdcd;
+  width: 100%;
+  height: 20em;
+  display: block;
+  float: left;
+  margin-top: 5em;
+}
+
+/* Explorations */
+/* line 454, ../_sass/screen.scss */
+.questions {
+  width: 100%;
+  clear: both;
+}
+
+/* line 459, ../_sass/screen.scss */
+.explorations .question {
+  background-color: #ccc;
+  width: 50%;
+  height: 15em;
+  float: left;
+  border-color: #f7f7f7;
+  padding: 1.5em;
+  border-left-style: solid;
+  border-left-width: 0.0625em;
+  padding-left: 1.4375em;
+  border-top-style: solid;
+  border-top-width: 0.0625em;
+  padding-top: 1.4375em;
+}
+/* line 469, ../_sass/screen.scss */
+.explorations .question p {
+  margin: 0;
+}
+/* line 471, ../_sass/screen.scss */
+.explorations .question:first-child {
+  width: 100%;
+  font-size: 1.5em;
+  line-height: 2em;
+  height: 10em;
+}
+/* line 477, ../_sass/screen.scss */
+.explorations .question:nth-child(6), .explorations .question:nth-child(8) {
+  width: 33.33333%;
+}
+/* line 481, ../_sass/screen.scss */
+.explorations .question:nth-child(7) {
+  height: 20em;
+  width: 66.66667%;
+  font-size: 1.5em;
+  line-height: 2em;
+  line-height: 36px;
+  float: right;
+}
+@media (min-width: 40em) {
+  /* line 459, ../_sass/screen.scss */
+  .explorations .question {
+    height: 15em;
+    padding-right: 1.5em;
+  }
+  /* line 494, ../_sass/screen.scss */
+  .explorations .question:first-child, .explorations .question:nth-child(2), .explorations .question:nth-child(3), .explorations .question:nth-child(4), .explorations .question:nth-child(6), .explorations .question:nth-child(7) {
+    width: 25%;
+    font-size: 1em;
+    line-height: 1.5em;
+    height: 15em;
+  }
+  /* line 500, ../_sass/screen.scss */
+  .explorations .question:nth-child(5) {
+    width: 50%;
+    font-size: 1.5em;
+    line-height: 2em;
+    height: 10em;
+  }
+  /* line 506, ../_sass/screen.scss */
+  .explorations .question:nth-child(8), .explorations .question:nth-child(9), .explorations .question:nth-child(10) {
+    width: 33.33333%;
+  }
+}
+
+/* line 512, ../_sass/screen.scss */
+.exploration-answer div[role=main] {
+  background: #fff;
+}
+
+/* line 516, ../_sass/screen.scss */
+.answer {
+  background: #fff;
+  padding: 1.5em 0;
+}
+/* line 520, ../_sass/screen.scss */
+.answer p {
+  padding: 0 3.44828%;
+}
+@media (min-width: 40em) {
+  /* line 520, ../_sass/screen.scss */
+  .answer p {
+    width: 100%;
+    display: inline-block;
+    padding: 0 3.44828%;
+  }
+}
+/* line 529, ../_sass/screen.scss */
+.answer .related-items {
+  display: none;
+}
+@media (min-width: 40em) {
+  /* line 529, ../_sass/screen.scss */
+  .answer .related-items {
+    margin-top: 3em;
+    clear: both;
+    display: block;
+  }
+  /* line 537, ../_sass/screen.scss */
+  .answer .related-items .item {
+    margin-bottom: 3em;
+    overflow: auto;
+  }
+  /* line 542, ../_sass/screen.scss */
+  .answer .related-items .image {
+    margin-left: 3.44828%;
+    margin-right: 0;
+    clear: both;
+    width: 12em;
+    height: 9em;
+  }
+  /* line 550, ../_sass/screen.scss */
+  .answer .related-items h2, .answer .related-items p {
+    width: 57.62712%;
+    float: right;
+    margin-right: 0;
+    clear: none;
+    margin: 0 0 1.5em 0;
+    padding: 0 3.44828% 0 0;
+  }
+}
+/* line 559, ../_sass/screen.scss */
+.answer .related-items-mobile {
+  margin-bottom: 1.5em;
+  margin-top: 3em;
+  overflow: auto;
+}
+@media (min-width: 40em) {
+  /* line 559, ../_sass/screen.scss */
+  .answer .related-items-mobile {
+    display: none;
+  }
+}
+/* line 568, ../_sass/screen.scss */
+.answer .related-items-mobile .previous, .answer .related-items-mobile .next {
+  display: inline-block;
+  background-color: #666;
+  width: 5%;
+  height: 9em;
+  line-height: 9em;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+}
+/* line 579, ../_sass/screen.scss */
+.answer .related-items-mobile .previous a, .answer .related-items-mobile .next a {
+  color: #fff;
+}
+/* line 582, ../_sass/screen.scss */
+.answer .related-items-mobile .image {
+  display: inline-block;
+  width: 90%;
+}
+/* line 586, ../_sass/screen.scss */
+.answer .related-items-mobile .image:first-of-type {
+  margin: 0;
+}
+/* line 588, ../_sass/screen.scss */
+.answer .related-items-mobile .image:before {
+  content: "1/5";
+  text-align: center;
+  display: inline;
+  line-height: 4.5em;
+  margin-left: 45%;
+  font-size: 2em;
+}
+/* line 598, ../_sass/screen.scss */
+.answer .related-items-mobile .caption {
+  background-color: #e7e7e7;
+  font-style: italic;
+  clear: both;
+  padding: 1.5em 3.44828%;
+  text-align: center;
+}
+@media (min-width: 40em) {
+  /* line 516, ../_sass/screen.scss */
+  .answer {
+    padding: 3em 0;
+    width: 66.10169%;
+    float: left;
+    margin-right: 1.69492%;
+  }
+}
+
+/* line 613, ../_sass/screen.scss */
+.learn-more {
+  padding: 1.5em 3.44828%;
+  overflow: auto;
+}
+@media (min-width: 40em) {
+  /* line 613, ../_sass/screen.scss */
+  .learn-more {
+    padding-left: 0;
+    width: 32.20339%;
+    float: right;
+    margin-right: 0;
+  }
+  /* line 621, ../_sass/screen.scss */
+  .learn-more .items, .learn-more .other-questions, .learn-more .themes {
+    background-color: #e7e7e7;
+    padding: 1.5em 5.26316%;
+    margin-bottom: 3em;
+  }
+  /* line 626, ../_sass/screen.scss */
+  .learn-more .items > *:first-child, .learn-more .other-questions > *:first-child, .learn-more .themes > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  /* line 630, ../_sass/screen.scss */
+  .learn-more .items > *:last-child, .learn-more .other-questions > *:last-child, .learn-more .themes > *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border: 0;
+  }
+  /* line 637, ../_sass/screen.scss */
+  .learn-more .items {
+    margin-top: 0.75em;
+  }
+}
+/* line 640, ../_sass/screen.scss */
+.learn-more > p {
+  margin-left: 1.5em;
+  text-indent: -1.5em;
+}
+/* line 645, ../_sass/screen.scss */
+.learn-more > p:first-child {
+  font-weight: bold;
+}
+/* line 649, ../_sass/screen.scss */
+.learn-more .other-questions {
+  border-color: #ccc;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: 1.4375em;
+}
+/* line 653, ../_sass/screen.scss */
+.learn-more .other-questions > p a:before {
+  font-family: 'entypo';
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  margin-right: .5em;
+}
+/* line 664, ../_sass/screen.scss */
+.learn-more .other-questions > p:last-child {
+  margin-bottom: 0;
+}
+/* line 666, ../_sass/screen.scss */
+.learn-more .other-questions .back a:before {
+  content: "\e00d";
+}
+/* line 667, ../_sass/screen.scss */
+.learn-more .other-questions .prev a:before {
+  content: "\e006";
+}
+/* line 668, ../_sass/screen.scss */
+.learn-more .other-questions .next a:before {
+  content: "\e009";
+}
+@media (min-width: 40em) {
+  /* line 649, ../_sass/screen.scss */
+  .learn-more .other-questions {
+    border-bottom: 0;
+  }
+  /* line 673, ../_sass/screen.scss */
+  .learn-more .other-questions p {
+    border-color: #ccc;
+    border-bottom-style: solid;
+    border-bottom-width: 0.0625em;
+    padding-bottom: 1.4375em;
+  }
+}
+/* line 680, ../_sass/screen.scss */
+.learn-more ul {
+  padding-left: 1.5em;
+  border-color: #ccc;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: 1.4375em;
+}
+@media (min-width: 40em) {
+  /* line 680, ../_sass/screen.scss */
+  .learn-more ul {
+    border-bottom: 0;
+  }
+}
+
+/* line 692, ../_sass/screen.scss */
+.people .persons {
+  background-color: #fff;
+  padding: 1.5em 3.44828%;
+  overflow: auto;
+}
+/* line 698, ../_sass/screen.scss */
+.people div[role=main] nav {
+  width: 100%;
+}
+/* line 700, ../_sass/screen.scss */
+.people div[role=main] nav ul {
+  background-color: #666;
+  margin: 0;
+  overflow: auto;
+}
+/* line 705, ../_sass/screen.scss */
+.people div[role=main] nav ul li {
+  float: right;
+}
+/* line 707, ../_sass/screen.scss */
+.people div[role=main] nav ul a {
+  padding: 0.75em 20px;
+  background-color: #343434;
+  display: inline-block;
+}
+
+/* line 717, ../_sass/screen.scss */
+.people.images .blurb {
+  display: none;
+}
+/* line 719, ../_sass/screen.scss */
+.people.images .persons {
+  text-align: center;
+}
+/* line 721, ../_sass/screen.scss */
+.people.images .person {
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 3%;
+  text-align: center;
+}
+/* line 729, ../_sass/screen.scss */
+.people.images .image {
+  display: inline-block;
+  float: none;
+}
+/* line 734, ../_sass/screen.scss */
+.people.images .person h2 {
+  margin-top: 0;
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  text-align: center;
+  font-style: italic;
+}
+/* line 741, ../_sass/screen.scss */
+.people.images .image {
+  width: 6em;
+  height: 11em;
+  -webkit-border-radius: 55px/100px;
+  -moz-border-radius: 55px/100px;
+  border-radius: 55px/100px;
+}
+
+/* line 751, ../_sass/screen.scss */
+.people.alpha .persons {
+  padding: 0;
+}
+@media (min-width: 40em) {
+  /* line 751, ../_sass/screen.scss */
+  .people.alpha .persons {
+    padding: 4.5em 0;
+  }
+}
+/* line 759, ../_sass/screen.scss */
+.people.alpha .persons h2 {
+  margin: 0;
+  background-color: #e7e7e7;
+  padding: 0.375em 3.44828%;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+@media (min-width: 40em) {
+  /* line 759, ../_sass/screen.scss */
+  .people.alpha .persons h2 {
+    font-size: 1.5em;
+    line-height: 2em;
+    width: 15.25424%;
+    float: left;
+    margin-right: 1.69492%;
+    padding-left: 33.89831%;
+    vertical-align: top;
+    background-color: transparent;
+    margin: 0;
+    padding-top: 0;
+  }
+}
+/* line 776, ../_sass/screen.scss */
+.people.alpha .person {
+  padding: 0.375em 3.44828%;
+  display: inline-block;
+  width: 100%;
+}
+@media (min-width: 40em) {
+  /* line 776, ../_sass/screen.scss */
+  .people.alpha .person {
+    width: 57.62712%;
+    float: left;
+    margin-right: 1.69492%;
+    padding-right: 16.94915%;
+    float: right;
+    margin-bottom: 1.5em;
+  }
+  /* line 787, ../_sass/screen.scss */
+  .people.alpha .person:last-of-type {
+    margin-bottom: 4.5em;
+  }
+}
+
+/* line 793, ../_sass/screen.scss */
+.events .timeline {
+  background-color: #fff;
+  overflow: auto;
+  position: relative;
+  padding-top: 3em;
+}
+/* line 799, ../_sass/screen.scss */
+.events .timeline h2 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0;
+  padding: 0.75em 3.44828%;
+}
+/* line 805, ../_sass/screen.scss */
+.events .timeline h2:nth-child(1) {
+  background-color: #e7e7e7;
+}
+/* line 806, ../_sass/screen.scss */
+.events .timeline h2:nth-child(2) {
+  background-color: #ccc;
+}
+/* line 807, ../_sass/screen.scss */
+.events .timeline h2:nth-child(3) {
+  background-color: #999;
+}
+/* line 808, ../_sass/screen.scss */
+.events .timeline h2:nth-child(4) {
+  background-color: #777;
+}
+@media (min-width: 40em) {
+  /* line 799, ../_sass/screen.scss */
+  .events .timeline h2 {
+    font-size: 1.5em;
+    line-height: 2em;
+    width: 15.25424%;
+    float: left;
+    margin-right: 1.69492%;
+    text-align: center;
+    padding: 10px;
+  }
+  /* line 817, ../_sass/screen.scss */
+  .events .timeline h2:nth-child(1), .events .timeline h2:nth-child(2), .events .timeline h2:nth-child(3), .events .timeline h2:nth-child(4) {
+    background-color: transparent;
+  }
+}
+/* line 824, ../_sass/screen.scss */
+.events .timeline .image {
+  display: block;
+  width: 100px;
+  height: 100px;
+  float: left;
+  background-color: #ccc;
+  margin: 0 3.44828% 0.75em 0;
+}
+@media (min-width: 40em) {
+  /* line 824, ../_sass/screen.scss */
+  .events .timeline .image {
+    margin: 1.5em 3.44828% 1.5em 0;
+  }
+}
+/* line 837, ../_sass/screen.scss */
+.events .timeline .period {
+  overflow: auto;
+  border-color: #e7e7e7;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: -0.0625em;
+}
+@media (min-width: 40em) {
+  /* line 842, ../_sass/screen.scss */
+  .events .timeline .period:nth-child(1) {
+    background-color: #e7e7e7;
+  }
+  /* line 843, ../_sass/screen.scss */
+  .events .timeline .period:nth-child(2) {
+    background-color: #ccc;
+  }
+  /* line 844, ../_sass/screen.scss */
+  .events .timeline .period:nth-child(3) {
+    background-color: #999;
+  }
+  /* line 845, ../_sass/screen.scss */
+  .events .timeline .period:nth-child(4) {
+    background-color: #777;
+  }
+}
+/* line 849, ../_sass/screen.scss */
+.events .timeline .event {
+  padding: 0 3.44828%;
+  border-color: #e7e7e7;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: -0.0625em;
+}
+@media (min-width: 40em) {
+  /* line 849, ../_sass/screen.scss */
+  .events .timeline .event {
+    background-color: #fff;
+    width: 83.05085%;
+    float: right;
+    margin-right: 0;
+    padding: 0 2%;
+    border-bottom: 0;
+  }
+}
+
+/* line 864, ../_sass/screen.scss */
+#period-nav {
+  background-color: #666;
+  color: #fff;
+  padding: 0.9375em 3.44828%;
+  text-align: right;
+  vertical-align: top;
+  width: 100%;
+  max-width: 57em;
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  line-height: 24px;
+}
+@media (min-width: 40em) {
+  /* line 864, ../_sass/screen.scss */
+  #period-nav {
+    font-size: 16px;
+    padding: 0.75em 3.44828%;
+  }
+}
+/* line 882, ../_sass/screen.scss */
+#period-nav a {
+  color: #fff;
+}
+/* line 884, ../_sass/screen.scss */
+#period-nav ul {
+  margin: 0 0 1.5em 0;
+  display: inline;
+  width: auto;
+}
+/* line 890, ../_sass/screen.scss */
+#period-nav ul li {
+  display: inline;
+  margin-left: 3.44828%;
+}
+/* line 894, ../_sass/screen.scss */
+#period-nav ul li:first-of-type {
+  margin-left: 0;
+}
+/* line 897, ../_sass/screen.scss */
+#period-nav.fixed {
+  position: fixed;
+  top: 0;
+}
+
+/* line 903, ../_sass/screen.scss */
+.locations {
+  background-color: #fff;
+}
+/* line 906, ../_sass/screen.scss */
+.locations .image {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0.75em;
+}
+@media (min-width: 40em) {
+  /* line 906, ../_sass/screen.scss */
+  .locations .image {
+    margin-bottom: 0;
+  }
+}
+
+/* line 917, ../_sass/screen.scss */
+.site {
+  padding: 1.5em 3.44828% 0;
+  border-color: #ccc;
+  overflow: auto;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: 1.4375em;
+}
+/* line 923, ../_sass/screen.scss */
+.site h3 {
+  margin-top: 0;
+}
+/* line 925, ../_sass/screen.scss */
+.site p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* line 929, ../_sass/screen.scss */
+.item div[role=main] {
+  background-color: #fff;
+  padding-bottom: 3em;
+}
+/* line 933, ../_sass/screen.scss */
+.item div[role=main] h2 {
+  padding-left: 0;
+}
+/* line 936, ../_sass/screen.scss */
+.item div[role=main] h2:first-of-type {
+  margin-top: 1.5em;
+}
+@media (min-width: 40em) {
+  /* line 939, ../_sass/screen.scss */
+  .item div[role=main] h2:first-of-type {
+    margin-top: 2.25em;
+  }
+}
+@media (min-width: 40em) {
+  /* line 944, ../_sass/screen.scss */
+  .item .metadata {
+    width: 32.20339%;
+    float: left;
+    margin-right: 1.69492%;
+    padding-left: 8.47458%;
+    padding-top: 3em;
+  }
+}
+/* line 952, ../_sass/screen.scss */
+.item .metadata .image {
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  border-color: #f7f7f7;
+  border-top-style: solid;
+  border-top-width: 0.0625em;
+  padding-top: -0.0625em;
+}
+@media (min-width: 40em) {
+  /* line 952, ../_sass/screen.scss */
+  .item .metadata .image {
+    margin-bottom: 1.5em;
+  }
+}
+/* line 966, ../_sass/screen.scss */
+.item .description {
+  padding: 0 3.44828%;
+}
+@media (min-width: 40em) {
+  /* line 966, ../_sass/screen.scss */
+  .item .description {
+    width: 57.62712%;
+    float: right;
+    margin-right: 0;
+    padding-right: 8.47458%;
+    padding-top: 2.25em;
+  }
+}
+/* line 974, ../_sass/screen.scss */
+.item .description p {
+  clear: both;
+}
+/* line 977, ../_sass/screen.scss */
+.item .description p:first-of-type {
+  padding-top: 1.5em;
+}
+@media (min-width: 40em) {
+  /* line 974, ../_sass/screen.scss */
+  .item .description p {
+    padding: 0;
+  }
+  /* line 982, ../_sass/screen.scss */
+  .item .description p:first-of-type {
+    padding-top: 0;
+  }
+}
+/* line 987, ../_sass/screen.scss */
+.item .category {
+  font-weight: bold;
+}
+
+/* line 992, ../_sass/screen.scss */
+.themes .theme-list {
+  padding: 3em 3.44828%;
+  background-color: #fff;
+}
+@media (min-width: 40em) {
+  /* line 992, ../_sass/screen.scss */
+  .themes .theme-list {
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }
+}
+/* line 1001, ../_sass/screen.scss */
+.themes .theme a {
+  background-color: #e7e7e7;
+  padding: 0.75em 3.44828%;
+  margin-bottom: 1.5em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100%;
+}

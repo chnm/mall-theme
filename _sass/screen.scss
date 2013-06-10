@@ -1,3 +1,5 @@
+@import "base";
+
 * {
     @include box-sizing(border-box);
 }
@@ -18,7 +20,8 @@ body {
     font-size: $base-font-size;
     line-height: $base-line-height;
     color: #5A5A5A;
-    overflow: auto; 
+    overflow-x: hidden;
+    overflow-y: auto; 
     @include at-breakpoint($break) {
         @include container;
         padding-bottom: rhythm(5);
@@ -81,7 +84,7 @@ header {
     height: 5em;
     display: block;
     float: left;
-    margin: 0 1em 1em 0;
+    margin: 0 1em 0 0;
     
     @include at-breakpoint($break) {
         margin: .5em 1em 1em 0;
@@ -237,7 +240,7 @@ nav ul {
         display: block;
         float: right;
         clear: none;
-        width: 70%;
+        width: 100%;
         display: block !important;
         @include leader(2);
         @include trailer(.5);
@@ -513,28 +516,125 @@ div[role=main] h2 {
 .answer {
     background: #fff;
     padding: rhythm(1) 0;
-
+    
     p {
         padding: 0 gutter(6);
         @include at-breakpoint($break) {
             width: 100%;
             display: inline-block;
-            padding: 0 0 0 gutter(3);
+            padding: 0 gutter(6);
+        }
+    }
+    
+    .related-items {
+        display: none;
+        
+        @include at-breakpoint($break) {
+            @include leader(2);
+            clear: both;
+            display: block;
+            
+            .item { 
+                @include trailer(2); 
+                overflow: auto;
+            }
+            
+            .image {
+                margin-left: gutter(6);
+                margin-right: 0;
+                clear: both;
+                width: 12em;
+                height: 9em;
+            }
+            
+            h2, p {
+                @include span-columns(7 omega);
+                clear: none;
+                margin: 0 0 rhythm(1) 0;
+                padding: 0 gutter(6) 0 0;
+            }
+        }
+    }
+    
+    .related-items-mobile {
+        @include trailer();
+        @include leader(2);
+        overflow: auto;
+
+        @include at-breakpoint($break) {
+            display: none;
+        }
+
+        .previous, .next {
+            display: inline-block;
+            background-color: #666;
+            width: 5%;
+            height: 9em;
+            line-height: 9em;
+            float: left;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            
+            a { color: #fff; }
+        }
+        
+        .image {
+            display: inline-block;
+            width: 90%;
+            
+            &:first-of-type { margin: 0; }
+            
+            &:before {
+                content: "1/5";
+                text-align: center;
+                display: inline;
+                line-height: 4.5em;
+                margin-left: 45%;
+                font-size: 2em;
+            }
+        }
+        
+        .caption { 
+            background-color: #e7e7e7;
+            font-style: italic; 
+            clear: both;
+            padding: rhythm(1) gutter(6);
+            text-align: center;
         }
     }
     
     @include at-breakpoint($break) {
         padding: rhythm(2) 0;
-        @include span-columns(7 alpha);
+        @include span-columns(8 alpha);
     }
 }
 
 .learn-more {
-    padding: 0 gutter(6) rhythm(1);
+    padding: rhythm(1) gutter(6);
+    overflow: auto;
 
     @include at-breakpoint($break) {
-        @include span-columns(5 omega);
-        padding: rhythm(2) gutter(6);
+        padding-left: 0;
+        @include span-columns(4 omega);
+        
+        .items, .other-questions, .themes {
+            background-color: #e7e7e7;
+            padding: rhythm(1) gutter(4);
+            @include trailer(2);
+            
+            & > *:first-child { 
+                margin-top: 0; 
+                padding-top: 0;
+            }
+            & > *:last-child { 
+                margin-bottom: 0; 
+                padding-bottom: 0;
+                border: 0;
+            }
+        }
+        
+        .items { @include leader(.5); }
     }
 
     & > p {
@@ -546,25 +646,45 @@ div[role=main] h2 {
         font-weight: bold; 
     }
     
-    & > p a:before {
-        font-family: 'entypo';
-        speak: none;
-        font-weight: normal;
-        font-variant: normal;
-        text-transform: none;
-        line-height: 1;
-        -webkit-font-smoothing: antialiased;
-        margin-right: .5em;
+    .other-questions {
+        border-color: #ccc;
+        @include trailing-border(1px, 1, $base-font-size, solid); 
+
+        & > p a:before {
+            font-family: 'entypo';
+            speak: none;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            margin-right: .5em;
+        }
+        
+        & > p:last-child { margin-bottom: 0;}
+        
+        .back a:before { content: "\e00d"; }
+        .prev a:before { content: "\e006"; }
+        .next a:before { content: "\e009"; }
+        
+        @include at-breakpoint($break) {
+            border-bottom: 0;
+
+            p { 
+                border-color: #ccc;
+                @include trailing-border(1px, 1, $base-font-size, solid); 
+            }
+        }
     }
-    
-    .back a:before { content: "\e00d"; }
-    .prev a:before { content: "\e006"; }
-    .next a:before { content: "\e009"; }
     
     ul {
         padding-left: 1.5em;
         border-color: #ccc;
         @include trailing-border(1px, 1, $base-font-size, solid);
+        
+        @include at-breakpoint($break) {
+            border-bottom: 0;
+        }
     }
 }
 
@@ -673,6 +793,8 @@ div[role=main] h2 {
     .timeline { 
         background-color: #fff;
         overflow: auto;
+        position: relative;
+        @include padding-leader(2);
         
         h2 {
             
@@ -736,6 +858,45 @@ div[role=main] h2 {
                 border-bottom: 0;
             }
         }
+    }
+}
+
+#period-nav {
+    background-color: #666;
+    color: #fff;
+    padding: rhythm(.625) gutter(6);
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+    max-width: 57em;
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    line-height: 24px;
+    
+    @include at-breakpoint($break) {
+        font-size: 16px;
+        padding: rhythm(.5) gutter(6);
+    }
+    
+    a { color: #fff; }
+    
+    ul { 
+        margin: 0 0 rhythm(1) 0;
+        display: inline;
+        width: auto;
+    };
+    
+    ul li { 
+        display: inline; 
+        margin-left: gutter(6);
+        
+        &:first-of-type { margin-left: 0; }
+    }
+    
+    &.fixed {
+        position: fixed;
+        top: 0;
     }
 }
 
@@ -825,4 +986,24 @@ div[role=main] h2 {
     
     .category { font-weight: bold; }
     
+}
+
+.themes {    
+    .theme-list {
+        padding: rhythm(2) gutter(6);
+        background-color: #fff;
+        
+        @include at-breakpoint($break) {
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+    }
+    .theme a {
+        background-color: #e7e7e7;
+        padding: rhythm(.5) gutter(6);
+        @include trailer();
+        @include border-radius(5px);
+        display: inline-block;
+        width: 100%;
+    }
 }
