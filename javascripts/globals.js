@@ -18,6 +18,18 @@
                 var content = $(this).attr("href");
                 $(content).toggle();
             });
+        } else {
+            if ($(window).width() < 640) {
+                $("#search").insertAfter("#navigation");
+            }            
+            
+            $(window).resize( function() {
+                if ($(window).width() < 640) {
+                    $("#search").insertAfter("#navigation");
+                } else {
+                    $("#search").insertBefore("#navigation");
+                }
+            });
         }
     });
   
