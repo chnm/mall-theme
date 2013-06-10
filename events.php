@@ -14,10 +14,21 @@
         <h1>Historical Events</h1>
         
         <div class="timeline">
+
+            <nav id="period-nav">
+                
+                <ul>
+                    <li><a href="#1890">1890-1919</a></li>
+                    <li><a href="#1920">1920-1949</a></li>
+                    <li><a href="#1950">1950-1979</a></li>
+                    <li><a href="#1980">1980-1999</a></li>
+                </ul>
+                
+            </nav>
         
             <div class="period">
                 
-                <h2>1890-1919</h2>
+                <a name="1890"></a><h2>1890-1919</h2>
                 
                 <div class="event">
                     <div class="image"></div>
@@ -47,7 +58,7 @@
 
             <div class="period">
                 
-                <h2>1920-1949</h2>
+                <a name="1920"></a><h2>1920-1949</h2>
                 
                 <div class="event">
                     <div class="image"></div>
@@ -77,7 +88,7 @@
 
             <div class="period">
                 
-                <h2>1950-1979</h2>
+                <a name="1950"></a><h2>1950-1979</h2>
                 
                 <div class="event">
                     <div class="image"></div>
@@ -91,7 +102,7 @@
                         
             <div class="period">
                 
-                <h2>1980-1999</h2>
+                <a name="1980"></a><h2>1980-1999</h2>
                 
                 <div class="event">
                     <div class="image"></div>
@@ -114,4 +125,5 @@
         </div>
         
     </div>
+    
 <?php include('footer.php'); ?>
