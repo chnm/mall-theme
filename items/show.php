@@ -37,13 +37,26 @@
 <?php echo all_element_texts('item'); ?>
 
 <div id="mobile-content">
-
+    
+    <?php if ($description = metadata($item, array('Dublin Core', 'Description'))): ?>
     <h3>Description</h3>
-    <?php echo metadata($item, array('Dublin Core', 'Description')); ?>
-    <h4>Date</h4>
-    <h4>Creator</h4>
-    <h4>Coverage</h4>
-    <h4>Source</h4>
+    <?php echo $description; ?>
+    <?php endif; ?>
+
+    <?php if ($creator = metadata($item, array('Dublin Core', 'Creator'))): ?>
+    <h3>Creator</h3>
+    <?php echo $creator; ?>
+    <?php endif; ?>    
+    
+    <?php if ($coverage = metadata($item, array('Dublin Core', 'Coverage'))): ?>
+    <h3>Coverage</h3>
+    <?php echo $coverage; ?>
+    <?php endif; ?>    
+    
+    <?php if ($source = metadata($item, array('Dublin Core', 'Source'))): ?>
+    <h3>Source</h3>
+    <?php echo $source; ?>
+    <?php endif; ?>
 
 </div>
 
