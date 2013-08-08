@@ -10,7 +10,7 @@
             mobile_nav.prepend(search_icon);
             mobile_nav.prepend(menu_icon);
             
-            $("#search").hide();
+            $("#search-form").hide();
             $("#navigation").hide();
             
             $("#mobile-nav a").click(function(e) {

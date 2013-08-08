@@ -1,4 +1,4 @@
-@import "base";
+/* @group ----- Generic HTML elements ----- */
 
 * {
     @include box-sizing(border-box);
@@ -10,30 +10,30 @@ html, body {
 }
 
 html { 
-    background-color: #f1f1f1; 
     width: 100%;
     height: 100%;
 
 }
 
 body { 
+    //background: url('../images/bg2.jpg') no-repeat center center fixed;
+    @include background-size(cover);
     font-size: $base-font-size;
     line-height: $base-line-height;
-    color: #5A5A5A;
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+    color: $body-copy;
     overflow-x: hidden;
     overflow-y: auto; 
-    @include at-breakpoint($break) {
-        @include container;
-        padding-bottom: rhythm(5);
-    }
+    word-wrap: break-word;
 }
 
 a {
     text-decoration: none;
     
-    &:link { color: #0077b7}
-    &:visited { color: #6b90a4}
-    &:active, &:hover { color: #00a5fd}
+    &:link { color: $dark-red}
+    &:visited { color: $red}
+    &:active, &:hover { color: $bright-red}
     
 }
 
@@ -42,20 +42,62 @@ h1 {
     line-height: 2 * $base-line-height;
 }
 
+h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+
+input {
+    font-family: "Raleway", sans-serif;
+    font-weight: 400;
+}
+
+/* @end */
+
+/* @group ----- Global classes ----- */
+
 .screen-reader-text {
    position: absolute !important;
    top: -9999px !important;
    left: -9999px !important;
 }
 
+a.button {
+    background-color: #3d3d3d;
+    color: #fff;
+    padding: rhythm(.5);
+    @include border-radius(3px);
+}
+
+div[role=main] {
+    clear: both;
+    overflow: auto;
+    background-color: #fff;
+    
+    & > h1:first-of-type {
+        background-color: $blue;
+        color: #fff;
+        padding: 5% gutter(6);
+        margin: 0;
+    }    
+}
+
+.image {
+    width: 48%;
+    height: rhythm(6);
+    background-color: #ccc;
+    float: left;
+    margin: 0 0 rhythm(1) 0;
+    
+    &:first-of-type { margin-right: 4%; }
+}
+
+/* @end */
+
+/* @group ----- Header ----- */
+
 header {
     float: left;
     width: 100%;
     position: relative;
-    
-    @include at-breakpoint($break) {
-        @include padding-leader(2);
-    }
+    text-align: center;
 }
 
 .home #site-title {
@@ -63,18 +105,15 @@ header {
 }
 
 #site-title {
-    width: 70%;
+    width: 100%;
     text-transform: uppercase;
     padding: rhythm(.5) gutter();
     margin: 0;
     @include adjust-font-size-to(18px);
     
-    @include at-breakpoint($break) {
-        @include adjust-font-size-to(14px);
-        width: 30%;
-        float: left;
-        line-height: 29px;
-        padding: 0;
+    a {
+        @include leader(.5);
+        display: inline-block;
     }
 }
 
@@ -85,83 +124,72 @@ header {
     display: block;
     float: left;
     margin: 0 1em 0 0;
-    
-    @include at-breakpoint($break) {
-        margin: .5em 1em 1em 0;
-    }
 }
 
 #mobile-nav { 
     position: absolute;
     top: 0;
-    right: gutter();
+    right: gutter(6);
     width: 3em;
     padding: rhythm(.5) 0;
-    background-color: #555;
+    background-color: #fff;
     text-align: center;
+    @include box-shadow(0 0 50px #e7e7e7);
     
     a { 
         display: block; 
         font-size: 24px;
-        color: #fff;
     }
     
-    a:last-child { margin-bottom: 0; }
+    a:last-of-type { margin-bottom: 0; }
     
     @include at-breakpoint($break) { display: none; }
 }
 
-#search {
+#search-form {
     padding: rhythm(.5) gutter();
     float: left;
     width: 100%;
-    background-color: #000;
+    background-color: rgba(0,0,0,.04);
+    @include leader();
     
-    @include at-breakpoint($break) {
-        padding: 0;
-        width: 30%;
-        float: right;
-        display: block !important;
-        background-color: transparent;
-        @include trailer(.5);
+    input[type=text], input[type=submit] {
+        height: rhythm(1.5);
+        margin: 0;
+        float: left;
+        padding: rhythm(.25) gutter();
+        font-size: $base-font-size;
+    }
+    
+    input[type=text] {
+        width: 65%;
+        border: 0;
+    }
+    
+    input[type=submit] {
+        width: 35%;
+        background-color: $green;
+        color: #f7f7f7;
+        border: 0;
     }
 }
 
-#search-query, #search-submit {
-    height: rhythm(1.5);
-    margin: 0;
-    float: left;
-    padding: rhythm(.25) gutter();
-    font-size: $base-font-size;
-    
-    @include at-breakpoint($break) {
-        height: rhythm(1.25);
-    }
-}
+/* @end */
 
-#search-query {
-    border-color: #e5e5e5;
-    width: 65%;
-    @include rhythm-borders(1px, 0, $base-font-size, solid);
-}
-
-#search-submit {
-    width: 35%;
-    background-color: #888888;
-    color: #f7f7f7;
-    border: 0;
-}
+/* @group ----- Home ----- */
 
 #intro {
-    background-color: #C2C2C2;
+    background-color: #fff;
     padding: rhythm(.5) gutter();
+    @include trailing-border(1px, 1, $base-font-size, solid);
+    border-color: #e7e7e7;
     clear: both;
 }
 
 #intro h1 {
-    @include adjust-font-size-to(20px);
-    @include adjust-leading-to(1);
-    margin: 0;
+    font-size: 1.5 * $base-font-size;
+    line-height: 1.5 * $base-line-height;
+    margin: rhythm(.25) 0;
 }
 
 #intro p:first-of-type {
@@ -169,14 +197,94 @@ header {
 }
 
 #intro p:last-of-type {
-    margin-bottom: rhythm(.25);
+    margin-bottom: rhythm(.5);
 }
 
-a.button {
-    background-color: #3d3d3d;
-    color: #fff;
-    padding: rhythm(.25);
-    @include border-radius(3px);
+#intro .button {
+    background-color: $blue;
+    display: inline-block;
+}
+
+.home #navigation li:nth-of-type(4) {
+    background: url('../images/map.png') no-repeat center/cover;
+    
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(33, 201, 0, 0.4));
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+}
+
+.home #navigation li:nth-of-type(3) {
+    background: url('../images/discover.jpg') no-repeat center/cover;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        background-image: linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.4));
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+}
+
+.home #navigation li:first-of-type {
+    background: url('../images/james.jpg') no-repeat center center/cover;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        background-image: linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+}
+
+.home #navigation li:nth-of-type(2) {
+    background: url('../images/events.jpg') no-repeat center center/cover;
+
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(255, 51, 0, 0.4));
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+}
+
+.home .news-item {
+    @include container;
+    height: rhythm(12);
+    overflow: hidden;
+    position: relative;
+    
+    h1 {
+        font-size: $base-font-size;
+        line-height: $base-line-height;
+        text-transform: uppercase;
+    }
+    
+    h2 {
+        margin: 0 0 $base-line-height;
+        padding-left: 0;
+    }
+    
+    p {
+        display: block;
+    }
 }
 
 #featured-question {
@@ -196,7 +304,67 @@ a.button {
     .title { @include adjust-leading-to(.75); }
 }
 
-/* Navigation */
+#featured-person {
+    @include leading-border(1px, 1, $base-font-size, solid);
+    background: #fff no-repeat center 25%/cover;
+    width: 100%;
+    
+    &:after {
+        background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+    }
+}
+
+#featured-three {
+    @include leading-border(1px, 1, $base-font-size, solid);
+    background: #fff url('../images/spencer.jpg') no-repeat center 25%;
+}
+
+.featured {
+    @include adjust-leading-to(1);
+    padding: rhythm(.5) gutter();
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    border-color: #fff;
+    color: #fff;
+
+    .button { 
+        display: inline-block;
+        background-color: $red;
+        text-shadow: none;
+    }
+    
+    * { 
+        position: relative;
+        z-index: 10; 
+        text-shadow: 0 0 30px #000;
+    }
+    
+    h1 { margin-top: 0; }
+    
+    span { display: block; }
+    
+    .category {
+        text-transform: uppercase;
+        @include adjust-font-size-to(10px);
+    }
+    
+    .title { @include adjust-leading-to(.75); }
+    
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+/* @end */
+
+/* @group ----- Navigation ----- */
 
 nav ul {
     list-style-type: none;
@@ -205,12 +373,11 @@ nav ul {
 
 #navigation {
     clear: both;
-    background-color: #333;
+    background-color: #fff;
     
     h1 { 
         margin: 0;
-        color: #e7e7e7;
-        border-color: rgba(255,255,255,.2);
+        border-color: rgba(0,0,0,.03);
         padding: rhythm(.25) gutter() 0 gutter();
         @include adjust-font-size-to(20px); 
         @include adjust-leading-to(1, $base-font-size);
@@ -228,51 +395,40 @@ nav ul {
     li {
         display: block;
         padding: rhythm(.25) gutter() 0 gutter();
-        border-color: rgba(255,255,255,.2);
+        border-color: rgba(0,0,0,.03);
         @include trailing-border(1px, .25, $base-font-size, solid);
         
         h2 { margin: 0; }
     }
-    
-    @include at-breakpoint($break) {
-        background-color: transparent;
-        text-align: right;
-        display: block;
-        float: right;
-        clear: none;
-        width: 100%;
-        display: block !important;
-        @include leader(2);
-        @include trailer(.5);
-        
-        ul { 
-            padding: 0; 
-            margin-bottom: 0;
-        }
-        
-        li { 
-            display: inline-block;
-            margin: 0; 
-        }
-        
-        h1 { display: none; }
-    }
 }
 
 .home #navigation {
-    background-color: #424242;
-    color: #e7e7e7;
-    overflow: auto;
+    background-color: #fff;
     width: 100%;
     clear: both;
     text-align: left;
     margin: 0;
+    
+    a { 
+        color: #fff; 
+        position: relative;
+        z-index: 100;
+        text-shadow: 0 0 20px #333;
+        display: block;
+        height: rhythm(5);
+        text-align: center;
+        line-height: rhythm(3);
+        padding: rhythm(.5) gutter(6);
+    }
     
     h1 { 
         padding: rhythm(.5) gutter(); 
         margin: 0;
         font-size: 18px;
         display: block;
+        background-color: $red;
+        color: #fff;
+        text-align: center;
     }
     
     h2 { 
@@ -288,63 +444,56 @@ nav ul {
     li {
         width: 50%;
         height: rhythm(5);
-        padding: rhythm(.5) gutter();
         margin: 0;
+        position: relative;
         float: left;
-        border-color: #5c5c5c;
-        @include trailing-border(1px, 0, $base-font-size, solid);
-    }
-    
-    li:first-of-type, li:nth-of-type(2) {
+        border-color: #f7f7f7;
+        padding: 0;
+        background-size: cover;
         @include leading-border(1px, 0, $base-font-size, solid);
-    }
-    
-    li:nth-of-type(2n - 1) {
         @include apply-side-rhythm-border(right, 1px, 0, $base-font-size, solid);
-    }
-    
-    li:last-of-type {
         border-bottom: 0;
-    }
-    
-    @include at-breakpoint($break) {
-        li { 
-            width: percentage(1/3);
-            @include leading-border(1px, 0, $base-font-size, solid);
-            @include apply-side-rhythm-border(right, 1px, 0, $base-font-size, solid);
-        }
         
-        li:last-of-type {
-            @include apply-side-rhythm-border(right, 0px, 0, $base-font-size, solid);
+        &:after {
+            @include trailing-border(1px, 0, $base-font-size, solid);
+            border-color: #fff;
+            @include box-sizing(border-box);
         }
+
+        &:nth-of-type(2n) { border-right: 0; }
+        
+        &:nth-of-type(3) { border-left: 0; }
     }
-    
 }
 
 .pagination {
-    background-color: #999;
+    @include box-shadow(#666 0 5px 10px);
+    background-color: #fff;
     overflow: auto;
     clear: both; 
-    ul {
-        padding: 0 gutter(6);
-        margin: 0;
-    }
+    padding: 0 gutter(6);
+    margin: 0;
     
     li {
         display: inline-block;
-        background-color: #777;
-        @include border-radius(30px);
         @include leader(.5);
         @include trailer(.5);
     }
     
     a {
+        background-color: $red;
         display: inline-block;
+        @include border-radius(30px);
         padding: rhythm(.25) rhythm(.6);
     }
     
-    a:link, a:visited { color: #e7e7e7; }
+    a:link, a:visited { color: #f7f7f7; }
     a:active, a:hover { color: #fff; }
+    
+    &:nth-of-type(2) {
+        @include leading-border(1px, 0, $base-font-size, solid);
+        border-color: #e7e7e7;
+    }
 }
 
 .by-image a:before {
@@ -389,49 +538,7 @@ nav ul {
     }
 }
 
-div[role=main] {
-    overflow: auto;
-    clear: both;
-}
-
-.image {
-    width: 48%;
-    height: rhythm(6);
-    background-color: #ccc;
-    float: left;
-    margin: 0 0 rhythm(1) 0;
-    
-    &:first-of-type { margin-right: 4%; }
-    
-    @include at-breakpoint($break) {
-        width: 16em;
-        height: 12em;
-    }
-}
-
-.right {
-    width: 100%;
-    display: block;
-    @include at-breakpoint($break) {
-        float: right;
-        width: 35%;
-        margin-right: 5%;
-        
-        .image {
-            float: right;
-            &:first-of-type { margin-right: 0; }
-        }
-    }
-}
-
-
 /* Inspector */
-
-div[role=main] > h1:first-of-type {
-    padding: 5% gutter(6);
-    background-color: #CFCFCF;
-    margin: 0;
-}
 
 div[role=main] h2 {
     padding-left: 5%;
@@ -449,7 +556,18 @@ div[role=main] h2 {
     margin-top: 5em;
 }
 
-/* Explorations */
+/* @group ----- Explorations ----- */
+
+.explorations div[role=main], 
+.exploration-answer div[role=main]{
+    float: left;
+}
+
+.explorations div[role=main] h1:first-of-type,
+.exploration-answer div[role=main] h1:first-of-type {
+    background-color: $blue;
+    color: #fff;
+}
 
 .questions { 
     width: 100%;
@@ -457,60 +575,42 @@ div[role=main] h2 {
 }
 
 .explorations .question {
-    background-color: #ccc;
+    background-color: #fff;
     width: 50%;
     height: rhythm(10);
     float: left;
-    border-color: #f7f7f7;
-    padding: rhythm();
-    @include apply-side-rhythm-border(left,1px, 1);
+    border-color: #e7e7e7;
+    padding: rhythm() gutter(6);
+    border-left: 1px solid #e7e7e7;
     @include leading-border(1px, 1);
 
     p { margin: 0; }
     
-    &:first-child {
+    &:first-of-type {
         width: 100%;
         @include adjust-font-size-to(24px);
         height: 10em;
     }
     
-    &:nth-child(6), &:nth-child(8) {
+    &:nth-of-type(6), &:nth-of-type(8) {
         width: percentage(1/3);
     }
     
-    &:nth-child(7) {
+    &:nth-of-type(7) {
         height: 20em;
         width: percentage(2/3);
         @include adjust-font-size-to(24px);
         line-height: 36px;
         float: right;
     }
-
-    @include at-breakpoint($break) {
-        height: rhythm(10);
-        padding-right: rhythm();
-        
-        &:first-child, &:nth-child(2), &:nth-child(3), &:nth-child(4),
-        &:nth-child(6), &:nth-child(7) {
-            width: 25%;
-            @include adjust-font-size-to(16px);
-            height: rhythm(10);
-        }
-        
-        &:nth-child(5) {
-            width: 50%;
-            @include adjust-font-size-to(24px);
-            height: 10em;
-        }
-        
-        &:nth-child(8), &:nth-child(9), &:nth-child(10) {
-            width: percentage(1/3);
-        }
-    }
 }
 
 .exploration-answer div[role=main] {
     background: #fff;
+    
+    h2 {
+        padding: 0 gutter(6);
+    }
 }
 
 .answer {
@@ -528,42 +628,12 @@ div[role=main] h2 {
     
     .related-items {
         display: none;
-        
-        @include at-breakpoint($break) {
-            @include leader(2);
-            clear: both;
-            display: block;
-            
-            .item { 
-                @include trailer(2); 
-                overflow: auto;
-            }
-            
-            .image {
-                margin-left: gutter(6);
-                margin-right: 0;
-                clear: both;
-                width: 12em;
-                height: 9em;
-            }
-            
-            h2, p {
-                @include span-columns(7 omega);
-                clear: none;
-                margin: 0 0 rhythm(1) 0;
-                padding: 0 gutter(6) 0 0;
-            }
-        }
     }
     
     .related-items-mobile {
         @include trailer();
         @include leader(2);
         overflow: auto;
-
-        @include at-breakpoint($break) {
-            display: none;
-        }
 
         .previous, .next {
             display: inline-block;
@@ -603,46 +673,34 @@ div[role=main] h2 {
             text-align: center;
         }
     }
-    
+}
+
+.right {
+    width: 100%;
+    display: block;
     @include at-breakpoint($break) {
-        padding: rhythm(2) 0;
-        @include span-columns(8 alpha);
+        float: right;
+        width: 35%;
+        margin-right: 5%;
+        
+        .image {
+            float: right;
+            &:first-of-type { margin-right: 0; }
+        }
     }
 }
+
 
 .learn-more {
     padding: rhythm(1) gutter(6);
     overflow: auto;
-
-    @include at-breakpoint($break) {
-        padding-left: 0;
-        @include span-columns(4 omega);
-        
-        .items, .other-questions, .themes {
-            background-color: #e7e7e7;
-            padding: rhythm(1) gutter(4);
-            @include trailer(2);
-            
-            & > *:first-child { 
-                margin-top: 0; 
-                padding-top: 0;
-            }
-            & > *:last-child { 
-                margin-bottom: 0; 
-                padding-bottom: 0;
-                border: 0;
-            }
-        }
-        
-        .items { @include leader(.5); }
-    }
 
     & > p {
         margin-left: 1.5em;
         text-indent: -1.5em;
     }
     
-    & > p:first-child { 
+    & > p:first-of-type { 
         font-weight: bold; 
     }
     
@@ -661,53 +719,63 @@ div[role=main] h2 {
             margin-right: .5em;
         }
         
-        & > p:last-child { margin-bottom: 0;}
+        & > p:last-of-type { margin-bottom: 0;}
         
         .back a:before { content: "\e00d"; }
         .prev a:before { content: "\e006"; }
         .next a:before { content: "\e009"; }
-        
-        @include at-breakpoint($break) {
-            border-bottom: 0;
-
-            p { 
-                border-color: #ccc;
-                @include trailing-border(1px, 1, $base-font-size, solid); 
-            }
-        }
     }
     
     ul {
         padding-left: 1.5em;
         border-color: #ccc;
         @include trailing-border(1px, 1, $base-font-size, solid);
-        
-        @include at-breakpoint($break) {
-            border-bottom: 0;
-        }
     }
 }
 
+.image-list-left-thumbs {
+    padding: 0 gutter(6);
+    
+    img { 
+        margin: rhythm(1) gutter(6) rhythm(1) 0; 
+        float: left;
+    }
+}
+
+.image-text-group {
+    overflow: visible;
+}
+
+/* @end */
+
+/* @group ----- People ----- */
+
 .people {
-    .persons { 
+    .items { 
         background-color: #fff;
         padding: rhythm() gutter(6); 
         overflow: auto;
     }
-    
+        
     div[role=main] nav { width: 100%; }
     
     div[role=main] nav ul {
-        background-color: #666;
+        background-color: #fff;
         margin: 0;
         overflow: auto;
+        padding-left: gutter(6);
+        @include trailing-border(1px, 0, $base-font-size, solid);
+        border-color: #e7e7e7;
         
-        li { float: right; }
-
+        li { background-color: transparent; }
+    }
+    
+    .pagination {
         a {
-            padding: rhythm(.5) 20px;
-            background-color: #343434;
             display: inline-block;
+            background-color: $red;
+            @include border-radius(30px);
+            padding: 0 10px;
         }
     }
     
@@ -750,75 +818,43 @@ div[role=main] h2 {
 .people.alpha {
     .persons { 
         padding: 0;
-        
-        @include at-breakpoint($break) {
-            padding: rhythm(3) 0; 
-        }
     }
 
     .persons h2 {
         margin: 0;
-        background-color: #e7e7e7;
+        background-color: #f7f7f7;
         padding: rhythm(.25) gutter(6);
         @include adjust-font-size-to($base-font-size);
-
-        @include at-breakpoint($break) {
-            @include adjust-font-size-to(24px);
-            @include span-columns(2);
-            @include prefix(4);
-            vertical-align: top;
-            background-color: transparent;
-            margin: 0;
-            padding-top: 0;
-        }
     }
     
     .person {
         padding: rhythm(.25) gutter(6);
         display: inline-block;
         width: 100%;
-    
-        @include at-breakpoint($break) {
-            @include span-columns(7);
-            @include suffix(2);
-            float: right;
-            @include trailer();
-            
-            &:last-of-type { @include trailer(3); }        
-        }
     }
 }
 
-.events {
-    .timeline { 
+/* @end */
+
+/* @group ----- Events ----- */
+
+
+.items.event {
+    
+    .items { 
         background-color: #fff;
         overflow: auto;
         position: relative;
         @include padding-leader(2);
+        
+        .period h2 { background-color: #e7e7e7; }
+        .period:nth-of-type(2n) h2 { background-color: #f7f7f7; }
         
         h2 {
             
             @include adjust-font-size-to($base-font-size);
             margin-top: 0;
             padding: rhythm(.5) gutter(6);
-
-            &:nth-child(1) { background-color: #e7e7e7; }
-            &:nth-child(2) { background-color: #ccc; }
-            &:nth-child(3) { background-color: #999; }
-            &:nth-child(4) { background-color: #777; }
-
-            @include at-breakpoint($break) {
-                @include adjust-font-size-to(24px);
-                @include span-columns(2 alpha);
-                text-align: center;
-                padding: 10px;
-                
-                &:nth-child(1), &:nth-child(2),
-                &:nth-child(3), &:nth-child(4) {
-                    background-color: transparent;
-                }
-            }
-            
         }
         
         .image {
@@ -828,44 +864,25 @@ div[role=main] h2 {
             float: left;
             background-color: #ccc;
             margin: 0 gutter(6) rhythm(.5) 0;
-            
-            @include at-breakpoint($break) {
-                margin: rhythm(1) gutter(6) rhythm(1) 0;
-            }
         }
         
         .period {
             overflow: auto;
-            border-color: #e7e7e7;
+            border-color: #f7f7f7;
             @include trailing-border(1px, 0, $base-font-size, solid);
-            @include at-breakpoint($break) {
-                &:nth-child(1) { background-color: #e7e7e7; }
-                &:nth-child(2) { background-color: #ccc; }
-                &:nth-child(3) { background-color: #999; }
-                &:nth-child(4) { background-color: #777; }
-            }
         }
         
         .event {
             padding: 0 gutter(6);
             border-color: #e7e7e7;
             @include trailing-border(1px, 0, $base-font-size, solid);
-
-            @include at-breakpoint($break) {
-                background-color: #fff;
-                @include span-columns(10 omega);
-                padding: 0 2%;
-                border-bottom: 0;
-            }
         }
     }
 }
 
 #period-nav {
-    background-color: #666;
-    color: #fff;
     padding: rhythm(.625) gutter(6);
-    text-align: right;
+    text-align: left;
     vertical-align: top;
     width: 100%;
     max-width: 57em;
@@ -873,14 +890,9 @@ div[role=main] h2 {
     top: 0;
     font-size: 14px;
     line-height: 24px;
-    
-    @include at-breakpoint($break) {
-        font-size: 16px;
-        padding: rhythm(.5) gutter(6);
-    }
-    
-    a { color: #fff; }
-    
+    background-color: #fff;
+    @include box-shadow(0 0 50px #bbb);
+        
     ul { 
         margin: 0 0 rhythm(1) 0;
         display: inline;
@@ -900,6 +912,10 @@ div[role=main] h2 {
     }
 }
 
+/* @end */
+
+/* @group ----- Sites ----- */
+
 .locations {
     background-color: #fff;
     
@@ -912,6 +928,12 @@ div[role=main] h2 {
         }
         
     }
+}
+
+    
+.sites div[role=main] h1:first-of-type { 
+    background-color: $green;
+    color: #fff;
 }
 
 .site {
@@ -934,69 +956,38 @@ div[role=main] h2 {
             padding-left: 0; 
             
             &:first-of-type { margin-top: rhythm(1); }
-            
-            @include at-breakpoint($break) {
-                &:first-of-type { @include leader(1.5); }
-            }
         }
     }
     
-    .metadata {
-        
-        @include at-breakpoint($break) {
-            @include span-columns(4 alpha);
-            @include prefix(1);
-            @include padding-leader(2);
-        }
-        
-        .image {
-            width: 100%;
-            padding: 20px;
-            margin: 0;
-            border-color: #f7f7f7;
-            @include leading-border(1px, 0, $base-font-size, solid);
-            
-            @include at-breakpoint($break) {
-                @include trailer();
-            }
-        }
-        
+    .metadata .image {
+        width: 100%;
+        padding: 20px;
+        margin: 0;
+        border-color: #f7f7f7;
+        @include leading-border(1px, 0, $base-font-size, solid);
     }
     
     .description {
         padding: 0 gutter(6);
-        @include at-breakpoint($break) {
-            @include span-columns(7 omega);
-            @include suffix(1);
-            padding-top: rhythm(1.5);
-        }
         
         p { 
             clear: both; 
             
             &:first-of-type { padding-top: rhythm(1); }
-            
-            @include at-breakpoint($break) {
-                padding: 0;
-                
-                &:first-of-type { padding-top: 0; }
-            }
         }
     }
     
     .category { font-weight: bold; }
     
 }
+/* @end */
+
+/* @group ----- Themes ----- */
 
 .themes {    
     .theme-list {
         padding: rhythm(2) gutter(6);
         background-color: #fff;
-        
-        @include at-breakpoint($break) {
-            -webkit-columns: 2;
-            -moz-columns: 2;
-        }
     }
     .theme a {
         background-color: #e7e7e7;
@@ -1007,3 +998,37 @@ div[role=main] h2 {
         width: 100%;
     }
 }
+
+/* @end */
+
+/* @group ----- Items/Show ----- */
+
+.items.show div[role=main] {
+    @include padding-trailer(3);
+    
+    & > div {
+        padding: 0 gutter(6);
+    }
+    
+    & > aside {
+        & > div {
+            display: none;
+        }
+        
+        nav {
+            padding: 0 gutter(6);
+        }
+        
+        .images {
+            display: block;
+            padding: 0;
+        }
+    
+        img {
+            max-width: 100%; 
+            height: auto;
+        }
+    }
+}
+
+/* @end */

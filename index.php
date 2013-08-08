@@ -1,13 +1,4 @@
-<?php include('header.php'); ?>
-<body class="home">
-
-    <header>
-        <h1 id="site-title"><div class="logo"></div><a href="index">Hidden Histories<br>of the<br> National Mall</a></h1>
-        
-        <?php include('search.php'); ?>
-        
-        <?php include('navigation.php'); ?>
-    </header>
+<?php echo head(); ?>
 
     <div role="main">
     
@@ -16,15 +7,44 @@
             <p>Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui.</p>
             <p><a href="about" class="button">Learn more about the project.</a></p>
         </div>
+        
+        <?php $featuredExhibit = exhibit_builder_random_featured_exhibit(); ?>
+        <?php $featuredExhibitId = $featuredExhibit->id; ?>
                 
-        <div id="featured-question">
+        <div id="featured-question" class="featured">
+            
             <h1>
                 <span class="category">Featured question</span>
-                <span class="title">Were there ever stores on the National Mall?</span>
+                <span class="title"><?php echo $featuredExhibit->title; ?></span>
             </h1>
-            <p>Center Market, the city's oldest shopping venue,  operated for 120 years on the edge of the National Mall on Pennsylvania Avenue. George Washington had set aside land for the market in 1797.</p>
-            <p class="jump-link"><a href="#" class="button">Read more</a></p>
+            <p><?php echo snippet($featuredExhibit->description, 0, 200); ?></p>
+            <p class="jump-link"><?php echo exhibit_builder_link_to_exhibit($featuredExhibit, 'Read More', array('class' => 'button')); ?></p>
         </div>
+        
+        <?php 
+        $featuredPeople = get_records('Item', array(
+              'featured' => 1, 
+              'sort_field' => 'random', 
+              'hasImage' => true,
+              'item_type' => 'People'), 1); 
+        ?>
+                
+        <?php if (count($featuredPeople) > 0): ?>
+        <?php $featuredPerson = $featuredPeople[0]; ?>
+        <?php $featuredPersonFile = get_db()->getTable('File')->findWithImages($featuredPerson->id, 0); ?>
+        
+        <div id="featured-person" class="featured" style="background-image:url(<?php echo file_display_url($featuredPersonFile); ?>)">
+
+            <h1>
+                <span class="category">Featured Person</span>
+                <span class="title"><?php echo metadata($featuredPerson, array('Dublin Core', 'Title')); ?></span>
+            </h1>
+            <p><?php echo snippet(metadata($featuredPerson, array('Dublin Core', 'Description')), 0, 200); ?></p>
+            <p class="jump-link"><?php echo link_to_item('Read More', array('class' => 'button'), 'show', $featuredPerson); ?></p>
+        </div>
+        
+        <?php endif; ?>
 
     </div>
-<?php include('footer.php'); ?>
+
+<?php echo foot(); ?>

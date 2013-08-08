@@ -1,13 +1,13 @@
 /*
-Syntax error: Undefined mixin 'box-sizing'.
-        on line 4 of /Users/kim/Sites/mallhistory/themes/mall/_sass/screen.scss, in `box-sizing'
-        from line 4 of /Users/kim/Sites/mallhistory/themes/mall/_sass/screen.scss
+Syntax error: Undefined mixin 'container'.
+        on line 4 of /Users/kim/Sites/mallhistory/themes/mall/_sass/screen_40em.scss, in `container'
+        from line 4 of /Users/kim/Sites/mallhistory/themes/mall/_sass/screen_40em.scss
 
-1: /Users/kim/Sites/mallhistory/themes/mall/_sass/screen.scss
+1: /Users/kim/Sites/mallhistory/themes/mall/_sass/screen_40em.scss
 
 Backtrace:
-/Users/kim/Sites/mallhistory/themes/mall/_sass/screen.scss:4:in `box-sizing'
-/Users/kim/Sites/mallhistory/themes/mall/_sass/screen.scss:4
+/Users/kim/Sites/mallhistory/themes/mall/_sass/screen_40em.scss:4:in `container'
+/Users/kim/Sites/mallhistory/themes/mall/_sass/screen_40em.scss:4
 /Users/kim/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
 /Users/kim/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.7/lib/sass/tree/visitors/base.rb:37:in `visit'
 /Users/kim/.rvm/gems/ruby-2.0.0-p0/gems/sass-3.2.7/lib/sass/tree/visitors/perform.rb:100:in `visit'
@@ -82,4 +82,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'box-sizing'.\A         on line 4 of /Users/kim/Sites/mallhistory/themes/mall/_sass/screen.scss, in `box-sizing'\A         from line 4 of /Users/kim/Sites/mallhistory/themes/mall/_sass/screen.scss\A \A 1: /Users/kim/Sites/mallhistory/themes/mall/_sass/screen.scss"; }
+  content: "Syntax error: Undefined mixin 'container'.\A         on line 4 of /Users/kim/Sites/mallhistory/themes/mall/_sass/screen_40em.scss, in `container'\A         from line 4 of /Users/kim/Sites/mallhistory/themes/mall/_sass/screen_40em.scss\A \A 1: /Users/kim/Sites/mallhistory/themes/mall/_sass/screen_40em.scss"; }

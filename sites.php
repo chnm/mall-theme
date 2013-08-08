@@ -2,7 +2,7 @@
 <body class="sites">
 
     <header>
-        <h1 id="site-title"><div class="logo"></div><a href="index">Hidden Histories<br>of the<br> National Mall</a></h1>
+        <h1 id="site-title"><div class="logo"></div><a href="index">Histories of the<br />National Mall</a></h1>
         
         <?php include('search.php'); ?>
         

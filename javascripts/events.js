@@ -1,15 +1,15 @@
 (function($) {
 
     $(document).ready( function() {
-        if ($('body').hasClass('events')) {
+        if ($('body').hasClass('event')) {
             var $period = $('#period-nav');
-            var periodTop = $('.timeline').position().top;
+            var periodTop = $('div.items').position().top;
             
             var windowTop;
             var $window = $(window);
             
             $window.resize(function() {
-                periodTop = $('.timeline').position().top;
+                periodTop = $('div.items').position().top;
                 positionNav();
             });
 
