@@ -70,7 +70,6 @@ a.button {
 
 div[role=main] {
     clear: both;
-    overflow: auto;
     background-color: #fff;
     
     & > h1:first-of-type {
@@ -207,18 +206,22 @@ header {
     display: inline-block;
 }
 
+.home #navigation li:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    content: "";
+    display: block;
+    width: 100%;
+}
+
 .home #navigation li:nth-of-type(4) {
     background: url('../images/map.png') no-repeat center/cover;
     
     &:after {
-        content: "";
-        display: block;
-        width: 100%;
         background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(33, 201, 0, 0.4));
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
     }
 }
 
@@ -226,14 +229,7 @@ header {
     background: url('../images/discover.jpg') no-repeat center/cover;
 
     &:after {
-        content: "";
-        display: block;
-        width: 100%;
         background-image: linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.4));
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
     }
 }
 
@@ -241,14 +237,7 @@ header {
     background: url('../images/james.jpg') no-repeat center center/cover;
 
     &:after {
-        content: "";
-        display: block;
-        width: 100%;
         background-image: linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
     }
 }
 
@@ -256,14 +245,7 @@ header {
     background: url('../images/events.jpg') no-repeat center center/cover;
 
     &:after {
-        content: "";
-        display: block;
-        width: 100%;
         background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(255, 51, 0, 0.4));
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
     }
 }
 
@@ -469,32 +451,61 @@ nav ul {
 }
 
 .pagination {
-    @include box-shadow(#666 0 5px 10px);
+    @include box-shadow(rgba(0,0,0,.1) 0 5px 10px);
     background-color: #fff;
-    overflow: auto;
     clear: both; 
     padding: 0 gutter(6);
     margin: 0;
+    position: relative;
+    height: rhythm(2);
     
     li {
         display: inline-block;
-        @include leader(.5);
-        @include trailer(.5);
+        height: 100%;
+        position: absolute;
+        top: 0;
+        text-align: center;
     }
     
     a {
-        background-color: $red;
+        color: $red;
         display: inline-block;
-        @include border-radius(30px);
-        padding: rhythm(.25) rhythm(.6);
+        padding: 0 10px;
+        height: 100%;
+        line-height: rhythm(2);
     }
-    
-    a:link, a:visited { color: #f7f7f7; }
-    a:active, a:hover { color: #fff; }
-    
+        
     &:nth-of-type(2) {
         @include leading-border(1px, 0, $base-font-size, solid);
         border-color: #e7e7e7;
+    }
+    
+    .page-input {
+        left: 10%;
+        width: 80%;
+        border-left: 1px solid #e7e7e7;
+        
+        form {
+            padding: rhythm(.5) 0;
+        }
+        
+        input[type=text] { 
+            width: 3em; 
+            border: 0;
+            border-bottom: 1px solid #e7e7e7;
+            text-align: center;
+        }
+    }
+    
+    .pagination_previous {
+        width: 10%;
+        left: 0;
+    }
+    
+    .pagination_next {
+        left: 90%;
+        width: 10%;
+        border-left: 1px solid #e7e7e7;
     }
 }
 
@@ -542,13 +553,6 @@ nav ul {
 
 /* Inspector */
 
-div[role=main] h2 {
-    padding-left: 5%;
-    clear: both;
-    float: left;
-    width: 100%;
-    margin-top: 2em;
-}
 .mission-header {
     background-color: #cdcdcd;
     width: 100%;
@@ -558,7 +562,7 @@ div[role=main] h2 {
     margin-top: 5em;
 }
 
-/* @group ----- Explorations ----- */
+/* @group ----- Discover ----- */
 
 .explorations div[role=main], 
 .exploration-answer div[role=main]{
@@ -758,29 +762,15 @@ div[role=main] h2 {
         padding: rhythm() gutter(6); 
         overflow: auto;
     }
-        
-    div[role=main] nav { width: 100%; }
-    
-    div[role=main] nav ul {
+
+    .pagination {    
+        width: 100%;
         background-color: #fff;
         margin: 0;
         overflow: auto;
         padding-left: gutter(6);
-        @include trailing-border(1px, 0, $base-font-size, solid);
         border-color: #e7e7e7;
-        
-        li { background-color: transparent; }
     }
-    
-    .pagination {
-        a {
-            display: inline-block;
-            background-color: $red;
-            @include border-radius(30px);
-            padding: 0 10px;
-        }
-    }
-    
 }
 
 .people.images {
@@ -1018,7 +1008,7 @@ div[role=main] h2 {
         }
         
         nav {
-            padding: 0 gutter(6);
+            padding: 0;
         }
         
         .images {
@@ -1029,8 +1019,35 @@ div[role=main] h2 {
         img {
             max-width: 100%; 
             height: auto;
+            vertical-align: bottom;
         }
     }
 }
 
+.items.show .element-set { display: none; }
+
+.item-pagination {
+    height: rhythm(2);
+    margin: 0;
+    position: relative;
+    @include trailing-border(1px, 0, $base-font-size, solid);
+    border-color: #e7e7e7;
+    
+    li {
+        position: absolute;
+        top: 0;
+        width: 50%;
+        text-align: center;
+        
+        a {
+            padding: rhythm(.5) 0;
+            display: inline-block;
+            width: 100%;
+        }
+    }
+}
+
+#next-item {
+    left: 50%;
+}
 /* @end */

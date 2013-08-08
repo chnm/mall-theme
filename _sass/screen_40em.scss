@@ -10,7 +10,14 @@ body {
 
 /* @group ----- Global classes ----- */
 
-div[role=main] { @include box-shadow(#BBB 0 0 50px); }
+div[role=main] { 
+    @include box-shadow(#BBB 0 0 50px); 
+    
+    & > h1:first-of-type {
+        padding: rhythm(3) gutter(6);
+        text-align: center;
+    }
+}
 
 .image {
     width: 16em;
@@ -22,15 +29,18 @@ div[role=main] { @include box-shadow(#BBB 0 0 50px); }
 /* @group ----- Header ----- */
 
 header { 
-    @include padding-leader(2);
-    text-align: left;
+    padding: rhythm(4) 1em rhythm(1);
+    text-align: center;
+    @include leader(2);
+    background-color: #FFF;
+    z-index: 10;
+    @include box-shadow(0 0 50px rgba(0, 128, 0, 0.18));
+    border-top: 5px solid #DB6C36;
 }
 
 #site-title {
-    width: 70%;
     @include adjust-font-size-to(14px);
     float: left;
-    line-height: 29px;
     padding: 0;
 }
 
@@ -42,10 +52,25 @@ header {
     float: right;
     display: block !important;
     background-color: transparent;
-    @include trailer(.5);
-    @include box-shadow(0 0 50px #e7e7e7);
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    border-left: 1px solid #F7F7F7;
     
-    input[type=text], input[type=submit] { height: rhythm(1.25); }
+    input[type=text] { 
+        width: 60%;
+        height: rhythm(1.25); 
+        margin: rhythm(1) 2%;
+        border-bottom: 1px dotted #ccc;
+    }
+    
+    input[type=submit] {
+        width: 36%;
+        background-color: $red;
+        height: rhythm(3);
+    }
 }
 
 /* @end */
@@ -55,6 +80,10 @@ header {
 #intro {
     @include span-columns(4 alpha);
     @include trailing-border(0px, 0, $base-font-size, solid);
+}
+
+.home header {
+    padding: rhythm(1) 0 0;
 }
 
 .home .news-item {
@@ -67,12 +96,41 @@ header {
     &:after {
         content: "";
         display: block;
-        height: rhythm(4);
         width: 100%;
         background-image: linear-gradient(0deg, rgba(255,255,255,1), rgba(255,255,255,0));
         position: absolute;
-        bottom: 0;
         z-index: 50;
+    }
+}
+
+.home #search-form {
+    position: relative;
+    width: 100%;
+    border-left: 0;
+    padding: rhythm(.5) gutter();
+    float: left;
+    width: 100%;
+    background-color: rgba(0,0,0,.04);
+    @include leader();
+    
+    input[type=text], input[type=submit] {
+        height: rhythm(1.5);
+        margin: 0;
+        float: left;
+        padding: rhythm(.25) gutter();
+        font-size: $base-font-size;
+    }
+    
+    input[type=text] {
+        width: 65%;
+        border: 0;
+    }
+    
+    input[type=submit] {
+        width: 35%;
+        background-color: $green;
+        color: #f7f7f7;
+        border: 0;
     }
 }
 
@@ -81,37 +139,52 @@ header {
 /* @group ----- Navigation ----- */
 
 #navigation {
-    background-color: transparent;
-    text-align: right;
-    display: block;
     float: right;
     clear: none;
     width: 100%;
     display: block !important;
-    @include leader(2);
-    @include trailer(.5);
+    background-color: #FFF;
+    text-align: left;
+    clear: none;
+    display: block !important;
+    margin: 0 0 rhythm(.5);
+    position: absolute;
+    top: 0;
+    padding: 0;
+    left: 0;
     
-    a { @include text-shadow(0 0 100px #fff); }
+    a { 
+        border-right: 1px solid #F7F7F7;
+        float: left;
+        padding: rhythm(1);    
+    }
     
     ul { 
         padding: 0; 
-        margin-bottom: 0;
+        width: 100%;
+        margin: 0;
+        overflow: auto;
+        border-bottom: 1px solid #F7F7F7;
     }
     
     li { 
-        display: inline-block;
         margin: 0; 
         border-bottom: 0;
-        padding-bottom: 0;
+        padding: 0;
+        float:left;
     }
     
     h1 { display: none; }
 }
 
 .home #navigation {
+
+    position: relative;
+    
     li { 
         width: percentage(1/2);
         height: rhythm(7);
+        @include leading-border(0px, 0, $base-font-size, solid);
         
         &:after { 
             height: rhythm(7); 
@@ -122,6 +195,10 @@ header {
         text-align: left;
         font-size: 1.5 * $base-font-size;
         line-height: $base-line-height;
+        border: 0;
+        padding: 1em;
+        width: 100%;
+        height: 100%;
     }
     
     li:last-of-type {
@@ -355,7 +432,14 @@ header {
             display: block;
         }
     }
+}
 
+.items.show .element-text {
+    display: block;
+}
+
+#mobile-content {
+    display: none;
 }
 
 /* @end */
