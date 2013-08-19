@@ -71,6 +71,7 @@ a.button {
 div[role=main] {
     clear: both;
     background-color: #fff;
+    float: left;
     
     & > h1:first-of-type {
         background-color: $blue;
@@ -99,10 +100,6 @@ header {
     width: 100%;
     position: relative;
     text-align: center;
-}
-
-.home #site-title {
-    @include trailer();
 }
 
 #site-title {
@@ -276,6 +273,10 @@ header {
     padding: rhythm(.5) gutter();
     background-color: #fff;
     
+    &:after {
+        background-image: linear-gradient(215deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+    }
+    
     h1 { margin-top: 0; }
     
     span { display: block; }
@@ -294,7 +295,7 @@ header {
     width: 100%;
     
     &:after {
-        background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+        background-image: linear-gradient(80deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
     }
 }
 
@@ -434,7 +435,6 @@ nav ul {
         border-color: #f7f7f7;
         padding: 0;
         background-size: cover;
-        @include leading-border(1px, 0, $base-font-size, solid);
         @include apply-side-rhythm-border(right, 1px, 0, $base-font-size, solid);
         border-bottom: 0;
         
@@ -447,6 +447,10 @@ nav ul {
         &:nth-of-type(2n) { border-right: 0; }
         
         &:nth-of-type(3) { border-left: 0; }
+        
+        &:nth-of-type(3), &:nth-of-type(4) {
+            @include trailing-border(0px, 0, $base-font-size, solid);
+        }
     }
 }
 
@@ -771,6 +775,9 @@ nav ul {
         padding-left: gutter(6);
         border-color: #e7e7e7;
     }
+    .letter {
+        clear: both;
+    }
 }
 
 .people.images {
@@ -826,6 +833,11 @@ nav ul {
     }
 }
 
+#people-item-type-metadata-first-name,
+#people-item-type-metadata-last-name {
+    display: none;
+}
+
 /* @end */
 
 /* @group ----- Events ----- */
@@ -860,14 +872,19 @@ nav ul {
         
         .period {
             overflow: auto;
-            border-color: #f7f7f7;
+            border-color: #e7e7e7;
             @include trailing-border(1px, 0, $base-font-size, solid);
         }
         
         .event {
             padding: 0 gutter(6);
             border-color: #e7e7e7;
-            @include trailing-border(1px, 0, $base-font-size, solid);
+            @include leading-border(1px, 0, $base-font-size, solid);
+            @include padding-trailer();
+            
+            &:first-of-type {
+                @include leading-border(0px, 0, $base-font-size, solid);
+            }
         }
     }
 }
@@ -877,25 +894,73 @@ nav ul {
     text-align: left;
     vertical-align: top;
     width: 100%;
-    max-width: 57em;
     position: absolute;
     top: 0;
     font-size: 14px;
     line-height: 24px;
     background-color: #fff;
+    text-align: center;
     @include box-shadow(0 0 50px #bbb);
+    
+    .heading:after {
+        content: ":";
+        display: inline-block;
+        width: 160px;
+        text-align: left;
+    }
+    
         
     ul { 
-        margin: 0 0 rhythm(1) 0;
-        display: inline;
-        width: auto;
-    };
+        position: absolute;
+        top: rhythm(.25);
+        margin: rhythm(.1875) 0 rhythm(1) 0;
+        left: 50%;
+        border-bottom: 1px solid #e7e7e7;
+    }
     
     ul li { 
-        display: inline; 
-        margin-left: gutter(6);
+        display: none; 
+        background-color: #fff;
+        text-align: left;
         
-        &:first-of-type { margin-left: 0; }
+        &:first-of-type { 
+            font-weight: bold; 
+            display: block;
+            cursor: pointer;
+            height: rhythm(1.5);
+            line-height: 1.25 * $base-line-height;
+            padding: 0 gutter(6);
+            color: $red;
+            width: 150px;
+            border: solid #e7e7e7;
+            border-width: 1px 1px 0 1px;
+            
+            &:after { 
+                content: "";
+                height: 0;
+                width: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid $red;
+                position: absolute;
+                top: 13px;
+                right: 10px;
+            }
+        }
+    }
+    
+    ul:hover li {
+        display: block;
+    }
+    
+    a {
+        border: solid #e7e7e7;
+        border-width: 1px 1px 0 1px;
+        width: 150px;
+        display: block;
+        height: rhythm(1.5);
+        line-height: 1.25 * $base-line-height;
+        padding: 0 gutter(6);
     }
     
     &.fixed {

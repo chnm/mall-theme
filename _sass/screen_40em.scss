@@ -52,24 +52,30 @@ header {
     float: right;
     display: block !important;
     background-color: transparent;
-    margin: 0;
+    margin: 0 gutter(12) 0 0;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 10;
-    border-left: 1px solid #F7F7F7;
+    font-size: 0;
     
     input[type=text] { 
         width: 60%;
-        height: rhythm(1.25); 
-        margin: rhythm(1) 2%;
-        border-bottom: 1px dotted #ccc;
+        margin: rhythm(.75) 0;
+        border: 1px solid #e7e7e7;
+        font-size: $base-font-size;
+        line-height: $base-line-height;
+        float:none;
+        display: inline-block;
     }
     
     input[type=submit] {
         width: 36%;
-        background-color: $red;
-        height: rhythm(3);
+        margin: rhythm(.75) gutter(6) rhythm(.75) 0;
+        font-size: $base-font-size;
+        line-height: $base-line-height;
+        float:none;
+        display: inline-block;
     }
 }
 
@@ -115,7 +121,7 @@ header {
     
     input[type=text], input[type=submit] {
         height: rhythm(1.5);
-        margin: 0;
+        margin: rhythm(.5) 0;
         float: left;
         padding: rhythm(.25) gutter();
         font-size: $base-font-size;
@@ -178,8 +184,11 @@ header {
 }
 
 .home #navigation {
-
     position: relative;
+
+    ul {
+        @include trailing-border(0px, 0, $base-font-size, solid);
+    }
     
     li { 
         width: percentage(1/2);
@@ -367,6 +376,15 @@ header {
 #period-nav {
     font-size: 16px;
     padding: rhythm(.5) gutter(6);
+    max-width: ($column-width * 12) + ($gutter-width * 9);
+    
+    .sub-menu {
+        margin-top: 0;
+    }
+    
+    ul li:first-of-type, a {
+        line-height: 1.5 * $base-line-height;      
+    }
 }
 
 /* @end */
@@ -415,7 +433,6 @@ header {
 /* @group ----- Items/Show ----- */
 
 .items.show div[role=main] {
-    h1:first-of-type { @include trailer(1); }
 
     & > div {
         @include prefix(1);
@@ -433,6 +450,8 @@ header {
         }
     }
 }
+
+.item-pagination { @include trailer(2); }
 
 .items.show .element-text {
     display: block;
