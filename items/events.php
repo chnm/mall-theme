@@ -19,9 +19,10 @@ $periodItems = array();
     
         <?php if($coverageTexts): ?>
         <nav id="period-nav">
+            <span class="heading">Jump to a period</span>
             <ul class="sub-menu">
             <?php foreach($coverageTexts as $coverageText): ?>
-                <li><a href="#<?php echo $coverageText ?>"><?php echo $coverageText ?></li>
+                <li><a href="#<?php echo $coverageText ?>"><?php echo $coverageText ?></a></li>
                 
                 <?php 
                 /* Create an array of periods that store their respective items */
