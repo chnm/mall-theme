@@ -36,6 +36,12 @@
                 duration: 1000,
                 offset: -48
             });
+            
+            $('#period-nav .sub-menu').prepend('<li class="current">'+$('#period-nav li:first-of-type').text()+'</li>');
+            $('#period-nav a').click(function() {
+                $('.current').text($(this).text());
+            });
+
         }
     });
   
