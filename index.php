@@ -10,8 +10,10 @@
         
         <?php $featuredExhibit = exhibit_builder_random_featured_exhibit(); ?>
         <?php $featuredExhibitId = $featuredExhibit->id; ?>
+        <?php $featuredExhibitItem = get_records('Item', array('exhibit' => $featuredExhibitId, 'random' => true, 'has files' => true), 1); ?>
+        <?php $featuredExhibitImage = get_db()->getTable('File')->findWithImages($featuredExhibitItem[0]->id, 0); ?>
                 
-        <div id="featured-question" class="featured">
+        <div id="featured-question" class="featured" style="background-image:url('<?php echo file_display_url($featuredExhibitImage); ?>')">
             
             <h1>
                 <span class="category">Featured question</span>
