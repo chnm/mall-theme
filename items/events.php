@@ -18,7 +18,7 @@ $periodItems = array();
     <div class="items">
     
         <?php if($coverageTexts): ?>
-        <nav id="period-nav">
+        <nav id="period-nav" class="off">
             <span class="heading">Jump to a period</span>
             <ul class="sub-menu">
             <?php foreach($coverageTexts as $coverageText): ?>

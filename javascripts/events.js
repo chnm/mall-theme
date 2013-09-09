@@ -41,6 +41,11 @@
             $('#period-nav a').click(function() {
                 $('.current').text($(this).text());
             });
+            
+            $('#period-nav .current').click(function() {
+                $('#period-nav').toggleClass('on');
+                $('#period-nav').toggleClass('off');
+            });
 
         }
     });
