@@ -277,12 +277,14 @@ header {
 }
 
 .learn-more {
+    clear: none;
     padding-left: 0;
     @include span-columns(4 omega);
     
     .items, .other-questions, .themes {
         background-color: #f7f7f7;
         padding: rhythm(1) gutter(4);
+        border: 0;
         @include trailer(2);
         
         & > *:first-of-type { 
@@ -342,6 +344,10 @@ header {
         
         &:last-of-type { @include trailer(3); }        
     }
+}
+
+.people.images .image {
+    width: 105px;
 }
 
 /* @end */

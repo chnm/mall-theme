@@ -1,6 +1,7 @@
 <?php
 
 if($itemTypeId = Zend_Controller_Front::getInstance()->getRequest()->getParam('type')) { 
+    $extra = '';
     if(is_numeric($itemTypeId)) {
         $itemTypeName = $db->getTable('ItemType')->find($itemTypeId)->name;
     } else {
@@ -8,6 +9,7 @@ if($itemTypeId = Zend_Controller_Front::getInstance()->getRequest()->getParam('t
     }
     if($itemTypeName == 'people') {
         $title = ucfirst($itemTypeName);
+        queue_js_file('people');
     } else {
         $title = ucfirst($itemTypeName) . 's';
     }
@@ -15,13 +17,17 @@ if($itemTypeId = Zend_Controller_Front::getInstance()->getRequest()->getParam('t
     $title = 'Browse Items';
 }
 
-echo head(array('title'=>$title,'bodyclass' => 'items browse ' . $itemTypeName));
+echo head(array('title'=>$title,'bodyclass' => 'items browse ' . $itemTypeName . ' ' . $extra));
 ?>
 
 
 <?php if($itemTypeName == 'event'): ?>
 
     <?php include('events.php'); ?>
+    
+<?php elseif($itemTypeName == 'people'): ?>
+
+    <?php include('people-image.php'); ?>
 
 <?php else: ?>
 
