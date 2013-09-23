@@ -41,7 +41,11 @@ header {
 #site-title {
     @include adjust-font-size-to(14px);
     float: left;
-    padding: 0;
+    
+    img {
+        height: rhythm(5);
+        width: auto;
+    }
 }
 
 .logo { margin: .5em 1em 1em 0; }

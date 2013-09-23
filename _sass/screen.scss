@@ -112,23 +112,19 @@ header {
 #site-title {
     width: 100%;
     text-transform: uppercase;
-    padding: rhythm(.5) gutter();
+    padding: rhythm(.5) 5%;
     margin: 0;
     @include adjust-font-size-to(18px);
     
     a {
-        @include leader(.5);
+        padding: rhythm(.5) 0;
         display: inline-block;
     }
-}
-
-.logo {
-    background-color: #2d2d2d;
-    width: 5em;
-    height: 5em;
-    display: block;
-    float: left;
-    margin: 0 1em 0 0;
+    
+    img {
+        height: rhythm(4);
+        width: auto;
+    }
 }
 
 #mobile-nav { 
@@ -154,7 +150,7 @@ header {
 
 #search-form {
     padding: rhythm(.5) 2%;
-    border-color: #f7f7f7;
+    border-color: #e7e7e7;
     @include leading-border(1px, .5, $base-font-size, solid);
     float: left;
     width: 100%;
@@ -177,7 +173,7 @@ header {
     input[type=submit] {
         width: 35%;
         background-color: $green;
-        color: #f7f7f7;
+        color: #e7e7e7;
         border: 0;
     }
 }
@@ -397,7 +393,7 @@ nav ul {
     clear: both;
     background-color: #fff;
     @include leading-border(1px, 0, $base-font-size, solid);
-    border-color: #f7f7f7;
+    border-color: #e7e7e7;
     
     h1 { 
         margin: 0;
@@ -471,7 +467,7 @@ nav ul {
         margin: 0;
         position: relative;
         float: left;
-        border-color: #f7f7f7;
+        border-color: #e7e7e7;
         padding: 0;
         background-size: cover;
         @include apply-side-rhythm-border(right, 1px, 0, $base-font-size, solid);
@@ -576,14 +572,18 @@ nav ul {
     display: inline-block;
 }
 
-.about div[role=main] {
+/* @end */
+
+/* @group ----- About ----- */
+
+.page div[role=main] {
     clear: both;
     padding: 0 0 rhythm(2) 0;
     background-color: #fff;
     float: left;
     
     p {
-        padding: 0 5%;
+        padding: 0 gutter(6);
         @include at-breakpoint($break) {
             width: 100%;
             float: left;
@@ -596,16 +596,7 @@ nav ul {
     }
 }
 
-/* Inspector */
-
-.mission-header {
-    background-color: #cdcdcd;
-    width: 100%;
-    height: 20em;
-    display: block;
-    float: left;
-    margin-top: 5em;
-}
+/* @end */
 
 /* @group ----- Discover ----- */
 
@@ -913,7 +904,7 @@ nav ul {
 
     h2 {
         margin: 0;
-        background-color: #f7f7f7;
+        background-color: #e7e7e7;
         padding: rhythm(.25) gutter(6);
         @include adjust-font-size-to($base-font-size);
     }
@@ -944,7 +935,7 @@ nav ul {
         @include padding-leader(2);
         
         .period h2 { background-color: #e7e7e7; }
-        .period:nth-of-type(2n) h2 { background-color: #f7f7f7; }
+        .period:nth-of-type(2n) h2 { background-color: #e7e7e7; }
         
         h2 {
             
@@ -1116,7 +1107,7 @@ nav ul {
         width: 100%;
         padding: 20px;
         margin: 0;
-        border-color: #f7f7f7;
+        border-color: #e7e7e7;
         @include leading-border(1px, 0, $base-font-size, solid);
     }
     
@@ -1166,7 +1157,7 @@ nav ul {
 }
 
 .search-result {
-    border-color: #f7f7f7;
+    border-color: #e7e7e7;
     padding: rhythm(.5) gutter(6);
     @include trailing-border(1px, .5, $base-font-size, solid);
     
