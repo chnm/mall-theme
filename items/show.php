@@ -60,25 +60,6 @@
 
 </div>
 
-<!-- The following returns all of the files associated with an item. -->
-
-<!-- If the item belongs to a collection, the following creates a link to that collection. -->
-<?php if (metadata('item', 'Collection Name')): ?>
-<div id="collection" class="element">
-    <h3><?php echo __('Collection'); ?></h3>
-    <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>
-</div>
-<?php endif; ?>
-
-<!-- The following prints a list of all tags associated with the item -->
-<?php if (metadata('item', 'has tags')): ?>
-<div id="item-tags" class="element">
-    <h3><?php echo __('Tags'); ?></h3>
-    <div class="element-text"><?php echo tag_string('item'); ?></div>
-</div>
-<?php endif;?>
-
-
 <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
 
 </div>
