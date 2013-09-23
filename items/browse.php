@@ -1,5 +1,6 @@
 <?php
-
+$itemTypeName = '';
+$extra = '';
 if($itemTypeId = Zend_Controller_Front::getInstance()->getRequest()->getParam('type')) { 
     $extra = '';
     if(is_numeric($itemTypeId)) {
@@ -20,7 +21,6 @@ if($itemTypeId = Zend_Controller_Front::getInstance()->getRequest()->getParam('t
 echo head(array('title'=>$title,'bodyclass' => 'items browse ' . $itemTypeName . ' ' . $extra));
 ?>
 
-
 <?php if($itemTypeName == 'event'): ?>
 
     <?php include('events.php'); ?>
@@ -28,6 +28,10 @@ echo head(array('title'=>$title,'bodyclass' => 'items browse ' . $itemTypeName .
 <?php elseif($itemTypeName == 'people'): ?>
 
     <?php include('people-image.php'); ?>
+    
+<?php elseif($_GET['tags']): ?>
+
+    <?php include('tags.php'); ?>
 
 <?php else: ?>
 
