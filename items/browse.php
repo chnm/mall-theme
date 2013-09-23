@@ -1,4 +1,5 @@
 <?php
+$db = get_db();
 $itemTypeName = '';
 $extra = '';
 if($itemTypeId = Zend_Controller_Front::getInstance()->getRequest()->getParam('type')) { 
