@@ -300,6 +300,7 @@ header {
     @include adjust-leading-to(1);
     padding: rhythm(.5) gutter();
     background-color: #fff;
+    min-height: rhythm(14);
     
     &:after {
         background-image: -webkit-linear-gradient(215deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));

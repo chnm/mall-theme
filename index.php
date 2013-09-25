@@ -3,9 +3,9 @@
     <div role="main">
     
         <div id="intro">
-            <h1>'Hidden Histories' is a discovery tool for the National Mall.</h1>
-            <p>Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui.</p>
-            <p><a href="about" class="button">Learn more about the project.</a></p>
+            <h1><?php echo get_theme_option('intro_head'); ?></h1>
+            <p><?php echo get_theme_option('intro'); ?></p>
+            <p><a href="<?php echo get_theme_option('intro_button_slug'); ?>" class="button"><?php echo get_theme_option('intro_button'); ?></a></p>
         </div>
         
         <?php $featuredExhibit = exhibit_builder_random_featured_exhibit(); ?>
