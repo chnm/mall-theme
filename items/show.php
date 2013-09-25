@@ -16,7 +16,7 @@
     <?php $itemFiles = $item->Files; ?>
     <div class="images">
     <?php foreach ($itemFiles as $itemFile): ?>
-        <?php echo file_image('fullsize', array(), $itemFile); ?>
+        <a href="<?php echo file_display_url($itemFile, 'original'); ?>"><?php echo file_image('fullsize', array(), $itemFile); ?></a>
     <?php endforeach; ?>
     </div>
     <?php endif; ?>

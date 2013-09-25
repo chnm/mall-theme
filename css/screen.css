@@ -272,7 +272,7 @@ header {
 }
 
 .home #navigation li:nth-of-type(3) {
-  background: url("../images/discover.jpg") no-repeat center;
+  background: url("../images/james.jpg") no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -284,7 +284,7 @@ header {
 }
 
 .home #navigation li:first-of-type {
-  background: url("../images/james.jpg") no-repeat center center;
+  background: url("../images/discover.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
