@@ -1,6 +1,6 @@
 <div role="main">
 
-<h1><?php echo $title;?> <?php echo __('(%s total)', $total_results); ?></h1>
+<h1><?php print_r($title);?> <?php echo __('(%s total)', $total_results); ?></h1>
 
 <nav>
 <?php echo pagination_links(); ?>

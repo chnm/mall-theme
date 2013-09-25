@@ -1190,6 +1190,21 @@
   }
 
   /* @end */
+  /* @group ----- Items/Browse ----- */
+  .items.browse .item {
+    padding: 0 2.85714%;
+    border-color: #e7e7e7;
+    border-bottom-style: solid;
+    border-bottom-width: 0.0625em;
+    padding-bottom: 1.4375em;
+    overflow: auto;
+  }
+  .items.browse .item img {
+    float: left;
+    margin-right: 4.34783%;
+  }
+
+  /* @end */
   /* @group ----- Items/Show ----- */
   .items.show div[role=main] {
     padding-bottom: 4.5em;
@@ -1750,7 +1765,16 @@
   }
 
   /* @end */
+  /* @group ----- Items/Browse ----- */
+  .items.browse .item img {
+    margin-right: 2.85714%;
+  }
+
+  /* @end */
   /* @group ----- Items/Show ----- */
+  .items.show div[role=main] h1 {
+    margin-bottom: 3em;
+  }
   .items.show div[role=main] > div {
     padding-left: 8.4507%;
     padding-right: 8.4507%;

@@ -440,9 +440,22 @@ header {
 
 /* @end */
 
+/* @group ----- Items/Browse ----- */
+
+.items.browse .item {
+    img {
+        margin-right: gutter(6);
+    }
+}
+
+/* @end */
+
 /* @group ----- Items/Show ----- */
 
 .items.show div[role=main] {
+    h1 {
+        @include trailer(2);
+    }
 
     & > div {
         @include prefix(1);

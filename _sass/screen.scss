@@ -1175,6 +1175,22 @@ nav ul {
 
 /* @end */
 
+/* @group ----- Items/Browse ----- */
+
+.items.browse .item {
+    padding: 0 gutter(6);
+    border-color: #e7e7e7;
+    @include trailing-border(1px, 1, $base-font-size, solid);
+    overflow: auto;
+    
+    img {
+        float: left;
+        margin-right: gutter(4);
+    }
+}
+
+/* @end */
+
 /* @group ----- Items/Show ----- */
 
 .items.show div[role=main] {

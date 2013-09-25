@@ -16,7 +16,11 @@ if($itemTypeId = Zend_Controller_Front::getInstance()->getRequest()->getParam('t
         $title = ucfirst($itemTypeName) . 's';
     }
 } else {
-    $title = 'Browse Items';
+    if(isset($_GET['advanced'][0]['terms'])) {
+        $title = $_GET['advanced'][0]['terms'] . ' Items';
+    } else {
+        $title = 'Browse Items';
+    }
 }
 
 echo head(array('title'=>$title,'bodyclass' => 'items browse ' . $itemTypeName . ' ' . $extra));
@@ -30,7 +34,7 @@ echo head(array('title'=>$title,'bodyclass' => 'items browse ' . $itemTypeName .
 
     <?php include('people-image.php'); ?>
     
-<?php elseif($_GET['tags']): ?>
+<?php elseif(isset($_GET['tags'])): ?>
 
     <?php include('tags.php'); ?>
 
