@@ -10,13 +10,15 @@ echo head(array('title' => $title, 'bodyclass' => 'explorations browse'));
 
 <?php echo pagination_links(); ?>
 
+<div class="questions">
 <?php $exhibitCount = 0; ?>
 <?php foreach (loop('exhibit') as $exhibit): ?>
     <?php $exhibitCount++; ?>
-    <div class="question">
+    <div class="question" <?php echo mall_exhibit_background($exhibit); ?>>
         <p><?php echo link_to_exhibit(); ?></p>
     </div>
 <?php endforeach; ?>
+</div>
 
 <?php echo pagination_links(); ?>
 

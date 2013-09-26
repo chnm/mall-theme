@@ -121,15 +121,13 @@ div[role=main] + nav, div[role=main] h1 + nav {
   z-index: 60;
 }
 
-.image {
-  width: 48%;
-  height: 9em;
-  background-color: #ccc;
-  float: left;
-  margin: 0 0 1.5em 0;
-}
-.image:first-of-type {
-  margin-right: 4%;
+#outputs {
+  padding: 1.5em 2.85714%;
+  border-color: #e7e7e7;
+  border-top-style: solid;
+  border-top-width: 0.0625em;
+  padding-top: 1.4375em;
+  background-color: #fff;
 }
 
 /* @end */
@@ -667,12 +665,15 @@ nav ul {
 
 .explorations .question {
   background-color: #fff;
+  background-size: cover;
+  background-position: center center;
   width: 50%;
   height: 15em;
   float: left;
   border-color: #e7e7e7;
   padding: 1.5em 2.85714%;
   border-left: 1px solid #e7e7e7;
+  position: relative;
   border-top-style: solid;
   border-top-width: 0.0625em;
   padding-top: 1.4375em;
@@ -696,6 +697,52 @@ nav ul {
   line-height: 2em;
   line-height: 36px;
   float: right;
+}
+.explorations .question:nth-of-type(2n+1):after {
+  /* Black */
+  background-image: -webkit-linear-gradient(215deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+  background-image: -moz-linear-gradient(215deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+  background-image: linear-gradient(215deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+}
+.explorations .question:first-of-type:after, .explorations .question:nth-of-type(5n):after {
+  /* Red */
+  background-image: -webkit-linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(119, 24, 0, 0.61));
+  background-image: -moz-linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(119, 24, 0, 0.61));
+  background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(119, 24, 0, 0.61));
+}
+.explorations .question:nth-of-type(2n):after, .explorations .question:nth-of-type(7n):after {
+  /* Blue */
+  background-image: -webkit-linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.6));
+  background-image: -moz-linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.6));
+  background-image: linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.6));
+}
+.explorations .question:nth-of-type(4n):after {
+  /* Green */
+  background-image: -webkit-linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(18, 111, 0, 0.64));
+  background-image: -moz-linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(18, 111, 0, 0.64));
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(18, 111, 0, 0.64));
+}
+.explorations .question:nth-of-type(3n):after {
+  /* Yellow */
+  background-image: -webkit-linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
+  background-image: -moz-linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
+  background-image: linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
+}
+.explorations .question:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 0;
+}
+.explorations .question a {
+  position: relative;
+  z-index: 10;
+  text-shadow: 0 0 60px #000, 0 0 60px #000;
+  color: #fff;
 }
 
 .exploration-answer div[role=main] {
@@ -901,6 +948,13 @@ nav ul {
   display: none;
 }
 
+.people.items.browse .item {
+  border-bottom-style: solid;
+  border-bottom-width: 0em;
+  padding-bottom: 1.5em;
+  overflow: hidden;
+}
+
 .persons.images {
   text-align: center;
   padding-top: 1.5em;
@@ -915,21 +969,18 @@ nav ul {
 .persons.images .image {
   width: 85px;
   display: inline-block;
-  float: none;
   -webkit-border-radius: 55px/100px;
   -moz-border-radius: 55px/100px;
   border-radius: 55px/100px;
   overflow: hidden;
-  border: 3px solid #DABF00;
   text-align: center;
-  background: #B19335 center center no-repeat;
+  background: #e7e7e7 center center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -webkit-box-shadow: 0 2px 0px 3px #ffe26e;
-  -moz-box-shadow: 0 2px 0px 3px #ffe26e;
-  box-shadow: 0 2px 0px 3px #ffe26e;
+  height: 9em;
+  margin-bottom: 1.5em;
 }
 .persons.images .image a {
   display: block;
@@ -966,6 +1017,13 @@ nav ul {
 #people-item-type-metadata-first-name,
 #people-item-type-metadata-last-name {
   display: none;
+}
+
+.persons + nav {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 20px;
+  overflow: auto;
 }
 
 /* @end */
@@ -1212,6 +1270,10 @@ nav ul {
 
 /* @end */
 /* @group ----- Items/Browse ----- */
+#no-results {
+  padding: 0 2.85714%;
+}
+
 .items.browse .item {
   padding: 0 2.85714%;
   border-color: #e7e7e7;
@@ -1223,6 +1285,13 @@ nav ul {
 .items.browse .item img {
   float: left;
   margin-right: 4.34783%;
+}
+
+.items + nav {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 -5px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 -5px 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 -5px 20px;
+  overflow: auto;
 }
 
 /* @end */

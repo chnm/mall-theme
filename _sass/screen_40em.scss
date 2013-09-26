@@ -223,6 +223,11 @@ header {
 
 /* @group ----- Explorations ----- */
 
+.explorations .questions {
+    background-color: #e7e7e7;
+    overflow: auto;
+}
+
 .explorations .question {
     height: rhythm(10);
     padding-right: rhythm();
@@ -242,6 +247,11 @@ header {
     
     &:nth-of-type(8), &:nth-of-type(9), &:nth-of-type(10) {
         width: percentage(1/3);
+    }
+    
+    a {
+        font-size: 1.5 * $base-font-size;
+        line-height: 1.5 * $base-line-height;
     }
 }
 
@@ -350,8 +360,11 @@ header {
     }
 }
 
-.people.images .image {
-    width: 105px;
+.persons.images .image {
+    width: 95px;
+    -webkit-border-radius: 85px/130px;
+    -moz-border-radius: 85px/130px;
+    border-radius: 85px/130px;
 }
 
 /* @end */
