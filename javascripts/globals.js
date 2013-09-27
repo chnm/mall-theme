@@ -16,7 +16,7 @@
             $("#mobile-nav a").click(function(e) {
                 e.preventDefault();
                 var content = $(this).attr("href");
-                $(content).toggle();
+                $(content).slideToggle(400);
             });
         } else {
             if ($(window).width() < 640) {

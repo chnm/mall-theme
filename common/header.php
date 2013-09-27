@@ -15,7 +15,7 @@
 
     <!-- Stylesheets -->
     <?php
-    queue_css_url('http://fonts.googleapis.com/css?family=Raleway:300,600');
+    queue_css_url('http://fonts.googleapis.com/css?family=Raleway:400,600');
     queue_css_file('style');
 
     echo head_css();

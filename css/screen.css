@@ -152,7 +152,7 @@ header {
   display: inline-block;
 }
 #site-title img {
-  height: 6em;
+  height: 3.75em;
   width: auto;
 }
 
@@ -442,7 +442,7 @@ nav ul {
 }
 #navigation h1 {
   margin: 0;
-  border-color: rgba(0, 0, 0, 0.03);
+  border-color: #e7e7e7;
   padding: 0.375em 1.40845% 0 1.40845%;
   font-size: 1.25em;
   line-height: 1.2em;
@@ -463,13 +463,18 @@ nav ul {
 #navigation li {
   display: block;
   padding: 0.375em 1.40845% 0 1.40845%;
-  border-color: rgba(0, 0, 0, 0.03);
+  border-color: #e7e7e7;
   border-bottom-style: solid;
   border-bottom-width: 0.0625em;
   padding-bottom: 0.3125em;
 }
 #navigation li h2 {
   margin: 0;
+}
+#navigation li a {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .home #navigation {
@@ -573,8 +578,8 @@ nav ul {
   border-color: #e7e7e7;
 }
 .pagination .page-input {
-  left: 10%;
-  width: 80%;
+  left: 20%;
+  width: 60%;
 }
 .pagination .page-input form {
   padding: 0.75em 0;
@@ -586,12 +591,12 @@ nav ul {
   text-align: center;
 }
 .pagination .pagination_previous {
-  width: 10%;
-  left: 3%;
+  width: 20%;
+  left: 0;
 }
 .pagination .pagination_next {
-  left: 87%;
-  width: 10%;
+  left: 80%;
+  width: 20%;
 }
 .pagination .pagination_next a {
   background-color: #e7e7e7;
@@ -904,22 +909,27 @@ nav ul {
   overflow: auto;
 }
 .people .pagination {
-  width: 75%;
+  width: 100%;
   background-color: #fff;
   margin: 0;
-  overflow: auto;
   padding-left: 2.85714%;
   border-color: #e7e7e7;
   float: left;
+  border-bottom-style: solid;
+  border-bottom-width: 0.0625em;
+  padding-bottom: -0.0625em;
 }
 .people .pagination + ul {
   margin: 0;
   font-size: 0;
   float: right;
-  width: 25%;
+  width: 100%;
   background-color: #fff;
   position: relative;
   border-left: 1px solid #e7e7e7;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 5px 10px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 5px 10px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 5px 10px;
 }
 .people .pagination + ul li {
   width: 50%;
@@ -957,10 +967,10 @@ nav ul {
 
 .persons.images {
   text-align: center;
-  padding-top: 1.5em;
+  padding-top: 4.5em;
 }
 .persons.images .person {
-  width: 25%;
+  width: 50%;
   display: inline-block;
   vertical-align: top;
   margin: 2%;
@@ -1313,7 +1323,7 @@ nav ul {
   padding: 0;
 }
 .items.show div[role=main] > aside img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   vertical-align: bottom;
 }
