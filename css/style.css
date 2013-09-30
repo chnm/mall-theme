@@ -277,7 +277,7 @@
   }
 
   .home #navigation li:nth-of-type(4) {
-    background: url("../images/events.png") no-repeat center;
+    background: url("../images/events.jpg") no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -301,7 +301,7 @@
   }
 
   .home #navigation li:first-of-type {
-    background: url("../images/map.jpg") no-repeat center center;
+    background: url("../images/map.png") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
