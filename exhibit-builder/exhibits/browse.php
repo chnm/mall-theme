@@ -1,4 +1,5 @@
 <?php
+queue_js_file('jquery.masonry');
 $title = __('Discover');
 echo head(array('title' => $title, 'bodyclass' => 'explorations browse'));
 ?>
@@ -14,7 +15,7 @@ echo head(array('title' => $title, 'bodyclass' => 'explorations browse'));
 <?php $exhibitCount = 0; ?>
 <?php foreach (loop('exhibit') as $exhibit): ?>
     <?php $exhibitCount++; ?>
-    <div class="question" <?php echo mall_exhibit_background($exhibit); ?>>
+    <div class="question color-<?php echo rand(1,5); ?>" <?php echo mall_exhibit_background($exhibit); ?>>
         <p><?php echo link_to_exhibit(); ?></p>
     </div>
 <?php endforeach; ?>
@@ -27,5 +28,15 @@ echo head(array('title' => $title, 'bodyclass' => 'explorations browse'));
 <?php endif; ?>
 
 </div>
+
+<script>
+var $container = jQuery('.questions');
+// initialize
+$container.masonry({
+  itemSelector: '.question',
+  gutter: 20,
+  isFitWidth: true
+});
+</script>
 
 <?php echo foot(); ?>

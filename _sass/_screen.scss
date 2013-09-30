@@ -605,9 +605,18 @@ nav ul {
 
 /* @group ----- Discover ----- */
 
+.explorations h1 + .pagination {
+    @include box-shadow(rgba(0,0,0,.1) 0 5px 10px);
+}
+
 .explorations div[role=main], 
 .exploration-answer div[role=main]{
     float: left;
+    width: 100%;
+}
+
+.explorations div[role=main] {
+    background-color: #e7e7e7;
 }
 
 .explorations div[role=main] h1:first-of-type,
@@ -617,78 +626,64 @@ nav ul {
 }
 
 .questions { 
-    width: 100%;
     clear: both;
+    margin: 0 auto;
 }
 
 .explorations .question {
+    width: 100%;
+    @include box-shadow(1px 1px 0 rgba(0,0,0,.15));
     background-color: #fff;
     background-size: cover;
     background-position: center center;
-    width: 50%;
-    height: rhythm(10);
     float: left;
     border-color: #e7e7e7;
-    padding: rhythm() gutter(6);
     border-left: 1px solid #e7e7e7;
     position: relative;
-    @include leading-border(1px, 1);
+    padding: 0 20px;
+    margin-bottom: 0;
 
-    p { margin: 0; }
-    
-    &:first-of-type {
-        width: 100%;
-        @include adjust-font-size-to(24px);
-        height: 10em;
-    }
-    
-    &:nth-of-type(6), &:nth-of-type(8) {
-        width: percentage(1/3);
-    }
-    
-    &:nth-of-type(7) {
-        height: 20em;
-        width: percentage(2/3);
-        @include adjust-font-size-to(24px);
-        line-height: 36px;
-        float: right;
+    p, a { 
+        margin: 20px 0; 
+        display: block;
+        font-size: 1.5 * $base-font-size;
+        line-height: 1.5 * $base-line-height;
     }
 
-
-    &:nth-of-type(2n+1):after {
+    &.color-1:after {
         /* Black */
-        background-image: -webkit-linear-gradient(215deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
-        background-image: -moz-linear-gradient(215deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
-        background-image: linear-gradient(215deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+        background-image: -webkit-linear-gradient(215deg, rgba(#000, 0.9), rgba(255, 255, 255, 0.3));
+        background-image: -moz-linear-gradient(215deg, rgba(#000, 0.9), rgba(255, 255, 255, 0.3));
+        background-image: linear-gradient(215deg, rgba(#000, 0.9), rgba(255, 255, 255, 0.3));
     }
 
 
-    &:first-of-type:after, &:nth-of-type(5n):after {
+    &.color-2:after {
         /* Red */
-        background-image: -webkit-linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(119, 24, 0, 0.61));
-        background-image: -moz-linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(119, 24, 0, 0.61));
-        background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(119, 24, 0, 0.61));
+        background-image: -webkit-linear-gradient(15deg, rgba($red, 0.8), rgba(darken($red, 20), .8));
+        background-image: -moz-linear-gradient(15deg, rgba($red, 0.8), rgba(darken($red, 20), .8));
+        background-image: linear-gradient(15deg, rgba($red, 0.8), rgba(darken($red, 20), .8));
     }
     
-    &:nth-of-type(2n):after, &:nth-of-type(7n):after {
+    &.color-3:after {
         /* Blue */
-        background-image: -webkit-linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.6));
-        background-image: -moz-linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.6));
-        background-image: linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.6));
+        background-image: -webkit-linear-gradient(255deg, rgba($blue, 0.8), rgba(darken($blue, 20), 0.6));
+        background-image: -moz-linear-gradient(255deg, rgba($blue, 0.8), rgba(darken($blue, 20), 0.6));
+        background-image: linear-gradient(255deg, rgba($blue, 0.8), rgba(darken($blue, 20), 0.6));
     }
     
-    &:nth-of-type(4n):after {
+    &.color-4:after {
         /* Green */
-        background-image: -webkit-linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(18, 111, 0, 0.64));
-        background-image: -moz-linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(18, 111, 0, 0.64));
-        background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(18, 111, 0, 0.64));
+        background-image: -webkit-linear-gradient(135deg, rgba($green, 0.8), rgba(darken($green, 20), 0.64));
+        background-image: -moz-linear-gradient(135deg, rgba($green, 0.8), rgba(darken($green, 20), 0.64));
+        background-image: linear-gradient(135deg, rgba($green, 0.8), rgba(darken($green, 20), 0.64));
     }
 
-    &:nth-of-type(3n):after {
+    &.color-5:after {
         /* Yellow */
-        background-image: -webkit-linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
-        background-image: -moz-linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
-        background-image: linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
+        background-image: -webkit-linear-gradient(195deg, rgba($yellow, 0.8), rgba(darken($yellow, 20), 0.4));
+        background-image: -moz-linear-gradient(195deg, rgba($yellow, 0.8), rgba(darken($yellow, 20), 0.4));
+        background-image: linear-gradient(195deg, rgba($yellow, 0.8), rgba(darken($yellow, 20), 0.4));
     }
     
 
@@ -707,9 +702,14 @@ nav ul {
     a {
         position: relative;
         z-index: 10;
-        text-shadow: 0 0 60px #000, 0 0 60px #000;
         color: #fff;
     }
+    
+    &.color-1 a { text-shadow: 0 0 60px #000, 0 0 60px #000; }
+    &.color-2 a { text-shadow: 0 0 60px $red; }
+    &.color-3 a { text-shadow: 0 0 60px $blue; }
+    &.color-4 a { text-shadow: 0 0 60px darken($green,30); }
+    &.color-5 a { text-shadow: 0 0 60px saturate($yellow, 30); }
 }
 
 .exploration-answer div[role=main] {

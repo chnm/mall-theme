@@ -223,36 +223,13 @@ header {
 
 /* @group ----- Explorations ----- */
 
-.explorations .questions {
-    background-color: #e7e7e7;
-    overflow: auto;
+.explorations h1 + .pagination {
+    @include trailer();
 }
 
 .explorations .question {
-    height: rhythm(10);
-    padding-right: rhythm();
-    
-    &:first-of-type, &:nth-of-type(2), &:nth-of-type(3), &:nth-of-type(4),
-    &:nth-of-type(6), &:nth-of-type(7) {
-        width: 25%;
-        @include adjust-font-size-to(16px);
-        height: rhythm(10);
-    }
-    
-    &:nth-of-type(5) {
-        width: 50%;
-        @include adjust-font-size-to(24px);
-        height: 10em;
-    }
-    
-    &:nth-of-type(8), &:nth-of-type(9), &:nth-of-type(10) {
-        width: percentage(1/3);
-    }
-    
-    a {
-        font-size: 1.5 * $base-font-size;
-        line-height: 1.5 * $base-line-height;
-    }
+    width: 240px;
+    margin-bottom: 20px;
 }
 
 .answer {
