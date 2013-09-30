@@ -1800,7 +1800,7 @@
 
   /* @end */
   /* @group ----- Events ----- */
-  .items.event h2 {
+  .items.event .items h2 {
     font-size: 1.5em;
     line-height: 2em;
     width: 15.49296%;
@@ -1809,6 +1809,12 @@
     display: inline;
     text-align: center;
     padding: 10px;
+    font-size: 24px;
+    line-height: 36px;
+    padding-top: 1.5em;
+  }
+  .items.event .items .period:nth-of-type(2n) h2 {
+    background-color: transparent;
   }
   .items.event .image {
     margin: 1.5em 2.85714% 1.5em 0;

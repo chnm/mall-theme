@@ -376,11 +376,18 @@ header {
 /* @group ----- Events ----- */
 
 .items.event {
-    h2 {
+    .items h2 {
         @include adjust-font-size-to(24px);
         @include span-columns(2 alpha);
         text-align: center;
         padding: 10px;
+        font-size: 1.5 * $base-font-size;
+        line-height: 1.5 * $base-line-height;
+        @include padding-leader();
+    }
+    
+    .items .period:nth-of-type(2n) h2 {
+        background-color: transparent;
     }
     
     .image {
