@@ -98,8 +98,12 @@
     line-height: 48px;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2 {
     font-weight: 400;
+  }
+
+  h3, h4, h5, h6 {
+    font-weight: 700;
   }
 
   input {
@@ -134,8 +138,10 @@
   div[role=main] > h1:first-of-type {
     background-color: #2b89d9;
     color: #fff;
-    padding: 5% 2.85714%;
+    padding: 0.375em 2.85714%;
     margin: 0;
+    font-size: 24px;
+    line-height: 36px;
   }
   div[role=main] + nav, div[role=main] h1 + nav {
     -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 5px 10px;
@@ -165,43 +171,49 @@
   }
 
   #site-title {
-    width: 100%;
+    float: left;
     text-transform: uppercase;
-    padding: 0.75em 5%;
+    padding: 0 2.85714%;
     margin: 0;
     font-size: 1.125em;
     line-height: 1.33333em;
   }
   #site-title a {
-    padding: 0.75em 0;
-    display: inline-block;
+    padding: 0.5625em 0;
+    display: block;
   }
   #site-title img {
-    height: 3.75em;
+    height: 2.25em;
     width: auto;
+    vertical-align: bottom;
   }
 
   #mobile-nav {
-    right: 2.85714%;
-    width: 100%;
-    height: 2.25em;
-    background-color: #fff;
-    text-align: center;
-    display: table;
-    -webkit-box-shadow: rgba(0, 0, 0, 0.08) 0 -10px 40px 0px;
-    -moz-box-shadow: rgba(0, 0, 0, 0.08) 0 -10px 40px 0px;
-    box-shadow: rgba(0, 0, 0, 0.08) 0 -10px 40px 0px;
+    height: 3.75em;
+    text-align: right;
+    display: block;
+    line-height: 4.21875em;
   }
   #mobile-nav a {
-    display: table-cell;
+    display: inline-block;
     font-size: 24px;
-    width: 50%;
-    vertical-align: middle;
+    background-color: #21c900;
+    color: #fff;
+    height: 1.5em;
+    padding: 0 6px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    border-radius: 40px;
+    margin-right: 2.85714%;
+    line-height: 1.6875em;
   }
   #mobile-nav a:last-of-type {
     margin-bottom: 0;
   }
   #search-form {
+    display: none;
     padding: 0.75em 2%;
     border-color: #e7e7e7;
     border-top-style: solid;
@@ -230,7 +242,7 @@
   #search-form input[type=submit] {
     width: 35%;
     background-color: #21c900;
-    color: #e7e7e7;
+    color: #fff;
     border: 0;
   }
 
@@ -263,6 +275,27 @@
   #intro .button {
     background-color: #2b89d9;
     display: inline-block;
+  }
+
+  .home #site-title {
+    width: 100%;
+    padding: 0.75em 5%;
+    margin: 0;
+    font-size: 1.125em;
+    line-height: 1.33333em;
+  }
+  .home #site-title a {
+    padding: 0.75em 0;
+    display: inline-block;
+  }
+  .home #site-title img {
+    height: 3.75em;
+    width: auto;
+  }
+
+  .home #navigation,
+  .home #search-form {
+    display: block;
   }
 
   .home #navigation li:after {
@@ -458,17 +491,10 @@
     border-top-width: 0.0625em;
     padding-top: -0.0625em;
     border-color: #e7e7e7;
+    display: none;
   }
   #navigation h1 {
-    margin: 0;
-    border-color: #e7e7e7;
-    padding: 0.375em 1.40845% 0 1.40845%;
-    font-size: 1.25em;
-    line-height: 1.2em;
-    line-height: 1.5em;
-    border-bottom-style: solid;
-    border-bottom-width: 0.0625em;
-    padding-bottom: 0.3125em;
+    display: none;
   }
   #navigation h2 {
     font-size: 1em;
@@ -518,6 +544,7 @@
     padding: 0.75em 1.40845%;
     margin: 0;
     font-size: 18px;
+    line-height: 24px;
     display: block;
     background-color: #db6c36;
     color: #fff;
@@ -963,7 +990,7 @@
 
   .persons.images {
     text-align: center;
-    padding-top: 4.5em;
+    padding-top: 1.5em;
   }
   .persons.images .person {
     width: 50%;
@@ -1396,10 +1423,6 @@
 }
 
 @media screen and (min-width: 15em) {
-  #site-title img {
-    height: 4.5em;
-  }
-
   .people .pagination {
     width: 70%;
     border-bottom-style: solid;
@@ -1469,7 +1492,7 @@
   #site-title {
     font-size: 0.875em;
     line-height: 1.71429em;
-    float: left;
+    float: none;
   }
   #site-title img {
     height: 7.5em;

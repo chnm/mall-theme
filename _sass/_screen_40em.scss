@@ -40,8 +40,8 @@ header {
 
 #site-title {
     @include adjust-font-size-to(14px);
-    float: left;
-    
+    float: none;
+
     img {
         height: rhythm(5);
         width: auto;

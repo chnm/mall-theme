@@ -44,7 +44,9 @@ h1 {
     line-height: 2 * $base-line-height;
 }
 
-h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+h1, h2 { font-weight: 400; }
+
+h3, h4, h5, h6 { font-weight: 700; }
 
 input {
     font-family: "Raleway", sans-serif;
@@ -76,8 +78,10 @@ div[role=main] {
     & > h1:first-of-type {
         background-color: $blue;
         color: #fff;
-        padding: 5% gutter(6);
+        padding: rhythm(.25) gutter(6);
         margin: 0;
+        font-size: 1.5 * $base-font-size;
+        line-height: 1.5 * $base-line-height;
     }
     
     & + nav, h1 + nav {
@@ -108,37 +112,40 @@ header {
 }
 
 #site-title {
-    width: 100%;
+    float: left;
     text-transform: uppercase;
-    padding: rhythm(.5) 5%;
+    padding: 0 gutter(6);
     margin: 0;
     @include adjust-font-size-to(18px);
     
     a {
-        padding: rhythm(.5) 0;
-        display: inline-block;
+        padding: rhythm(.375) 0;
+        display: block;
     }
     
     img {
-        height: rhythm(2.5);
+        height: rhythm(1.5);
         width: auto;
+        vertical-align: bottom;
     }
 }
 
 #mobile-nav { 
-    right: gutter(6);
-    width: 100%;
-    height: rhythm(1.5);
-    background-color: #fff;
-    text-align: center;
-    display: table;
-    @include box-shadow(rgba(0, 0, 0, 0.08) 0 -10px 40px 0px);
+    height: rhythm(2.5);
+    text-align: right;
+    display: block;
+    line-height: rhythm(2.8125);
     
     a { 
-        display: table-cell; 
+        display: inline-block; 
         font-size: 24px;
-        width: 50%;
-        vertical-align: middle;
+        background-color: $green;
+        color: #fff;
+        height: rhythm(1);
+        padding: 0 6px;
+        @include border-radius(40px);
+        margin-right: gutter(6);
+        line-height: rhythm(1.125);
     }
     
     a:last-of-type { margin-bottom: 0; }
@@ -147,6 +154,7 @@ header {
 }
 
 #search-form {
+    display: none;
     padding: rhythm(.5) 2%;
     border-color: #e7e7e7;
     @include leading-border(1px, .5, $base-font-size, solid);
@@ -171,7 +179,7 @@ header {
     input[type=submit] {
         width: 35%;
         background-color: $green;
-        color: #e7e7e7;
+        color: #fff;
         border: 0;
     }
 }
@@ -205,6 +213,28 @@ header {
 #intro .button {
     background-color: $blue;
     display: inline-block;
+}
+
+.home #site-title {
+    width: 100%;
+    padding: rhythm(.5) 5%;
+    margin: 0;
+    @include adjust-font-size-to(18px);
+    
+    a {
+        padding: rhythm(.5) 0;
+        display: inline-block;
+    }
+    
+    img {
+        height: rhythm(2.5);
+        width: auto;
+    }
+}
+
+.home #navigation,
+.home #search-form {
+    display: block;
 }
 
 .home #navigation li:after {
@@ -393,14 +423,10 @@ nav ul {
     background-color: #fff;
     @include leading-border(1px, 0, $base-font-size, solid);
     border-color: #e7e7e7;
+    display: none;
     
     h1 { 
-        margin: 0;
-        border-color: #e7e7e7;
-        padding: rhythm(.25) gutter() 0 gutter();
-        @include adjust-font-size-to(20px); 
-        @include adjust-leading-to(1, $base-font-size);
-        @include trailing-border(1px, .25, $base-font-size, solid);
+        display: none;
     }
     
     h2 { @include adjust-font-size-to(16px); }
@@ -450,6 +476,7 @@ nav ul {
         padding: rhythm(.5) gutter(); 
         margin: 0;
         font-size: 18px;
+        line-height: $base-line-height;
         display: block;
         background-color: $red;
         color: #fff;
@@ -927,7 +954,7 @@ nav ul {
 
 .persons.images { 
     text-align: center;
-    @include padding-leader(3);
+    @include padding-leader();
 
     .person { 
         width: percentage(1/2); 

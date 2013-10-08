@@ -10,6 +10,11 @@
             mobile_nav.prepend(search_icon);
             mobile_nav.prepend(menu_icon);
             
+            if ($('html').hasClass('touch')) {
+                var top_y = $('div[role="main"] > h1').first().position().top;
+                $.scrollTo(top_y);
+            }
+            
             $("#search-form").hide();
             $("#navigation").hide();
             

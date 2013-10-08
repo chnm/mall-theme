@@ -1,7 +1,3 @@
-#site-title img {
-    height: rhythm(3);
-}
-
 .people .pagination {
     width: 70%;
     @include trailing-border(0px, 0, $base-font-size, solid);

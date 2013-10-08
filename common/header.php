@@ -23,7 +23,7 @@
 
     <!-- JavaScripts -->
     <?php queue_js_file('vendor/selectivizr', 'javascripts', array('conditional' => '(gte IE 6)&(lte IE 8)')); ?>
-    <?php queue_js_file(array('vendor/modernizr', 'vendor/respond', 'globals', 'jquery.scrollTo.min','jquery.localScroll.min', 'events')); ?>
+    <?php queue_js_file(array('mall.modernizr.min', 'vendor/respond', 'jquery.scrollTo.min','jquery.localScroll.min', 'globals', 'events')); ?>
     <?php echo head_js(); ?>
 
 </head>
