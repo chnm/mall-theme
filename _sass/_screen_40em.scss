@@ -92,8 +92,19 @@ header {
     @include trailing-border(0px, 0, $base-font-size, solid);
 }
 
+.home #site-title {
+    @include adjust-font-size-to(14px);
+    float: none;
+    padding: rhythm(2) 0;
+
+    img {
+        height: rhythm(5);
+        width: auto;
+    }
+}
+
 .home header {
-    padding: rhythm(1) 0 0;
+    padding:0;
 }
 
 .home .news-item {
