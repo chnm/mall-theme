@@ -425,10 +425,6 @@ nav ul {
     border-color: #e7e7e7;
     display: none;
     
-    h1 { 
-        display: none;
-    }
-    
     h2 { @include adjust-font-size-to(16px); }
     
     ul { 

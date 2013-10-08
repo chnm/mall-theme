@@ -40,7 +40,9 @@
         <?php echo search_form(); ?>
         
         <nav id="navigation">
+            <?php if(@$bodyclass == 'home'): ?>
             <h1>Start exploring the history of the National Mall &hellip;</h1>
+            <?php endif; ?>
             <?php echo public_nav_main(); ?>
         </nav>    
     </header>
