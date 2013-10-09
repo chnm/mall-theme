@@ -495,3 +495,16 @@ header {
 }
 
 /* @end */
+
+/* @group ----- Themes ----- */
+
+.search-result.item .description {
+    width: auto;
+    float: none;
+}
+
+.search-result .image {
+    @include trailer();
+}
+
+/* @end */

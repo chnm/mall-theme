@@ -1036,7 +1036,6 @@ nav ul {
         .period:nth-of-type(2n) h2 { background-color: #e7e7e7; }
         
         h2 {
-            
             @include adjust-font-size-to($base-font-size);
             margin-top: 0;
             padding: rhythm(.5) gutter(6);
@@ -1256,11 +1255,17 @@ nav ul {
 
 .search-result {
     border-color: #e7e7e7;
-    padding: rhythm(.5) gutter(6);
-    @include trailing-border(1px, .5, $base-font-size, solid);
+    padding: 0 gutter(6);
+    @include trailing-border(1px, 1, $base-font-size, solid);
+    @include trailer();
+    clear: both;
     
     &:last-of-type {
         border-bottom: 0;
+    }
+    
+    .description {
+        padding: 0;
     }
 }
 
@@ -1268,6 +1273,16 @@ nav ul {
     @include box-shadow(rgba(0,0,0,.04) 0 0 10px 10px);
     z-index: 50;
     border: 0;
+}
+
+.search-result .image {
+    display: block;
+    width: 100px;
+    height: 100px;
+    float: left;
+    background-color: #ccc;
+    margin: 0 gutter(6) rhythm(.5) 0;
+    clear: both;
 }
 
 /* @end */
