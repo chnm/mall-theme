@@ -1,3 +1,13 @@
+<?php queue_js_url('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-525629892de15af0'); ?>
+<?php queue_js_string("
+  addthis.layers({
+    'theme' : 'transparent',
+    'share' : {
+      'position' : 'left',
+      'numPreferredServices' : 5
+    }   
+  });
+"); ?>
 <?php /* Load all exhibit builder child page layouts */ ?>
 <?php set_exhibit_pages_for_loop_by_exhibit(); ?>
 <?php foreach (loop('exhibit_page') as $exhibitPage): ?>
