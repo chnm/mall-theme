@@ -1,17 +1,17 @@
 @font-face {
-	font-family: 'entypo';
-	src:url('fonts/entypo.eot');
-	src:url('fonts/entypo.eot?#iefix') format('embedded-opentype'),
-		url('fonts/entypo.woff') format('woff'),
-		url('fonts/entypo.ttf') format('truetype'),
-		url('fonts/entypo.svg#entypo') format('svg');
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
 /* Use the following CSS code if you want to use data attributes for inserting your icons */
 [data-icon]:before {
-	font-family: 'entypo';
+	font-family: 'icomoon';
 	content: attr(data-icon);
 	speak: none;
 	font-weight: normal;
@@ -19,6 +19,7 @@
 	text-transform: none;
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 /* Use the following CSS code if you want to have a class per icon */
@@ -27,8 +28,8 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-search, .icon-facebook, .icon-twitter, .icon-export, .icon-house, .icon-list, .icon-arrow-left, .icon-arrow-down, .icon-arrow-up, .icon-arrow-right, .icon-pinterest, .icon-googleplus, .icon-rss, .icon-reply, .icon-user {
-	font-family: 'entypo';
+.icon-search, .icon-facebook, .icon-twitter, .icon-export, .icon-house, .icon-list, .icon-arrow-left, .icon-arrow-down, .icon-arrow-up, .icon-arrow-right, .icon-pinterest, .icon-googleplus, .icon-rss, .icon-reply, .icon-user, .icon-map, .icon-cycle, .icon-reload, .icon-location, .icon-equalizer {
+	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -81,4 +82,19 @@ you can use the generic selector below, but it's slower:
 }
 .icon-user:before {
 	content: "\e00e";
+}
+.icon-map:before {
+	content: "\e00f";
+}
+.icon-cycle:before {
+	content: "\e010";
+}
+.icon-reload:before {
+	content: "\e011";
+}
+.icon-location:before {
+	content: "\e012";
+}
+.icon-equalizer:before {
+	content: "\e013";
 }

@@ -508,3 +508,31 @@ header {
 }
 
 /* @end */
+
+/* @group ----- Map ----- */
+
+body {
+    height: auto;
+}
+
+.map div[role="main"] h1:first-of-type {
+    padding: rhythm(.25) 0;
+}
+
+.map #map {
+    min-height: rhythm(40);
+}
+
+#filters {
+    height: auto;
+}
+
+#filters div label {
+    width: 48%;
+    float: left;
+    
+    &:nth-of-type(2n) {
+        margin-left: 2%;
+    }
+}
+/* @end */

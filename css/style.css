@@ -1,15 +1,15 @@
 @import url(normalize.css);
 /* ---- Typography ---- */
 @font-face {
-  font-family: 'entypo';
-  src: url("../fonts/entypo.eot");
-  src: url("../fonts/entypo.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo.woff") format("woff"), url("../fonts/entypo.ttf") format("truetype"), url("../fonts/entypo.svg#entypo") format("svg");
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 [data-icon]:before {
-  font-family: 'entypo';
+  font-family: 'icomoon';
   content: attr(data-icon);
   speak: none;
   font-weight: normal;
@@ -26,15 +26,15 @@
   @import url(normalize.css);
   /* ---- Typography ---- */
   @font-face {
-    font-family: 'entypo';
-    src: url("../fonts/entypo.eot");
-    src: url("../fonts/entypo.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo.woff") format("woff"), url("../fonts/entypo.ttf") format("truetype"), url("../fonts/entypo.svg#entypo") format("svg");
+    font-family: 'icomoon';
+    src: url("../fonts/icomoon.eot");
+    src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
     font-weight: normal;
     font-style: normal;
 }
 
   [data-icon]:before {
-    font-family: 'entypo';
+    font-family: 'icomoon';
     content: attr(data-icon);
     speak: none;
     font-weight: normal;
@@ -1974,6 +1974,32 @@
 
   .search-result .image {
     margin-bottom: 1.5em;
+  }
+
+  /* @end */
+  /* @group ----- Map ----- */
+  body {
+    height: auto;
+  }
+
+  .map div[role="main"] h1:first-of-type {
+    padding: 0.375em 0;
+  }
+
+  .map #map {
+    min-height: 60em;
+  }
+
+  #filters {
+    height: auto;
+  }
+
+  #filters div label {
+    width: 48%;
+    float: left;
+  }
+  #filters div label:nth-of-type(2n) {
+    margin-left: 2%;
   }
 
   /* @end */

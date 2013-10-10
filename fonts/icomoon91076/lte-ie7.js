@@ -3,7 +3,7 @@
 window.onload = function() {
 	function addIcon(el, entity) {
 		var html = el.innerHTML;
-		el.innerHTML = '<span style="font-family: \'entypo\'">' + entity + '</span>' + html;
+		el.innerHTML = '<span style="font-family: \'icomoon\'">' + entity + '</span>' + html;
 	}
 	var icons = {
 			'icon-search' : '&#xe000;',
@@ -20,12 +20,20 @@ window.onload = function() {
 			'icon-googleplus' : '&#xe00b;',
 			'icon-rss' : '&#xe00c;',
 			'icon-reply' : '&#xe00d;',
-			'icon-user' : '&#xe00e;'
+			'icon-user' : '&#xe00e;',
+			'icon-map' : '&#xe00f;',
+			'icon-cycle' : '&#xe010;',
+			'icon-reload' : '&#xe011;',
+			'icon-location' : '&#xe012;',
+			'icon-equalizer' : '&#xe013;'
 		},
 		els = document.getElementsByTagName('*'),
-		i, attr, html, c, el;
-	for (i = 0; i < els.length; i += 1) {
+		i, attr, c, el;
+	for (i = 0; ; i += 1) {
 		el = els[i];
+		if(!el) {
+			break;
+		}
 		attr = el.getAttribute('data-icon');
 		if (attr) {
 			addIcon(el, attr);
