@@ -37,12 +37,19 @@
                 offset: -48
             });
             
+            $('html').click(function () {
+                $('#period-nav').removeClass('on');
+                $('#period-nav').addClass('off');
+            });
+            
             $('#period-nav .sub-menu').prepend('<li class="current">'+$('#period-nav li:first-of-type').text()+'</li>');
-            $('#period-nav a').click(function() {
+            $('#period-nav a').click(function(e) {
+                e.stopPropagation();
                 $('.current').text($(this).text());
             });
             
-            $('#period-nav .current').click(function() {
+            $('#period-nav .current').click(function(e) {
+                e.stopPropagation();
                 $('#period-nav').toggleClass('on');
                 $('#period-nav').toggleClass('off');
             });
