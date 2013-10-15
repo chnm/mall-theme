@@ -85,6 +85,26 @@ header {
 
 /* @end */
 
+/* @group ----- Footer ----- */
+
+footer {
+    @include padding-leader(2);
+}
+
+footer .copy {
+    @include span-columns(6 alpha);
+}
+
+footer .logos {
+    @include span-columns(6 omega);
+}
+
+footer img {
+    margin: 0 0 rhythm() gutter(6);
+}
+
+/* @end */
+
 /* @group ----- Home ----- */
 
 #intro {

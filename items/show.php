@@ -50,6 +50,21 @@
     <h3>Creator</h3>
     <?php echo $creator; ?>
     <?php endif; ?>    
+
+    <?php if ($date = metadata($item, array('Dublin Core', 'Date'))): ?>
+    <h3>Date</h3>
+    <?php echo $date; ?>
+    <?php endif; ?>    
+    
+    <?php if ($birth = metadata($item, array('Item Type Metadata', 'Birth Date'))): ?>
+    <h3>Birth Date</h3>
+    <?php echo $birth; ?>
+    <?php endif; ?>    
+
+    <?php if ($death = metadata($item, array('Item Type Metadata', 'Death Date'))): ?>
+    <h3>Death Date</h3>
+    <?php echo $death; ?>
+    <?php endif; ?>    
     
     <?php if ($coverage = metadata($item, array('Dublin Core', 'Coverage'))): ?>
     <h3>Coverage</h3>

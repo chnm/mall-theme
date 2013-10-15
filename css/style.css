@@ -134,6 +134,9 @@
     clear: both;
     background-color: #fff;
     float: left;
+    -webkit-box-shadow: #e7e7e7 0 10px 20px 0px;
+    -moz-box-shadow: #e7e7e7 0 10px 20px 0px;
+    box-shadow: #e7e7e7 0 10px 20px 0px;
   }
   div[role=main] > h1:first-of-type {
     background-color: #2b89d9;
@@ -244,6 +247,25 @@
     background-color: #21c900;
     color: #fff;
     border: 0;
+  }
+
+  /* @end */
+  /* @group ----- Footer ----- */
+  footer {
+    padding: 1.5em 2.85714% 6em;
+    clear: both;
+    font-size: 12px;
+  }
+  footer img {
+    height: 4.5em;
+    width: auto;
+    margin: 1.5em 2.85714% 0 0;
+  }
+  footer a {
+    opacity: .5;
+  }
+  footer a:hover {
+    opacity: 1;
   }
 
   /* @end */
@@ -647,7 +669,7 @@
 
   .by-image a:before {
     content: "\e00e";
-    font-family: 'entypo';
+    font-family: 'icomoon';
     speak: none;
     font-weight: normal;
     font-variant: normal;
@@ -877,7 +899,7 @@
     padding-bottom: 1.4375em;
   }
   .learn-more .other-questions > p a:before {
-    font-family: 'entypo';
+    font-family: 'icomoon';
     speak: none;
     font-weight: normal;
     font-variant: normal;
@@ -1544,6 +1566,31 @@
     line-height: 24px;
     float: none;
     display: inline-block;
+  }
+
+  /* @end */
+  /* @group ----- Footer ----- */
+  footer {
+    padding-top: 3em;
+  }
+
+  footer .copy {
+    width: 49.29577%;
+    float: left;
+    margin-right: 1.40845%;
+    display: inline;
+  }
+
+  footer .logos {
+    width: 49.29577%;
+    float: right;
+    margin-right: 0;
+    *margin-left: -1em;
+    display: inline;
+  }
+
+  footer img {
+    margin: 0 0 1.5em 2.85714%;
   }
 
   /* @end */
