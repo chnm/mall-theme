@@ -16,7 +16,12 @@ echo head(array('title' => $title, 'bodyclass' => 'explorations browse'));
 <?php foreach (loop('exhibit') as $exhibit): ?>
     <?php $exhibitCount++; ?>
     <div class="question color-<?php echo rand(1,5); ?>" <?php echo mall_exhibit_background($exhibit); ?>>
+        <?php $exhibitPages = get_records('ExhibitPage', array('exhibit' => $exhibit->id)); ?>
+        <?php if (count($exhibitPages) > 0): ?>
+        <p><?php echo link_to($exhibitPages[0], 'show', $exhibit->title); ?></p>
+        <?php else: ?>
         <p><?php echo link_to_exhibit(); ?></p>
+        <?php endif; ?>
     </div>
 <?php endforeach; ?>
 </div>

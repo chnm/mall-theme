@@ -674,6 +674,10 @@ nav ul {
     color: #fff;
 }
 
+.exhibit-geolocation-map {
+    height: rhythm(10) !important;
+}
+
 .questions { 
     clear: both;
     margin: 0 auto;
@@ -767,6 +771,10 @@ nav ul {
     h2 {
         padding: 0 gutter(6);
     }
+}
+
+.exhibits.show .content {
+    padding: 0 gutter(6);
 }
 
 .answer {
@@ -905,6 +913,66 @@ nav ul {
 
 .image-text-group {
     overflow: visible;
+}
+
+/* @end */
+
+/* @group ----- People ----- */
+
+.layout-scavenger-hunt {
+    position: relative;
+    background-color: $yellow;
+    overflow: auto;
+
+    .found-actions {
+        display: none;
+    }
+    
+    img {
+        max-width: 100%;
+        vertical-align: bottom;
+        cursor: pointer;
+    }
+    
+    h3 {
+        margin: 0;
+        padding: rhythm(.5) 0;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.75 * $base-font-size;
+        cursor: pointer;
+    }
+    
+    .found-actions a {
+        display: block;
+        float: left;
+        width: 50%;
+        text-align: center;
+        color: #fff;
+        border-color: rgba(255,255,255,.3);
+        @include leading-border(1px, .5, $base-font-size, solid);
+        @include padding-trailer(.5);
+    }
+    
+    .transcript {
+        float: left;
+        width: 100%;
+        border-color: rgba(255,255,255,.3);
+        padding: 0 gutter(12) rhythm(.5);
+        @include leading-border(1px, .5, $base-font-size, solid);
+        background-color: #fff;
+    }
+
+    .no-actions {
+        cursor: default;
+    }
+}
+
+.plain-text {
+    background-color: #fff;
+    padding: 0 gutter(12);
+    overflow: auto;
 }
 
 /* @end */

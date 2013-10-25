@@ -250,7 +250,7 @@ footer img {
 
 /* @end */
 
-/* @group ----- Explorations ----- */
+/* @group ----- Discover ----- */
 
 .explorations h1 + .pagination {
     @include trailer();
@@ -259,6 +259,11 @@ footer img {
 .explorations .question {
     width: 240px;
     margin-bottom: 20px;
+}
+
+.content {
+    @include span-columns(8 alpha);
+    padding: rhythm() 0 rhythm() gutter(6);
 }
 
 .answer {
@@ -335,6 +340,15 @@ footer img {
     ul {
         border-bottom: 0;
     }
+}
+
+.exhibits.show .content {
+    padding: rhythm() gutter(12) !important;
+}
+
+.exhibits.show .layout-geolocation-map,
+.layout-scavenger-hunt {
+    @include trailer();
 }
 
 /* @end */
@@ -514,6 +528,7 @@ footer img {
     display: none;
 }
 
+<<<<<<< Updated upstream
 /* @end */
 
 /* @group ----- Themes ----- */
@@ -554,5 +569,8 @@ body {
     &:nth-of-type(2n) {
         margin-left: 2%;
     }
+}
+div#geolocation {
+    clear: none;
 }
 /* @end */

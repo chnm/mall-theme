@@ -726,6 +726,10 @@
     color: #fff;
   }
 
+  .exhibit-geolocation-map {
+    height: 15em !important;
+  }
+
   .questions {
     clear: both;
     margin: 0 auto;
@@ -817,6 +821,10 @@
     background: #fff;
   }
   .exploration-answer div[role=main] h2 {
+    padding: 0 2.85714%;
+  }
+
+  .exhibits.show .content {
     padding: 0 2.85714%;
   }
 
@@ -941,6 +949,62 @@
 
   .image-text-group {
     overflow: visible;
+  }
+
+  /* @end */
+  /* @group ----- People ----- */
+  .layout-scavenger-hunt {
+    position: relative;
+    background-color: #d9c414;
+    overflow: auto;
+  }
+  .layout-scavenger-hunt .found-actions {
+    display: none;
+  }
+  .layout-scavenger-hunt img {
+    max-width: 100%;
+    vertical-align: bottom;
+    cursor: pointer;
+  }
+  .layout-scavenger-hunt h3 {
+    margin: 0;
+    padding: 0.75em 0;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .layout-scavenger-hunt .found-actions a {
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+    border-top-style: solid;
+    border-top-width: 0.0625em;
+    padding-top: 0.6875em;
+    padding-bottom: 0.75em;
+  }
+  .layout-scavenger-hunt .transcript {
+    float: left;
+    width: 100%;
+    border-color: rgba(255, 255, 255, 0.3);
+    padding: 0 1.40845% 0.75em;
+    border-top-style: solid;
+    border-top-width: 0.0625em;
+    padding-top: 0.6875em;
+    background-color: #fff;
+  }
+  .layout-scavenger-hunt .no-actions {
+    cursor: default;
+  }
+
+  .plain-text {
+    background-color: #fff;
+    padding: 0 1.40845%;
+    overflow: auto;
   }
 
   /* @end */
@@ -1747,7 +1811,7 @@
   }
 
   /* @end */
-  /* @group ----- Explorations ----- */
+  /* @group ----- Discover ----- */
   .explorations h1 + .pagination {
     margin-bottom: 1.5em;
   }
@@ -1755,6 +1819,14 @@
   .explorations .question {
     width: 240px;
     margin-bottom: 20px;
+  }
+
+  .content {
+    width: 66.19718%;
+    float: left;
+    margin-right: 1.40845%;
+    display: inline;
+    padding: 1.5em 0 1.5em 2.85714%;
   }
 
   .answer {
@@ -1835,6 +1907,15 @@
   }
   .learn-more ul {
     border-bottom: 0;
+  }
+
+  .exhibits.show .content {
+    padding: 1.5em 1.40845% !important;
+  }
+
+  .exhibits.show .layout-geolocation-map,
+  .layout-scavenger-hunt {
+    margin-bottom: 1.5em;
   }
 
   /* @end */
@@ -2010,6 +2091,10 @@
 
   #mobile-content {
     display: none;
+  }
+
+  div#geolocation {
+    clear: none;
   }
 
   /* @end */
