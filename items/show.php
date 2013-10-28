@@ -1,4 +1,5 @@
 <?php queue_js_url('//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-525629892de15af0'); ?>
+<?php queue_js_file('items'); ?>
 <?php queue_js_string("
   addthis.layers({
     'theme' : 'transparent',
@@ -16,12 +17,34 @@
 
 <aside>
     <?php if (metadata('item', 'has files')): ?>
-    <?php $itemFiles = $item->Files; ?>
-    <div class="images">
-    <?php foreach ($itemFiles as $itemFile): ?>
-        <a href="<?php echo file_display_url($itemFile, 'original'); ?>"><?php echo file_image('fullsize', array(), $itemFile); ?></a>
-    <?php endforeach; ?>
-    </div>
+        <?php $itemFiles = $item->Files; ?>
+        <?php $multimedia = array(); ?>
+        <div class="images">
+        <?php foreach ($itemFiles as $itemFile): ?>
+            <a href="<?php echo file_display_url($itemFile, 'original'); ?>"><?php echo file_image('fullsize', array(), $itemFile); ?></a>
+        <?php endforeach; ?>
+        </div>
+        <?php if (count($itemFiles) > 1): ?>
+        <div class="thumbnails">
+            <?php foreach ($itemFiles as $itemFile): ?>
+                <?php if ($itemFile->has_derivative_image == 1): ?>
+                <?php echo file_image('square_thumbnail', array(), $itemFile); ?>
+                <?php else: ?>
+                <?php $multimedia[] = $itemFile; ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+        <?php if (count($multimedia) > 0): ?>
+        <div class="other-media">
+        <h3>Other Files</h3>
+        <ul>
+            <?php foreach ($multimedia as $mediaFile): ?>
+            <li><a href="<?php echo file_display_url($mediaFile, 'original'); ?>"><?php echo metadata($mediaFile, 'original filename'); ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+        </div>
+        <?php endif; ?>
     <?php endif; ?>
     
     <div id="item-citation" class="element">

@@ -515,6 +515,10 @@ footer img {
         & > div {
             display: block;
         }
+        
+        img {
+            @include trailer();
+        }
     }
 }
 
@@ -527,8 +531,6 @@ footer img {
 #mobile-content {
     display: none;
 }
-
-<<<<<<< Updated upstream
 /* @end */
 
 /* @group ----- Themes ----- */

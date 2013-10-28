@@ -1435,6 +1435,35 @@ nav ul {
             vertical-align: bottom;
         }
     }
+    
+    .images a {
+        display: none;
+        
+        &.current {
+            display: block;
+        }
+    }
+    
+    .thumbnails, .other-media { 
+        display: block; 
+        @include trailer();
+        overflow: auto;
+    }
+        
+    .thumbnails img {
+        width: 25%;
+        cursor: pointer;
+        opacity: .5;
+        float: left;
+        
+        &.current {
+            opacity: 1;
+        }
+    }
+    
+    .other-media {
+        padding: 0 gutter(6);
+    }
 }
 
 .items.show .element-set { display: none; }
