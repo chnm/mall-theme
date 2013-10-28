@@ -1384,7 +1384,14 @@
     border-bottom-width: 0.0625em;
     padding-bottom: 1.4375em;
     margin-bottom: 1.5em;
+    float: left;
     clear: both;
+  }
+  .search-result h3 {
+    margin-top: 0;
+  }
+  .search-result:first-of-type {
+    padding-top: 1.5em;
   }
   .search-result:last-of-type {
     border-bottom: 0;

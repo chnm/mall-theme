@@ -35,6 +35,6 @@ $query = $_GET['query'];
     <div id="no-results">
         <p><?php echo __('Your query returned no results.');?></p>
     </div>
-</div>
 <?php endif; ?>
+</div>
 <?php echo foot(); ?>

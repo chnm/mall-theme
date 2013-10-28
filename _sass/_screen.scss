@@ -1366,7 +1366,16 @@ nav ul {
     padding: 0 gutter(6);
     @include trailing-border(1px, 1, $base-font-size, solid);
     @include trailer();
+    float: left;
     clear: both;
+    
+    h3 {
+        margin-top: 0;
+    }
+    
+    &:first-of-type {
+        @include padding-leader();
+    }
     
     &:last-of-type {
         border-bottom: 0;
