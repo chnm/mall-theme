@@ -261,13 +261,12 @@ footer img {
     margin-bottom: 20px;
 }
 
-.content {
-    @include span-columns(8 alpha);
-    padding: rhythm() 0 rhythm() gutter(6);
+.exploration-answer div[role=main] h2 {
+    padding: 0;
 }
 
 .answer {
-    padding: rhythm(2) 0;
+    padding: rhythm(2) 0 rhythm(2) gutter(6);
     @include span-columns(8 alpha);
 
     .related-items {
@@ -289,7 +288,6 @@ footer img {
         }
         
         h2, p {
-            @include span-columns(7 omega);
             clear: none;
             margin: 0 0 rhythm(1) 0;
             padding: 0 gutter(6) 0 0;
@@ -299,11 +297,15 @@ footer img {
     .related-items-mobile {
         display: none;
     }
+    
+    p {
+        padding: 0;
+    }
 }
 
 .learn-more {
     clear: none;
-    padding-left: 0;
+    padding: rhythm(2) gutter(6) rhythm(2) gutter(12);
     @include span-columns(4 omega);
     
     .items, .other-questions, .themes {
@@ -342,13 +344,19 @@ footer img {
     }
 }
 
-.exhibits.show .content {
-    padding: rhythm() gutter(12) !important;
+.layout-geolocation-map,
+.layout-scavenger-hunt {
+    @include leader(0);
+    @include trailer();
 }
 
-.exhibits.show .layout-geolocation-map,
-.layout-scavenger-hunt {
+.layout-file-text .fullsize {
     @include trailer();
+    width: auto;
+}
+
+.layout-file-text .thumbnail {
+    margin-left: 0 !important;
 }
 
 /* @end */

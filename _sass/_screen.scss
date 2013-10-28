@@ -773,8 +773,23 @@ nav ul {
     }
 }
 
-.exhibits.show .content {
-    padding: 0 gutter(6);
+.exhibit-description p {
+    margin: rhythm() 0;
+    
+    &:first-of-type {
+        margin-top: 0;
+    }
+}
+
+.layout-file-text .thumbnail {
+    margin: 0 gutter(6) !important;
+}
+
+.layout-file-text .fullsize {
+    max-width: none;
+    width: 100%;
+    text-align: center;
+    background-color: #000;
 }
 
 .answer {
@@ -783,11 +798,6 @@ nav ul {
     
     p {
         padding: 0 gutter(6);
-        @include at-breakpoint($break) {
-            width: 100%;
-            display: inline-block;
-            padding: 0 gutter(6);
-        }
     }
     
     .related-items {
@@ -917,7 +927,7 @@ nav ul {
 
 /* @end */
 
-/* @group ----- People ----- */
+/* @group ----- Scavenger Hunt ----- */
 
 .layout-scavenger-hunt {
     position: relative;
@@ -973,6 +983,10 @@ nav ul {
     background-color: #fff;
     padding: 0 gutter(12);
     overflow: auto;
+}
+
+.layout-geolocation-map {
+    @include leader(-1);
 }
 
 /* @end */
