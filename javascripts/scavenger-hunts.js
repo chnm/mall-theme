@@ -3,10 +3,10 @@ jQuery(document).ready( function() {
         jQuery('.content > h2').hide();
     }
     jQuery('.layout-scavenger-hunt img').click( function(e) {
-        jQuery(this).siblings('.found-actions').slideToggle();
+        jQuery(this).siblings('.found-actions').toggle();
     });
     jQuery('a.text').unbind("click").click( function(e) {
         e.preventDefault();
-        jQuery(this).siblings('.transcript').slideToggle();
+        jQuery(this).siblings('.transcript').toggle();
     });
 });
