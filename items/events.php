@@ -34,6 +34,7 @@ $periodItems = array();
                         'terms' => $coverageText
                     ))
                 ), 200);
+                usort($periods[$coverageText], 'mall_sort_events');
                 ?>
         
             <?php endforeach; ?>

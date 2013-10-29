@@ -18,4 +18,11 @@ function mall_exhibit_background($exhibit)
     }
 }
 
+function mall_sort_events($firstPeriodItem, $secondPeriodItem) {
+    $firstDate = metadata($firstPeriodItem, array('Item Type Metadata', "Event Sort Date"));
+    $secondDate = metadata($secondPeriodItem, array('Item Type Metadata', "Event Sort Date"));
+    if ($firstDate == $secondDate) return 0;
+    return ($firstDate < $secondDate) ? -1 : 1;
+}
+
 ?>
