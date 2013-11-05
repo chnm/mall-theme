@@ -931,11 +931,16 @@ nav ul {
 
 .layout-scavenger-hunt {
     position: relative;
-    background-color: $yellow;
     overflow: auto;
 
     .found-actions {
         display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0,0,0,.4);
     }
     
     img {
@@ -945,8 +950,8 @@ nav ul {
     }
     
     h3 {
-        margin: 0;
-        padding: rhythm(.5) 0;
+        @include leader();
+        @include trailer();
         color: #fff;
         text-align: center;
         text-transform: uppercase;
@@ -956,22 +961,23 @@ nav ul {
     
     .found-actions a {
         display: block;
-        float: left;
-        width: 50%;
+        width: 70%;
+        margin: auto;
         text-align: center;
         color: #fff;
-        border-color: rgba(255,255,255,.3);
-        @include leading-border(1px, .5, $base-font-size, solid);
-        @include padding-trailer(.5);
+        padding: rhythm(.5) 10px;
+        @include trailer();
+        background-color: $yellow;
+        @include border-radius(5px);
     }
     
     .transcript {
-        float: left;
         width: 100%;
         border-color: rgba(255,255,255,.3);
-        padding: 0 gutter(12) rhythm(.5);
-        @include leading-border(1px, .5, $base-font-size, solid);
+        padding: rhythm() gutter(12);
         background-color: #fff;
+        position: relative;
+        z-index: 10;
     }
 
     .no-actions {

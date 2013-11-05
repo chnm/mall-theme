@@ -969,11 +969,16 @@
   /* @group ----- Scavenger Hunt ----- */
   .layout-scavenger-hunt {
     position: relative;
-    background-color: #d9c414;
     overflow: auto;
   }
   .layout-scavenger-hunt .found-actions {
     display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
   }
   .layout-scavenger-hunt img {
     max-width: 100%;
@@ -981,8 +986,8 @@
     cursor: pointer;
   }
   .layout-scavenger-hunt h3 {
-    margin: 0;
-    padding: 0.75em 0;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
@@ -991,25 +996,26 @@
   }
   .layout-scavenger-hunt .found-actions a {
     display: block;
-    float: left;
-    width: 50%;
+    width: 70%;
+    margin: auto;
     text-align: center;
     color: #fff;
-    border-color: rgba(255, 255, 255, 0.3);
-    border-top-style: solid;
-    border-top-width: 0.0625em;
-    padding-top: 0.6875em;
-    padding-bottom: 0.75em;
+    padding: 0.75em 10px;
+    margin-bottom: 1.5em;
+    background-color: #d9c414;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
   }
   .layout-scavenger-hunt .transcript {
-    float: left;
     width: 100%;
     border-color: rgba(255, 255, 255, 0.3);
-    padding: 0 1.40845% 0.75em;
-    border-top-style: solid;
-    border-top-width: 0.0625em;
-    padding-top: 0.6875em;
+    padding: 1.5em 1.40845%;
     background-color: #fff;
+    position: relative;
+    z-index: 10;
   }
   .layout-scavenger-hunt .no-actions {
     cursor: default;
