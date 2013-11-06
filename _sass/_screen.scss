@@ -1072,14 +1072,15 @@ nav ul {
         vertical-align: top;
         margin: 2%;
         text-align: center;
+        padding: 0;
     }
     
     .image { 
-        width: 85px;
+        width: 100px;
         display: inline-block; 
-        -webkit-border-radius: 55px/100px;
+        /* -webkit-border-radius: 55px/100px;
         -moz-border-radius: 55px/100px;
-        border-radius: 55px/100px;
+        border-radius: 55px/100px; */
         overflow: hidden;
         text-align: center;
         background: #e7e7e7 center center no-repeat;

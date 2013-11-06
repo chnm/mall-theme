@@ -1,6 +1,11 @@
 (function($) {
 
     $(document).ready( function() {
+
+        $(function() {
+            FastClick.attach(document.body);
+        });    
+
         if (!$('body').hasClass('home')) {
             /* Create the mobile menu and its icons */
             var menu_icon = $('<a href="#navigation" class="icon-alone"><span aria-hidden="true" data-icon="&#xe005;"></span><span class="screen-reader-text">Menu</span></a>');
