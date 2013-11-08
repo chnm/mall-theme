@@ -1,6 +1,6 @@
 <div role="main">
 
-    <h1>Browse People</h1>
+    <h1>People</h1>
     
     <nav>
         <?php echo pagination_links(); ?>
