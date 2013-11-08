@@ -1,6 +1,6 @@
 <?php
 queue_js_file('jquery.masonry');
-$title = __('Discover');
+$title = __('Explorations');
 echo head(array('title' => $title, 'bodyclass' => 'explorations browse'));
 ?>
 

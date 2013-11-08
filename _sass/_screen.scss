@@ -497,7 +497,7 @@ nav ul {
     h1 { 
         padding: rhythm(.5) gutter(); 
         margin: 0;
-        font-size: 18px;
+        font-size: 1.5 * $base-font-size;
         line-height: $base-line-height;
         display: block;
         background-color: $red;
