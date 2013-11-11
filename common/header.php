@@ -40,7 +40,7 @@
 <?php echo body_tag(array('id' => @$bodyid, 'class' => @$bodyclass)); ?>
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <header>
-        <h1 id="site-title"><?php echo link_to_home_page(theme_logo(), array('data-ajax' => 'false')); ?></h1>
+        <h1 id="site-title"><?php echo link_to_home_page(theme_logo(), array('alt' => 'Logo for Histories of the National Mall', 'title' => 'Logo for Histories of the National Mall')); ?></h1>
         
         <?php echo search_form(); ?>
         
