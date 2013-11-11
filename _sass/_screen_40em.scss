@@ -451,38 +451,6 @@ footer img {
 
 /* @end */
 
-/* @group ----- Sites ----- */
-
-.item {
-    div[role=main] h2:first-of-type {
-        @include leader(1.5);
-    }
-    
-    .metadata {
-        @include span-columns(4 alpha);
-        @include prefix(1);
-        @include padding-leader(2);
-        
-        .image {
-                @include trailer();
-        }
-    }
-    
-    .description {
-        @include span-columns(7 omega);
-        @include suffix(1);
-        padding-top: rhythm(1.5);
-        
-        p {
-            padding: 0;
-            
-            &:first-of-type { padding-top: 0; }
-        }
-    }
-}
-
-/* @end */
-
 /* @group ----- Themes ----- */
 
 .themes .theme-list {

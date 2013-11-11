@@ -1293,68 +1293,6 @@
   }
 
   /* @end */
-  /* @group ----- Sites ----- */
-  .locations {
-    background-color: #fff;
-  }
-  .locations .image {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 0.75em;
-  }
-  .sites div[role=main] h1:first-of-type {
-    background-color: #21c900;
-    color: #fff;
-  }
-
-  .site {
-    padding: 1.5em 2.85714% 0;
-    border-color: #ccc;
-    overflow: auto;
-    border-bottom-style: solid;
-    border-bottom-width: 0.0625em;
-    padding-bottom: 1.4375em;
-  }
-  .site h3 {
-    margin-top: 0;
-  }
-  .site p:last-of-type {
-    margin-bottom: 0;
-  }
-
-  .item div[role=main] {
-    background-color: #fff;
-    padding-bottom: 3em;
-  }
-  .item div[role=main] h2 {
-    padding-left: 0;
-  }
-  .item div[role=main] h2:first-of-type {
-    margin-top: 1.5em;
-  }
-  .item .metadata .image {
-    width: 100%;
-    padding: 20px;
-    margin: 0;
-    border-color: #e7e7e7;
-    border-top-style: solid;
-    border-top-width: 0.0625em;
-    padding-top: -0.0625em;
-  }
-  .item .description {
-    padding: 0 2.85714%;
-  }
-  .item .description p {
-    clear: both;
-  }
-  .item .description p:first-of-type {
-    padding-top: 1.5em;
-  }
-  .item .category {
-    font-weight: bold;
-  }
-
-  /* @end */
   /* @group ----- Themes ----- */
   .themes .theme-list {
     padding: 3em 2.85714%;
@@ -1449,6 +1387,38 @@
     -moz-box-shadow: rgba(0, 0, 0, 0.1) 0 -5px 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0 -5px 20px;
     overflow: auto;
+  }
+
+  .item div[role=main] {
+    background-color: #fff;
+    padding-bottom: 3em;
+  }
+  .item div[role=main] h2 {
+    padding-left: 0;
+  }
+  .item div[role=main] h2:first-of-type {
+    margin-top: 1.5em;
+  }
+  .item .metadata .image {
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    border-color: #e7e7e7;
+    border-top-style: solid;
+    border-top-width: 0.0625em;
+    padding-top: -0.0625em;
+  }
+  .item .description {
+    padding: 0 2.85714%;
+  }
+  .item .description p {
+    clear: both;
+  }
+  .item .description p:first-of-type {
+    padding-top: 1.5em;
+  }
+  .item .category {
+    font-weight: bold;
   }
 
   /* @end */
@@ -1559,12 +1529,6 @@
   }
   .right .image:first-of-type {
     margin-right: 0;
-  }
-}
-
-@media screen and (min-width: 40em) {
-  .locations .image {
-    margin-bottom: 0;
   }
 }
 
@@ -2056,38 +2020,6 @@
   }
   #period-nav ul li:first-of-type, #period-nav a {
     line-height: 36px;
-  }
-
-  /* @end */
-  /* @group ----- Sites ----- */
-  .item div[role=main] h2:first-of-type {
-    margin-top: 2.25em;
-  }
-  .item .metadata {
-    width: 32.39437%;
-    float: left;
-    margin-right: 1.40845%;
-    display: inline;
-    padding-left: 8.4507%;
-    padding-top: 3em;
-  }
-  .item .metadata .image {
-    margin-bottom: 1.5em;
-  }
-  .item .description {
-    width: 57.74648%;
-    float: right;
-    margin-right: 0;
-    *margin-left: -1em;
-    display: inline;
-    padding-right: 8.4507%;
-    padding-top: 2.25em;
-  }
-  .item .description p {
-    padding: 0;
-  }
-  .item .description p:first-of-type {
-    padding-top: 0;
   }
 
   /* @end */
