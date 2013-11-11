@@ -226,11 +226,11 @@ footer img {
     
     li { 
         width: percentage(1/2);
-        height: rhythm(7);
+        height: rhythm(9);
         @include leading-border(0px, 0, $base-font-size, solid);
         
         &:after { 
-            height: rhythm(7); 
+            height: rhythm(9); 
         }
     }
     
