@@ -1093,6 +1093,7 @@
     border-bottom-width: 0em;
     padding-bottom: 1.5em;
     overflow: hidden;
+    padding: 0;
   }
 
   .persons.images {
@@ -1574,6 +1575,7 @@
     -webkit-box-shadow: #bbbbbb 0 0 50px;
     -moz-box-shadow: #bbbbbb 0 0 50px;
     box-shadow: #bbbbbb 0 0 50px;
+    width: 100%;
   }
   div[role=main] > h1:first-of-type {
     padding: 4.5em 2.85714%;

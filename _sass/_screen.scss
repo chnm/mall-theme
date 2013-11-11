@@ -1060,6 +1060,7 @@ nav ul {
 .people.items.browse .item {
     @include trailing-border(0px, 1, $base-font-size, solid);
     overflow: hidden;
+    padding: 0;
 }
 
 .persons.images { 

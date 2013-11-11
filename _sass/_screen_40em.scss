@@ -12,6 +12,7 @@ body {
 
 div[role=main] { 
     @include box-shadow(#BBB 0 0 50px); 
+    width: 100%;
     
     & > h1:first-of-type {
         padding: rhythm(3) gutter(6);
