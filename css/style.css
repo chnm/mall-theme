@@ -1840,7 +1840,7 @@
   }
 
   .answer {
-    padding: 3em 0 3em 2.85714%;
+    padding: 0 0 3em 2.85714%;
     width: 66.19718%;
     float: left;
     margin-right: 1.40845%;
@@ -1876,7 +1876,7 @@
 
   .learn-more {
     clear: none;
-    padding: 3em 2.85714% 3em 1.40845%;
+    padding: 0 2.85714% 3em 1.40845%;
     width: 32.39437%;
     float: right;
     margin-right: 0;
@@ -2039,10 +2039,13 @@
 
   /* @end */
   /* @group ----- Items/Show ----- */
+  .exploration-answer div[role=main] h1,
   .items.show div[role=main] h1 {
     margin-bottom: 3em;
   }
-  .items.show div[role=main] > div {
+  .exploration-answer div[role=main] > div, .exploration-answer div[role=main] article,
+  .items.show div[role=main] > div,
+  .items.show div[role=main] article {
     padding-left: 8.4507%;
     padding-right: 8.4507%;
     width: 66.19718%;
@@ -2050,6 +2053,7 @@
     margin-right: 1.40845%;
     display: inline;
   }
+  .exploration-answer div[role=main] > aside,
   .items.show div[role=main] > aside {
     padding-left: 0%;
     padding-right: 8.4507%;
@@ -2059,9 +2063,11 @@
     *margin-left: -1em;
     display: inline;
   }
+  .exploration-answer div[role=main] > aside > div,
   .items.show div[role=main] > aside > div {
     display: block;
   }
+  .exploration-answer div[role=main] > aside img,
   .items.show div[role=main] > aside img {
     margin-bottom: 1.5em;
   }
