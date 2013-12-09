@@ -274,56 +274,47 @@ footer {
     width: 100%;
 }
 
+.home #navigation li {
+    @include transition(box-shadow ease .25s);
+}
+
+.home #navigation li:hover {
+    @include box-shadow(0 0 100px rgba(255,255,255,.8) inset);
+}
+
 .home #navigation li:nth-of-type(4) {
     background: url('../images/events.jpg') no-repeat center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    @include background-size(cover);    
     
     &:after {
-        background-image: -webkit-linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(33, 201, 0, 0.4));
-        background-image: -moz-linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(33, 201, 0, 0.4));
-        background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(33, 201, 0, 0.4));
+        @include background-image(linear-gradient(135deg, rgba(0, 0, 0, .8), rgba(33, 201, 0, 0.4)));
     }
 }
 
 .home #navigation li:nth-of-type(3) {
     background: url('../images/people.jpg') no-repeat top;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    
+    @include background-size(cover);    
 
     &:after {
-        background-image: -webkit-linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.4));
-        background-image: -moz-linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.4));
-        background-image: linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.4));
+        @include background-image(linear-gradient(255deg, rgba(0, 0, 0, 0.8), rgba(43, 137, 217, 0.4)));
     }
 }
 
 .home #navigation li:first-of-type {
     background: url('../images/map.png') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    @include background-size(cover);
 
     &:after {
-        background-image: -webkit-linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
-        background-image: -moz-linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
-        background-image: linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4));
+        @include background-image(linear-gradient(195deg, rgba(0, 0, 0, 0.8), rgba(217, 196, 20, 0.4)));
     }
 }
 
 .home #navigation li:nth-of-type(2) {
     background: url('../images/discover.jpg') no-repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    @include background-size(cover);    
 
     &:after {
-        background-image: -webkit-linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(255, 51, 0, 0.4));
-        background-image: -moz-linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(255, 51, 0, 0.4));
-        background-image: linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(255, 51, 0, 0.4));
+        @include background-image(linear-gradient(15deg, rgba(0, 0, 0, 0.8), rgba(255, 51, 0, 0.4)));
     }
 }
 
