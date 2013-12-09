@@ -253,8 +253,8 @@ footer img {
 
 /* @group ----- Discover ----- */
 
-.explorations h1 + .pagination {
-    @include trailer();
+.explorations .questions {
+    @include padding-leader();
 }
 
 .explorations .question {

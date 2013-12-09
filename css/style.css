@@ -1826,8 +1826,8 @@
 
   /* @end */
   /* @group ----- Discover ----- */
-  .explorations h1 + .pagination {
-    margin-bottom: 1.5em;
+  .explorations .questions {
+    padding-top: 1.5em;
   }
 
   .explorations .question {

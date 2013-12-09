@@ -80,7 +80,7 @@
     <?php if (metadata('exhibit', 'has tags')): ?>
     <div class="themes">
         <h3>Explore other questions about&hellip;</h3>
-        <?php echo tag_cloud('exhibit', 'exhibits/browse'); ?>
+        <?php echo tag_cloud('exhibit', 'explorations/browse'); ?>
     </div>
     <?php endif; ?>
 
