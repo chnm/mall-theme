@@ -1365,7 +1365,7 @@
     border-bottom: 0;
   }
   .search-result .description {
-    padding: 0;
+    padding: 0 !important;
   }
 
   .search .pagination:first-of-type, .search .pagination:nth-of-type(2) {

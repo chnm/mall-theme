@@ -16,7 +16,7 @@
         <div id="featured-question" class="featured" style="background-image:url('<?php echo file_display_url($featuredExhibitImage, 'original'); ?>')">
             
             <h1>
-                <span class="category">Featured question</span>
+                <span class="category">Featured Exploration</span>
                 <span class="title"><?php echo $featuredExhibit->title; ?></span>
             </h1>
             <p><?php echo snippet($featuredExhibit->description, 0, 200); ?></p>
