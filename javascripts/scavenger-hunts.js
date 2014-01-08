@@ -1,25 +1,34 @@
-jQuery(document).ready( function() {
-    if (jQuery('.layout-scavenger-hunt').length > 0) {
-        jQuery('.content > h2').hide();
-    }
-    var flag = false;
-    jQuery('.layout-scavenger-hunt img').bind('touchstart mousedown', function(e) {
-        if (!flag) {
-          flag = true;
-          setTimeout(function(){ flag = false; }, 100);
-          jQuery(this).siblings('.found-actions').toggle();
+(function($) {
+    $(document).ready( function() {
+        if ($('.layout-scavenger-hunt').length > 0) {
+            $('.content > h2').hide();
         }
-        return false
-    });
-    jQuery('a.text').bind('touchstart mousedown', function(e) {
-        e.preventDefault();
-        jQuery(this).parent().siblings('.transcript').toggle();
-    });
-    jQuery('a.done').bind('touchstart mousedown', function(e) {
-        e.preventDefault();
-        jQuery(this).parent().hide();
-        jQuery(this).parent().siblings('.transcript').hide();
-    })
-});
+        var flag = false;
+        $('.item-expanded img').bind('touchstart mousedown', function(e) {
+            if (!flag) {
+              flag = true;
+              setTimeout(function(){ flag = false; }, 100);
+              $(this).siblings('.found-actions').toggle();
+            }
+            return false
+        });
 
-new Fastclick(document.body);
+        $('.item-collapsed').click(function() {
+            $(this).next().slideToggle();
+            $(this).toggleClass('open');
+        });
+        
+        $('a.text, a.read, a.hunt-item').click(function(e) {
+            e.preventDefault();
+        });
+
+        $('a.text').bind('touchstart mousedown', function(e) {
+            $(this).parent().siblings('.transcript').slideToggle();
+        });
+
+        $('a.done').bind('touchstart mousedown', function(e) {
+            $(this).parent().hide();
+            $(this).parent().siblings('.transcript').hide();
+        })
+    });
+})(jQuery)

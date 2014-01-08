@@ -923,6 +923,7 @@ nav ul {
 .layout-scavenger-hunt {
     position: relative;
     overflow: auto;
+    @include trailer();
 
     .found-actions {
         display: none;
@@ -942,7 +943,7 @@ nav ul {
     
     h3 {
         @include leader();
-        @include trailer();
+        @include trailer(.5);
         color: #fff;
         text-align: center;
         text-transform: uppercase;
@@ -973,6 +974,54 @@ nav ul {
 
     .no-actions {
         cursor: default;
+    }
+    
+    a.done {
+        text-indent: -9999px;
+        background-color: transparent;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5 * $base-font-size;
+        
+        &:before {
+            font-family: "icomoon";
+            content: "\e600";
+            text-indent: 0;
+            speak: none;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+    }
+}
+
+.item-collapsed {
+    padding: rhythm(.5);
+
+    &:after {
+        position: absolute;
+        right: rhythm(.375);
+        top: rhythm(.375);
+        font-family: "icomoon";
+        content: "\e009";
+        text-indent: 0;
+        speak: none;
+        font-size: 1.25 * $base-font-size;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        color: $red;
+    }
+    
+    &.open:after {
+        content: "\e007";
     }
 }
 

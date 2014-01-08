@@ -992,6 +992,7 @@
   .layout-scavenger-hunt {
     position: relative;
     overflow: auto;
+    margin-bottom: 1.5em;
   }
   .layout-scavenger-hunt .found-actions {
     display: none;
@@ -1009,7 +1010,7 @@
   }
   .layout-scavenger-hunt h3 {
     margin-top: 1.5em;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.75em;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
@@ -1041,6 +1042,50 @@
   }
   .layout-scavenger-hunt .no-actions {
     cursor: default;
+  }
+  .layout-scavenger-hunt a.done {
+    text-indent: -9999px;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+  }
+  .layout-scavenger-hunt a.done:before {
+    font-family: "icomoon";
+    content: "\e600";
+    text-indent: 0;
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
+  .item-collapsed {
+    padding: 0.75em;
+  }
+  .item-collapsed:after {
+    position: absolute;
+    right: 0.5625em;
+    top: 0.5625em;
+    font-family: "icomoon";
+    content: "\e009";
+    text-indent: 0;
+    speak: none;
+    font-size: 20px;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    color: #db6c36;
+  }
+  .item-collapsed.open:after {
+    content: "\e007";
   }
 
   .plain-text {
