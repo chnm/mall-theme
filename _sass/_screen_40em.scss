@@ -554,3 +554,13 @@ div#geolocation {
     clear: none;
 }
 /* @end */
+
+/* @group ----- About ----- */
+
+.page div[role="main"] #content {
+    padding: rhythm(2) 0;
+    @include span-columns(12);
+    @include prefix(1);
+    @include suffix(1);
+}
+/* @end */

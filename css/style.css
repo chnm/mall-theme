@@ -2185,4 +2185,16 @@
   }
 
   /* @end */
+  /* @group ----- About ----- */
+  .page div[role="main"] #content {
+    padding: 3em 0;
+    width: 100%;
+    float: left;
+    margin-right: 1.40845%;
+    display: inline;
+    padding-left: 8.4507%;
+    padding-right: 8.4507%;
+  }
+
+  /* @end */
 }
