@@ -1099,6 +1099,10 @@
     margin-top: -1.5em;
   }
 
+  .layout-file-text .exhibit-items.left {
+    max-width: none !important;
+  }
+
   /* @end */
   /* @group ----- People ----- */
   .people .items {
