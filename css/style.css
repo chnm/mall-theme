@@ -721,9 +721,10 @@
     background-color: #fff;
     float: left;
   }
-  .page div[role=main] p {
+  .page div[role=main] #content {
     padding: 0 2.85714%;
   }
+
   /* @end */
   /* @group ----- Discover ----- */
   .explorations h1 + .pagination {
@@ -1574,19 +1575,6 @@
 @media screen and (min-width: 40em) {
   #mobile-nav {
     display: none;
-  }
-}
-
-@media screen and (min-width: 40em) {
-  .page div[role=main] p {
-    width: 100%;
-    float: left;
-    display: inline-block;
-  }
-}
-@media screen and (min-width: 40em) {
-  .page div[role=main] .history p {
-    width: 60%;
   }
 }
 

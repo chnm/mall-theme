@@ -627,17 +627,8 @@ nav ul {
     background-color: #fff;
     float: left;
     
-    p {
+    #content {
         padding: 0 gutter(6);
-        @include at-breakpoint($break) {
-            width: 100%;
-            float: left;
-            display: inline-block;
-        }
-    }
-    
-    @include at-breakpoint($break) {
-        .history p { width: 60%; }
     }
 }
 
