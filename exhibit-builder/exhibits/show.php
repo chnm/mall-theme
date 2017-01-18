@@ -2,7 +2,7 @@
 queue_js_file('scavenger-hunts');
 echo head(array(
     'title' => metadata('exhibit_page', 'title') . ' &middot; ' . metadata('exhibit', 'title'),
-    'bodyclass' => 'exhibits show'));
+    'bodyclass' => 'explorations exploration-answer show'));
 ?>
 
 <div role="main">

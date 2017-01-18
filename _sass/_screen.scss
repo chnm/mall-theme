@@ -1384,9 +1384,14 @@ nav ul {
     @include trailer();
     float: left;
     clear: both;
+    width: 100%;
     
     h3 {
         margin-top: 0;
+    }
+
+    h3:only-child {
+        margin-bottom: 0;
     }
     
     &:first-of-type {
@@ -1535,8 +1540,9 @@ nav ul {
         }
     }
     
-    .other-media {
-        padding: 0 gutter(6);
+    .other-media .mejs-container {
+        max-width: 100%;
+        overflow: hidden;
     }
 }
 

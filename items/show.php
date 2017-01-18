@@ -19,30 +19,33 @@
     <?php if (metadata('item', 'has files')): ?>
         <?php $itemFiles = $item->Files; ?>
         <?php $multimedia = array(); ?>
-        <div class="images">
+        <?php $images = array(); ?>
         <?php foreach ($itemFiles as $itemFile): ?>
-            <a href="<?php echo file_display_url($itemFile, 'original'); ?>"><?php echo file_image('fullsize', array(), $itemFile); ?></a>
-        <?php endforeach; ?>
-        </div>
-        <?php if (count($itemFiles) > 1): ?>
-        <div class="thumbnails">
-            <?php foreach ($itemFiles as $itemFile): ?>
-                <?php if ($itemFile->has_derivative_image == 1): ?>
-                <?php echo file_image('square_thumbnail', array(), $itemFile); ?>
-                <?php else: ?>
+            <?php if ($itemFile->has_derivative_image == 1): ?>
+                <?php $images[] = $itemFile; ?>
+            <?php else: ?>
                 <?php $multimedia[] = $itemFile; ?>
-                <?php endif; ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
+
+        <?php if (count($multimedia) > 0): ?>
+        <div class="other-media">
+            <?php foreach ($multimedia as $mediaFile): ?>
+                <?php echo file_markup($mediaFile, array('imageSize'=>'fullsize')); ?>
             <?php endforeach; ?>
         </div>
         <?php endif; ?>
-        <?php if (count($multimedia) > 0): ?>
-        <div class="other-media">
-        <h3>Other Files</h3>
-        <ul>
-            <?php foreach ($multimedia as $mediaFile): ?>
-            <li><a href="<?php echo file_display_url($mediaFile, 'original'); ?>"><?php echo metadata($mediaFile, 'original filename'); ?></a></li>
+
+        <div class="images">
+        <?php foreach ($images as $image): ?>
+                <a href="<?php echo file_display_url($image, 'original'); ?>"><?php echo file_image('fullsize', array(), $image); ?></a>
+        <?php endforeach; ?>
+        </div>
+        <?php if (count($images) > 1): ?>
+        <div class="thumbnails">
+            <?php foreach ($images as $image): ?>
+                <?php echo file_image('square_thumbnail', array(), $image); ?>
             <?php endforeach; ?>
-        </ul>
         </div>
         <?php endif; ?>
     <?php endif; ?>
@@ -69,7 +72,7 @@
     <?php echo $description; ?>
     <?php endif; ?>
 
-    <?php if ($creator = metadata($item, array('Dublin Core', 'Creator'))): ?>
+    <?php if (($creator = metadata($item, array('Dublin Core', 'Creator'))) && ($item->item_type !== 'People')): ?>
     <h3>Creator</h3>
     <?php echo $creator; ?>
     <?php endif; ?>    

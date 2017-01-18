@@ -21,7 +21,9 @@ $query = $_GET['query'];
                             $exhibitId = $record->id;
                             $exhibitItem = get_records('Item', array('exhibit' => $exhibitId, 'random' => true, 'has files' => true), 1);
                             $exhibitImage = get_db()->getTable('File')->findWithImages($exhibitItem[0]->id, 0);
-                            echo link_to($record, 'show', file_image('square_thumbnail', array(), $exhibitImage), array('class' => 'image'));
+                            if ($exhibitImage) {
+                                echo link_to($record, 'show', file_image('square_thumbnail', array(), $exhibitImage), array('class' => 'image'));
+                            }
                         ?>
                     <?php endif; ?>
                         <h3><a href="<?php echo record_url($record, 'show'); ?>"><?php echo $searchText['title'] ? $searchText['title'] : '[Unknown]'; ?></a></h3>

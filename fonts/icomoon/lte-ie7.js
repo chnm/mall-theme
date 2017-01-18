@@ -26,7 +26,8 @@ window.onload = function() {
 			'icon-reload' : '&#xe011;',
 			'icon-location' : '&#xe012;',
 			'icon-equalizer' : '&#xe013;',
-			'icon-tumblr' : '&#xe014;'
+			'icon-tumblr' : '&#xe014;',
+			'icon-cross' : '&#xe600;'
 		},
 		els = document.getElementsByTagName('*'),
 		i, attr, c, el;
