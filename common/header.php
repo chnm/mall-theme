@@ -29,7 +29,36 @@
               FastClick.attach(document.body);
           }, false);
     "); ?>
+    <?php queue_js_string("
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-69948031-1', 'auto');
+        ga('send', 'pageview');
+    "); ?>
     <?php echo head_js(); ?>
+
+
+
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stats.rrchnm.org/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '15']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
 
 </head>
 
@@ -41,13 +70,13 @@
     <?php fire_plugin_hook('public_body', array('view'=>$this)); ?>
     <header>
         <h1 id="site-title"><?php echo link_to_home_page(theme_logo(), array('alt' => 'Logo for Histories of the National Mall', 'title' => 'Logo for Histories of the National Mall')); ?></h1>
-        
+
         <?php echo search_form(); ?>
-        
+
         <nav id="navigation" data-role="none">
             <?php if(@$bodyclass == 'home'): ?>
             <h1>Discover</h1>
             <?php endif; ?>
             <?php echo public_nav_main(); ?>
-        </nav>    
+        </nav>
     </header>
