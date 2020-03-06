@@ -579,20 +579,41 @@ nav ul {
     height: rhythm(2);
     
     li {
-        display: inline-block;
         height: 100%;
         position: absolute;
         top: 0;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;        
     }
     
     a {
         color: $red;
-        display: inline;
+        width: 1.5 * $base-line-height;
+        height: 1.5 * $base-line-height;
+        line-height: 1.5 * $base-line-height;
         padding: 5px 10px;
-        line-height: 3em;
         border-radius: 30px;
         background-color: #EEE;
+        text-indent: -9999px;
+        position: relative;
+        display: inline-block;
+        
+        &:after {
+            content: "\e009";
+            font-family: "icomoon";
+            text-indent: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        &[rel="prev"]:after {
+            content: "\e006";
+        }
     }
         
     &:nth-of-type(2) {
@@ -648,10 +669,6 @@ nav ul {
     font-size: 12px;
     vertical-align: middle;
     line-height: 2 * $base-line-height;
-}
-
-.people nav ul li {
-    display: inline-block;
 }
 
 /* @end */
@@ -1088,42 +1105,8 @@ nav ul {
     }
 
     .pagination {
-        background-color: #fff;
-        margin: 0;
-        padding-left: gutter(6);
         border-color: #e7e7e7;
         @include trailing-border(1px, 0, $base-font-size, solid);
-        
-        li {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-                
-        a { 
-            width: 1.5 * $base-line-height;
-            height: 1.5 * $base-line-height;
-            line-height: 1.5 * $base-line-height;
-            display: inline-block;
-            vertical-align: middle;
-            text-indent: -9999px;
-            position: relative;
-            
-            &:after {
-                content: "\e009";
-                font-family: "icomoon";
-                text-indent: 0;
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-            }
-            
-            &[rel="prev"]:after {
-                content: "\e006";
-            }
-        }
     }
 
     .view-options {

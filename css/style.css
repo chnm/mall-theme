@@ -680,19 +680,38 @@
     height: 3em;
   }
   .pagination li {
-    display: inline-block;
     height: 100%;
     position: absolute;
     top: 0;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .pagination a {
     color: #db6c36;
-    display: inline;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
     padding: 5px 10px;
-    line-height: 3em;
     border-radius: 30px;
     background-color: #EEE;
+    text-indent: -9999px;
+    position: relative;
+    display: inline-block;
+  }
+  .pagination a:after {
+    content: "\e009";
+    font-family: "icomoon";
+    text-indent: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .pagination a[rel="prev"]:after {
+    content: "\e006";
   }
   .pagination:nth-of-type(2) {
     border-top-width: 0.0625em;
@@ -744,10 +763,6 @@
     font-size: 12px;
     vertical-align: middle;
     line-height: 48px;
-  }
-
-  .people nav ul li {
-    display: inline-block;
   }
 
   /* @end */
@@ -1169,40 +1184,10 @@
     width: 70%;
   }
   .people .pagination {
-    background-color: #fff;
-    margin: 0;
-    padding-left: 2.85714%;
     border-color: #e7e7e7;
     border-bottom-width: 0.0625em;
     border-bottom-style: solid;
     padding-bottom: -0.0625em;
-  }
-  .people .pagination li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .people .pagination a {
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
-    display: inline-block;
-    vertical-align: middle;
-    text-indent: -9999px;
-    position: relative;
-  }
-  .people .pagination a:after {
-    content: "\e009";
-    font-family: "icomoon";
-    text-indent: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  .people .pagination a[rel="prev"]:after {
-    content: "\e006";
   }
   .people .view-options {
     margin: 0;
