@@ -155,7 +155,8 @@ header {
 }
 
 #search-form {
-    display: none;
+    display: flex !important;
+    align-items: center;
     padding: rhythm(.5) 2%;
     border-color: #e7e7e7;
     @include leading-border(1px, .5, $base-font-size, solid);
@@ -163,11 +164,10 @@ header {
     width: 100%;
     background-color: #fff;
     
-    input[type=text], input[type=submit] {
+    input[type=text], [type=submit] {
         @include border-radius(0);
         height: rhythm(1.5);
         margin: 0;
-        float: left;
         padding: rhythm(.25) gutter();
         font-size: $base-font-size;
     }
@@ -177,7 +177,7 @@ header {
         border: 1px solid #e7e7e7;
     }
     
-    input[type=submit] {
+    [type=submit] {
         width: 35%;
         background-color: $green;
         color: #fff;
@@ -295,8 +295,7 @@ footer {
     }
 }
 
-.home #navigation,
-.home #search-form {
+.home #navigation {
     display: block;
 }
 

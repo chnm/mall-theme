@@ -208,7 +208,7 @@ header {
   width: 65%;
   border: 1px solid #e7e7e7;
 }
-#search-form input[type=submit] {
+#search-form [type=submit] {
   width: 35%;
   background-color: #21c900;
   color: #e7e7e7;

@@ -55,7 +55,6 @@ header {
     padding: 0;
     width: 30%;
     float: right;
-    display: block !important;
     background-color: transparent;
     margin: 0 gutter(12) 0 0;
     position: absolute;
@@ -74,13 +73,10 @@ header {
         display: inline-block;
     }
     
-    input[type=submit] {
-        width: 36%;
-        margin: rhythm(.75) gutter(6) rhythm(.75) 0;
+    [type=submit] {
+        margin: rhythm(.75, $base-font-size) 0;
         font-size: $base-font-size;
         line-height: $base-line-height;
-        float:none;
-        display: inline-block;
     }
 }
 
