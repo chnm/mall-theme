@@ -636,7 +636,7 @@ nav ul {
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
-    line-height: 1;
+    line-height: 2 * $base-line-height;
     -webkit-font-smoothing: antialiased;
     margin-right: .5em;
     display: block;
@@ -647,6 +647,7 @@ nav ul {
     content: "ABC";
     font-size: 12px;
     vertical-align: middle;
+    line-height: 2 * $base-line-height;
 }
 
 .people nav ul li {
@@ -1077,44 +1078,62 @@ nav ul {
         overflow: auto;
     }
 
-    .pagination {    
-        width: 100%;
+    .people-nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .pagination-nav {
+        width: 70%;
+    }
+
+    .pagination {
         background-color: #fff;
         margin: 0;
         padding-left: gutter(6);
         border-color: #e7e7e7;
-        float: left;
         @include trailing-border(1px, 0, $base-font-size, solid);
         
-        & + ul {
-            margin: 0;
-            font-size: 0;
-            float: right;
-            width: 100%;
-            background-color: #fff;
-            position: relative;
-            border-left: 1px solid #e7e7e7;
-            @include box-shadow(rgba(0,0,0,.1) 0 5px 10px);
-            
-            li {
-                width: 50%;
-                font-size: $base-font-size;
-                text-align: center;
-                background-color: #fff;
-                height: rhythm(2);
-                line-height: $base-line-height;
-                display: table;
-                float: left;
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
                 
-                a { 
-                    width: 100%;
-                    line-height: $base-line-height;
-                    display: table-cell;
-                    vertical-align: middle;
-                    height: 100%;
-                }
+        a { 
+            width: 1.5 * $base-line-height;
+            height: 1.5 * $base-line-height;
+            line-height: 1.5 * $base-line-height;
+            display: inline-block;
+            vertical-align: middle;
+            text-indent: -9999px;
+            position: relative;
+            
+            &:after {
+                content: "\e009";
+                font-family: "icomoon";
+                text-indent: 0;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+            
+            &[rel="prev"]:after {
+                content: "\e006";
             }
         }
+    }
+
+    .view-options {
+        margin: 0;
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-left: 1px solid #e7e7e7;
+        height: 100%;
     }
     
     nav li {

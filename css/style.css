@@ -732,7 +732,7 @@
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
-    line-height: 1;
+    line-height: 48px;
     -webkit-font-smoothing: antialiased;
     margin-right: .5em;
     display: block;
@@ -743,6 +743,7 @@
     content: "ABC";
     font-size: 12px;
     vertical-align: middle;
+    line-height: 48px;
   }
 
   .people nav ul li {
@@ -1160,44 +1161,56 @@
     padding: 1.5em 2.85714%;
     overflow: auto;
   }
+  .people .people-nav {
+    display: flex;
+    align-items: center;
+  }
+  .people .pagination-nav {
+    width: 70%;
+  }
   .people .pagination {
-    width: 100%;
     background-color: #fff;
     margin: 0;
     padding-left: 2.85714%;
     border-color: #e7e7e7;
-    float: left;
     border-bottom-width: 0.0625em;
     border-bottom-style: solid;
     padding-bottom: -0.0625em;
   }
-  .people .pagination + ul {
-    margin: 0;
-    font-size: 0;
-    float: right;
-    width: 100%;
-    background-color: #fff;
-    position: relative;
-    border-left: 1px solid #e7e7e7;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 5px 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 5px 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0 5px 10px;
+  .people .pagination li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .people .pagination + ul li {
-    width: 50%;
-    font-size: 16px;
-    text-align: center;
-    background-color: #fff;
-    height: 3em;
-    line-height: 24px;
-    display: table;
-    float: left;
-  }
-  .people .pagination + ul li a {
-    width: 100%;
-    line-height: 24px;
-    display: table-cell;
+  .people .pagination a {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
     vertical-align: middle;
+    text-indent: -9999px;
+    position: relative;
+  }
+  .people .pagination a:after {
+    content: "\e009";
+    font-family: "icomoon";
+    text-indent: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .people .pagination a[rel="prev"]:after {
+    content: "\e006";
+  }
+  .people .view-options {
+    margin: 0;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-left: 1px solid #e7e7e7;
     height: 100%;
   }
   .people nav li {
@@ -1631,13 +1644,11 @@
 }
 @media screen and (min-width: 15em) {
   .people .pagination {
-    width: 70%;
     border-bottom-width: 0em;
     border-bottom-style: solid;
     padding-bottom: 0em;
   }
   .people .pagination + ul {
-    width: 30%;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
