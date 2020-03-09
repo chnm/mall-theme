@@ -1237,6 +1237,11 @@ nav ul {
             float: left;
             background-color: #ccc;
             margin: 0 gutter(6) rhythm(.5) 0;
+            
+            img {
+                max-width: 100%;
+                height: auto;
+            }
         }
         
         .period {

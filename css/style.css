@@ -1316,6 +1316,10 @@
     background-color: #ccc;
     margin: 0 2.85714% 0.75em 0;
   }
+  .items.event .items .image img {
+    max-width: 100%;
+    height: auto;
+  }
   .items.event .items .period {
     overflow: auto;
     border-color: #e7e7e7;
