@@ -62,10 +62,10 @@
             
     </div>
     
-    <nav>
+    <nav class="people-nav">
         <?php echo pagination_links(); ?>
 
-        <ul>
+        <ul class="view-options">
             <li class="by-image"><a href="<?php echo url('items/browse/type/people?sort_field=Item+Type+Metadata%2CLast+Name'); ?>"><span class="screen-reader-text">By image</span></a></li>
             <li class="alphabetically"><a href="<?php echo url('items/people-abc'); ?>"><span class="screen-reader-text">Alphabetically</span></a></li>
         </ul>
