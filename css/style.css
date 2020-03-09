@@ -1166,7 +1166,7 @@
   }
 
   .layout-file-text .exhibit-items.left {
-    max-width: none !important;
+    max-width: 100%;
   }
 
   /* @end */
