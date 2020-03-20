@@ -1,9 +1,17 @@
 /* @group ----- Generic HTML elements ----- */
 
 body {
-    @include container;
     padding-bottom: rhythm(5);
+}
 
+header,
+div[role="main"],
+footer {
+    @include container;
+}
+
+div[role="main"] {
+    padding: 0;
 }
 
 /* @end */

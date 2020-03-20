@@ -129,7 +129,6 @@
   div[role=main] {
     clear: both;
     background-color: #fff;
-    float: left;
     box-shadow: #e7e7e7 0 10px 20px 0px;
     box-shadow: #e7e7e7 0 10px 20px 0px;
     box-shadow: #e7e7e7 0 10px 20px 0px;
@@ -163,7 +162,6 @@
   /* @end */
   /* @group ----- Header ----- */
   header {
-    float: left;
     width: 100%;
     position: relative;
     text-align: center;
@@ -254,7 +252,6 @@
   footer {
     padding: 1.5em 2.85714% 6em;
     clear: both;
-    font-size: 12px;
   }
   footer img {
     height: 4.5em;
@@ -266,6 +263,9 @@
   }
   footer a:hover {
     opacity: 1;
+  }
+  footer .copy {
+    font-size: 12px;
   }
 
   .twitter,
@@ -771,7 +771,6 @@
     clear: both;
     padding: 0 0 3em 0;
     background-color: #fff;
-    float: left;
   }
   .page div[role=main] #content {
     padding: 0 2.85714%;
@@ -787,7 +786,6 @@
 
   .explorations div[role=main],
   .exploration-answer div[role=main] {
-    float: left;
     width: 100%;
   }
 
@@ -1650,6 +1648,12 @@
 @media screen and (min-width: 40em) {
   /* @group ----- Generic HTML elements ----- */
   body {
+    padding-bottom: 7.5em;
+  }
+
+  header,
+  div[role="main"],
+  footer {
     *zoom: 1;
     max-width: 71em;
     _width: 71em;
@@ -1657,12 +1661,17 @@
     padding-right: 1em;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 7.5em;
   }
-  body:after {
+  header:after,
+  div[role="main"]:after,
+  footer:after {
     content: "";
     display: table;
     clear: both;
+  }
+
+  div[role="main"] {
+    padding: 0;
   }
 
   /* @end */

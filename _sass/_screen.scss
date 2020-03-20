@@ -73,7 +73,6 @@ a.button {
 div[role=main] {
     clear: both;
     background-color: #fff;
-    float: left;
     @include box-shadow(#e7e7e7 0 10px 20px 0px);
     
     & > h1:first-of-type {
@@ -106,7 +105,6 @@ div[role=main] {
 /* @group ----- Header ----- */
 
 header {
-    float: left;
     width: 100%;
     position: relative;
     text-align: center;
@@ -192,7 +190,6 @@ header {
 footer {
     padding: rhythm() gutter(6) rhythm(4);
     clear: both;
-    font-size: .75 * $base-font-size;
 
     img {
         height: rhythm(3);
@@ -206,6 +203,10 @@ footer {
     
     a:hover {
         opacity: 1;
+    }
+    
+    .copy {
+        font-size: .75 * $base-font-size;
     }
 }
 
@@ -679,7 +680,6 @@ nav ul {
     clear: both;
     padding: 0 0 rhythm(2) 0;
     background-color: #fff;
-    float: left;
     
     #content {
         padding: 0 gutter(6);
@@ -696,7 +696,6 @@ nav ul {
 
 .explorations div[role=main], 
 .exploration-answer div[role=main]{
-    float: left;
     width: 100%;
 }
 
