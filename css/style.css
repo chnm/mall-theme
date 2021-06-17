@@ -1494,6 +1494,10 @@
     clear: both;
   }
 
+  .search-result img {
+    max-width: 100%;
+  }
+
   /* @end */
   /* @group ----- Items/Browse ----- */
   #no-results {
